@@ -1,22 +1,18 @@
 #include "Population.h"
 
-//Default constructor
-Population::Population(){
-	//Default max population size
-	MaxPopSize = 200;
-	TestRange = new float[-1, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1];
-	TargetFormula = "3+2";
-
-}
 
 Population::Population(int GivenMaxSize){
 	MaxPopSize = GivenMaxSize;
 	Individuals = new Individual[MaxPopSize];
-	TestRange = new float[-1, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1];
 	TargetFormula = "x*x+(x-1)";
-
-	
-
+	//TestRangeSize = 21;
+	TestRangeSize = 3;
+	TestRange = vector<float>(TestRangeSize);
+	//TestRange = { -1, -0.9f, -0.8f, -0.7f, -0.6f, -0.5f, -0.4f, -0.3f, -0.2f, -0.1f, 0, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1 };
+	TestRange = {1,2,3};
+	TargetValues = vector<float>(TestRangeSize);
+	TargetValues = {1,5,11};
+	//TargetValues={-3,-2.71f,-2.44f,-2.19f, -1.96f,-1.75f,-1.56f,-1.39f,-1.24f,-1.11f,-1, -0.89f,-0.76f, -0.61f, -0.44f, -0.25f, -0.04f, 0.19f, 0.44f,0.71f,1};
 	//TestOnly
 	TempReturn = "";
 	//TestOnly
@@ -89,6 +85,28 @@ float Population::RunProgram(Node* CurrentNode, float CurrentValue)
 	
 }
 
+void Population::Evaluate() {
+
+	for (int i = 0; i < MaxPopSize; i++)
+	{
+		float CurrentDiffernce = 0;
+		for (int j = 0; j < TestRangeSize; j++)
+		{
+			float CurrentResult = 0;
+			CurrentResult = RunProgram(Individuals[i].GetRootNode(), TestRange[j]);
+			if (CurrentResult > TargetValues[j])
+			{
+				CurrentDiffernce += (CurrentResult - TargetValues[j]);
+			}
+			else
+			{
+				CurrentDiffernce += (TargetValues[j]- CurrentResult);
+			}
+		}
+		Individuals[i].SetTotalDiff(CurrentDiffernce);
+	}
+}
+
 
 //TestOnly
 string Population::PrintOutResult(int GivenNum) {
@@ -98,7 +116,12 @@ string Population::PrintOutResult(int GivenNum) {
 	result = to_string(RunProgram(GivenNode, 2));
 	return result;
 }
-
+string Population::PrintOutTotalDistance(int GivenNum) {
+	int Chosen = GivenNum;
+	string result = "";
+	result = to_string(Individuals[Chosen].GetTotalDiff());
+	return result;
+}
 string Population::PrintOutTree(int GivenNum){
 	int Chosen = GivenNum;
 	Node* GivenNode = Individuals[Chosen].GetRootNode();
@@ -122,4 +145,6 @@ void Population::PrintPrivate(Node* Current)
 		TempReturn += " ";
 	}
 }
+
+
 //TestOnly

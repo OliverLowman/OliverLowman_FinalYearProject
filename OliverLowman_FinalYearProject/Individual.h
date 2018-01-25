@@ -30,7 +30,8 @@ private:
 	int NodesRequired;
 	//Used to track the depth when generating the tree
 	int CurrentDepth;
-	
+	//The current total difference between the results of this individual and the results of the target formula
+	float TotalDifference;
 	//The node at the top of the tree
 	Node* rootNode;
 	//Generate the program tree
@@ -48,6 +49,12 @@ public:
 	~Individual();
 	//Returns the root node of the tree
 	Node* GetRootNode();
+
+	//Sets the TotalDiffernce value
+	void SetTotalDiff(float);
+
+	//Returns the TotalDifference values
+	float GetTotalDiff();
 };
 
 #endif

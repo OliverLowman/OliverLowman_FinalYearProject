@@ -152,17 +152,21 @@ namespace OliverLowman_FinalYearProject {
 		int MaxPopSize = System::Convert::ToInt16(PopSizeInput);
 		Population Pop(MaxPopSize);
 		Pop.Generate();	
+		Pop.Evaluate();
 		//TestOnly
 		string test = Pop.PrintOutTree(150);
 		string test2 = Pop.PrintOutResult(150);
+		string test3 = Pop.PrintOutTotalDistance(150);
 		ofstream myfile;
 		myfile.open("example.txt");
 		myfile << test;
 		myfile << endl;
 		myfile << test2;
+		myfile << endl;
+		myfile << test3;
 		myfile.close();
 		//TestONly
-
+		
 		TestText->Text = "test";
 		
 	}

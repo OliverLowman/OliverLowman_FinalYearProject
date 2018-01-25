@@ -6,7 +6,7 @@ Individual::Individual(){
 	FunctionSetMax = 4;
 	FunctionSet = new string[FunctionSetMax]{"-", "+", "*", "%"};
 	TerminalRange = new int[2]{-5, 5};
-	MaximumDepth = 3;
+	MaximumDepth = 2;
 	CurrentDepth = 0;
 	rootNode = CreateTree(rootNode);
 	//ADD DESTRUCTOR STUFF ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###########============##
@@ -81,4 +81,12 @@ Node* Individual::CreateNode(){
 
 Node* Individual::GetRootNode(){
 	return rootNode;
+}
+
+float Individual::GetTotalDiff() {
+	return TotalDifference;
+}
+
+void Individual::SetTotalDiff(float Input) {
+	TotalDifference = Input;
 }
