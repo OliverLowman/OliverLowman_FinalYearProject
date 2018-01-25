@@ -154,9 +154,12 @@ namespace OliverLowman_FinalYearProject {
 		Pop.Generate();	
 		//TestOnly
 		string test = Pop.PrintOutTree(150);
+		string test2 = Pop.PrintOutResult(150);
 		ofstream myfile;
 		myfile.open("example.txt");
 		myfile << test;
+		myfile << endl;
+		myfile << test2;
 		myfile.close();
 		//TestONly
 

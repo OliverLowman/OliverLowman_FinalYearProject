@@ -67,7 +67,7 @@ Node* Individual::CreateNode(){
 	else
 	{
 		if (rand() % 100 < 50) {
-			nodePTR->value = "X";
+			nodePTR->value = 'X';
 		}
 		else{
 			int randNum = TerminalRange[0] + (rand() % (TerminalRange[1] - TerminalRange[0] + 1));
