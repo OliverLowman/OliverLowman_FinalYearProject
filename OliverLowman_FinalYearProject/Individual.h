@@ -32,6 +32,10 @@ private:
 	int CurrentDepth;
 	//The current total difference between the results of this individual and the results of the target formula
 	float TotalDifference;
+	//The TotalDifference normalized from 1-100 and inverted, the value represents the individual's probablity of being selected for reproduction
+	float FitnessScore;
+	//Records whether or not a proram is invalid, an invalid program is one that contains division by 0 and cannot be ran
+	bool isInvalid;
 	//The node at the top of the tree
 	Node* rootNode;
 	//Generate the program tree
@@ -53,8 +57,20 @@ public:
 	//Sets the TotalDiffernce value
 	void SetTotalDiff(float);
 
-	//Returns the TotalDifference values
+	//Returns the TotalDifference value
 	float GetTotalDiff();
+
+	//Sets the FitnessScore value
+	void SetFitnessScore(float);
+
+	//Returns the FitnessScore value
+	float GetFitnessScore();
+
+	//Sets whether or not the program is invalid
+	void SetIsInvalid(bool);
+
+	//Returns whether or not the program is invalid
+	bool GetIsInvalid();
 };
 
 #endif

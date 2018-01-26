@@ -25,7 +25,7 @@ public:
 
 	//Evaluates the current population and assigns fitness values
 	void Evaluate();
-
+	//~REMEMBER TO DISCLUDE INDIVIDUALS THAT HAVE TRUE ISINVALID VALUES/add appropriate comment
 	
 	//TestOnly
 	string PrintOutTree(int);

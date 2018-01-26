@@ -8,33 +8,9 @@ Individual::Individual(){
 	TerminalRange = new int[2]{-5, 5};
 	MaximumDepth = 2;
 	CurrentDepth = 0;
+	isInvalid = false;
 	rootNode = CreateTree(rootNode);
 	//ADD DESTRUCTOR STUFF ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###########============##
-
-
-	/*
-	NodesRequired = pow(2, MaximumDepth) + (pow(2, MaximumDepth) - 1);
-	TreeNodes = new string[NodesRequired]{};
-	int testcount = 0;
-	for (int i = 0; i < NodesRequired; i++)
-	{
-		if (i <(pow(2, MaximumDepth) - 1))
-		{
-			int randNum = rand() % FunctionSetMax;
-			TreeNodes[i] = FunctionSet[randNum];
-		}
-		else
-		{
-			if (rand() % 100 < 50) {
-				TreeNodes[i] = "X";
-			}
-			else{			
-				int randNum = TerminalRange[0] + (rand() % (TerminalRange[1] - TerminalRange[0] + 1));
-				TreeNodes[i] = to_string(randNum);
-			}		
-		}
-	}
-	*/
 }
 
 
@@ -70,7 +46,15 @@ Node* Individual::CreateNode(){
 			nodePTR->value = 'X';
 		}
 		else{
-			int randNum = TerminalRange[0] + (rand() % (TerminalRange[1] - TerminalRange[0] + 1));
+			int randNum;
+			while (true)
+			{
+				randNum = TerminalRange[0] + (rand() % (TerminalRange[1] - TerminalRange[0] + 1));
+				if (randNum != 0)
+				{
+					break;
+				}
+			}
 			nodePTR->value = to_string(randNum);
 		}
 	}
@@ -89,4 +73,20 @@ float Individual::GetTotalDiff() {
 
 void Individual::SetTotalDiff(float Input) {
 	TotalDifference = Input;
+}
+
+float Individual::GetFitnessScore() {
+	return FitnessScore;
+}
+
+void Individual::SetFitnessScore(float Input) {
+	FitnessScore = Input;
+}
+
+bool Individual::GetIsInvalid() {
+	return isInvalid;
+}
+
+void Individual::SetIsInvalid(bool Input) {
+	isInvalid = Input;
 }

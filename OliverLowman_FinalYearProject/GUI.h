@@ -150,13 +150,13 @@ namespace OliverLowman_FinalYearProject {
 	private: System::Void StartButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		String^ PopSizeInput = popSizeTextBox->Text;
 		int MaxPopSize = System::Convert::ToInt16(PopSizeInput);
-		Population Pop(MaxPopSize);
+		Population Pop(200);
 		Pop.Generate();	
 		Pop.Evaluate();
 		//TestOnly
-		string test = Pop.PrintOutTree(150);
-		string test2 = Pop.PrintOutResult(150);
-		string test3 = Pop.PrintOutTotalDistance(150);
+		string test = Pop.PrintOutTree(170);
+		string test2 = Pop.PrintOutResult(170);
+		string test3 = Pop.PrintOutTotalDistance(170);
 		ofstream myfile;
 		myfile.open("example.txt");
 		myfile << test;
