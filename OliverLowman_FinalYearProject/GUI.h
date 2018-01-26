@@ -153,6 +153,7 @@ namespace OliverLowman_FinalYearProject {
 		Population Pop(200);
 		Pop.Generate();	
 		Pop.Evaluate();
+		Pop.CreateNewGen();
 		//TestOnly
 		string test = Pop.PrintOutTree(170);
 		string test2 = Pop.PrintOutResult(170);

@@ -56,6 +56,7 @@ Node* Individual::CreateNode(){
 				}
 			}
 			nodePTR->value = to_string(randNum);
+			
 		}
 	}
 	nodePTR->leftChild = NULL;

@@ -4,8 +4,12 @@
 Population::Population(int GivenMaxSize){
 	MaxPopSize = GivenMaxSize;
 	Individuals = new Individual[MaxPopSize];
+	NextGeneration = new Individual[MaxPopSize];
 	TargetFormula = "x*x+(x-1)";
 	TestRangeSize = 20;
+	CrossoverRate = 95;
+	MutationRate = 1;
+	ReproductionRate = 100- (CrossoverRate + MutationRate);
 	//TestRangeSize = 3;
 	TestRange = vector<float>(TestRangeSize);
 	TestRange = { -1, -0.9f, -0.8f, -0.7f, -0.6f, -0.5f, -0.4f, -0.3f, -0.2f, -0.1f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1 };
@@ -132,20 +136,6 @@ void Population::Evaluate() {
 		}
 		
 	}
-	/*
-	float testResult = 0;
-	float div = 0;
-	float mult = 0;
-	mult = (2214000 - 92000)*(10 - 1);
-	testResult = mult / (6425000-92000)+1;
-	string temparino = "";
-	
-	//TAKE 100
-	int testmeme = 55;
-	testmeme = testmeme - 100;
-	testmeme = testmeme / -1;
-	string temparino = "";
-	*/
 	float NormalizedFitness = 0;
 	for (int g = 0; g < MaxPopSize; g++)
 	{
@@ -164,6 +154,40 @@ void Population::Evaluate() {
 	}
 }
 
+void Population::CreateNewGen() {
+	
+	int meme = Crossover();
+}
+
+int Population::Crossover() {
+	float NumOfLoops = MaxPopSize * (CrossoverRate / 100);
+	int Parent1 = 0;
+	int Parent2 = 0;
+	for (int i = 0; i < NumOfLoops; i++)
+	{
+		Parent1 = ProportionateSelection();
+		Parent2 = ProportionateSelection();
+	}
+	return NumOfLoops;
+}
+int Population::ProportionateSelection() {
+	int ChosenIndividual = 0;
+	int RandIndividual = 0;
+	float RandFloat = 0;
+	while (true)
+	{
+		RandIndividual = 1 + (rand() % static_cast<int>(MaxPopSize - 1 + 1));
+		RandFloat = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 100));
+		if (Individuals[RandIndividual].GetFitnessScore() > RandFloat)
+		{
+			float test = Individuals[RandIndividual].GetFitnessScore();
+			string haha = "faw";
+			ChosenIndividual = RandIndividual;
+			break;
+		}
+	}
+	return ChosenIndividual;
+}
 
 //TestOnly
 string Population::PrintOutResult(int GivenNum) {
