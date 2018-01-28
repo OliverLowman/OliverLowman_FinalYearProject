@@ -158,7 +158,7 @@ namespace OliverLowman_FinalYearProject {
 		string test = Pop.PrintOutTree(128);
 		string test2 = Pop.PrintOutResult(128);
 		string test3 = Pop.PrintOutTotalDistance(128);
-		string test4 = Pop.PrintOutNewTree(0);
+		string test4 = Pop.PrintOutNewTree(56);
 		ofstream myfile;
 		myfile.open("example.txt");
 		myfile << test;

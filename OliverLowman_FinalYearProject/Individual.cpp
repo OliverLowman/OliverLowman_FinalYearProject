@@ -11,6 +11,8 @@ Individual::Individual(){
 	GivenNodes = "";
 	PrintOutput = "";
 	isInvalid = false;
+	NumOfNodes = 0;
+	CurrentNode = 0;
 	rootNode = CreateTree(rootNode);
 	//ADD DESTRUCTOR STUFF ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###########============##
 }
@@ -27,6 +29,8 @@ Individual::Individual(string CrossoverInput) {
 	GivenNodes = CrossoverInput;
 	PrintOutput = "";
 	isInvalid = false;
+	NumOfNodes = 0;
+	CurrentNode = 0;
 	rootNode = CreateTreeViaCrossover(rootNode);
 	//ADD DESTRUCTOR STUFF ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###########============##
 }
@@ -128,21 +132,68 @@ Node* Individual::CreateTreeViaCrossover(Node* CurrentNode) {
 	return NewNode;
 }
 
-string Individual::PrintTree() {
+string Individual::PrintTree(int type) {
+	int ChosenType = type;
 	PrintOutput = "";
-	PrivatePrint(rootNode);
+	if (ChosenType == 1)
+	{
+		PrivateFullPrint(rootNode);
+	}		
+	else if (ChosenType == 2)
+	{
+		CountNodes();
+		CurrentNode = 0;
+		int CrossoverPoint = 2 + (std::rand() % (2 - NumOfNodes + 1));
+		PrivateCrossoverPrint(rootNode, CrossoverPoint);
+
+	}
+	else if (ChosenType == 3)
+	{
+		CountNodes();
+		CurrentNode = 0;
+		int CrossoverPoint = 2 + (std::rand() % (2 - NumOfNodes + 1));
+		FindNode(CrossoverPoint);
+		PrivateFullPrint(ChosenNode);
+	}
 	return PrintOutput;
 }
 
-void Individual::PrivatePrint(Node* Current) {
+void Individual::PrivateCrossoverPrint(Node* Current, int Crossover) {
+	Node* NewNode = Current;
+	int CrossoverPoint = Crossover;
+	CurrentNode += 1;
+	if (CurrentNode == CrossoverPoint)
+	{
+		PrintOutput += "C";
+		PrintOutput += " ";
+	}
+	else if (NewNode->leftChild != NULL)
+	{
+		PrintOutput += NewNode->value;
+		PrintOutput += " ";
+		PrivateCrossoverPrint(NewNode->leftChild, CrossoverPoint);
+		PrivateCrossoverPrint(NewNode->rightChild, CrossoverPoint);
+	}
+	else
+	{
+		PrintOutput += NewNode->value;
+		PrintOutput += " ";
+	}
+}
+
+
+
+
+
+void Individual::PrivateFullPrint(Node* Current) {
 	Node* NewNode = Current;
 	
 	if (NewNode->leftChild != NULL)
 	{
 		PrintOutput += NewNode->value;
 		PrintOutput += " ";
-		PrivatePrint(NewNode->leftChild);		
-		PrivatePrint(NewNode->rightChild);
+		PrivateFullPrint(NewNode->leftChild);
+		PrivateFullPrint(NewNode->rightChild);
 		
 	}
 	else
@@ -151,6 +202,50 @@ void Individual::PrivatePrint(Node* Current) {
 		PrintOutput += " ";
 	}
 }
+
+void Individual::FindNode(int NodeNum) {
+	int GivenNum = NodeNum;
+	PrivateFindNode(rootNode, GivenNum);
+}
+
+void Individual::PrivateFindNode(Node* Current, int NodeNum) {
+	Node* NewNode = Current;
+	int GivenNum = NodeNum;
+	CurrentNode += 1;
+	if (CurrentNode == GivenNum)
+	{
+		ChosenNode = NewNode;
+	}
+	else if (NewNode->leftChild != NULL)
+	{
+		PrivateFindNode(NewNode->leftChild, GivenNum);
+		PrivateFindNode(NewNode->rightChild, GivenNum);
+	}
+
+}
+
+
+void Individual::CountNodes() {
+	NumOfNodes = 0;
+	PrivateCoutNodes(rootNode);
+}
+
+void Individual::PrivateCoutNodes(Node* Current) {
+	Node* NewNode = Current;
+
+	if (NewNode->leftChild != NULL)
+	{
+		NumOfNodes += 1;
+		PrivateCoutNodes(NewNode->leftChild);
+		PrivateCoutNodes(NewNode->rightChild);
+
+	}
+	else
+	{
+		NumOfNodes += 1;
+	}
+}
+
 /*
 string Population::PrintOutTree(int GivenNum) {
 	int Chosen = GivenNum;

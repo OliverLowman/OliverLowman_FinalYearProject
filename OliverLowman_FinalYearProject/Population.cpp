@@ -150,28 +150,34 @@ void Population::CreateNewGen() {
 }
 
 int Population::Crossover() {
-	
-	float temp = 0;
-	int Parent1Num = 0;
-	Parent1Num = ProportionateSelection();
-	string NodeList = Individuals[Parent1Num].PrintTree();
-	Individual NewIndividual = Individual(NodeList);;
-	NextGeneration[0] = NewIndividual;
-	//GOTTA ACTUALLY DO THE CROSSOVER
-	//Individual NewIndividual;
-	//NewIndividual = Individuals[Parent1Num];
-	
-	/*
+	int IndividualsGenerated = 0;
 	float NumOfLoops = MaxPopSize * (CrossoverRate / 100);
-	int Parent1 = 0;
-	int Parent2 = 0;
 	for (int i = 0; i < NumOfLoops; i++)
 	{
-		Parent1 = ProportionateSelection();
-		Parent2 = ProportionateSelection();
+		if (i == 56)
+		{
+			string gesg = "aw";
+		}
+		int Parent1Num = 0;
+		int Parent2Num = 0;
+		Parent1Num = ProportionateSelection();
+		Parent2Num = ProportionateSelection();
+		string NodeList1 = Individuals[Parent1Num].PrintTree(2);
+		string NodeList2 = Individuals[Parent2Num].PrintTree(3);
+		for (int j = 0; j < NodeList1.length(); j++)
+		{
+			if (NodeList1[j] == 'C')
+			{
+				NodeList1.erase(j,j-2);
+				NodeList1.insert(j, NodeList2);
+				break;
+			}
+		}
+		Individual NewIndividual = Individual(NodeList1);;
+		NextGeneration[i] = NewIndividual;
+		IndividualsGenerated += 1;
 	}
-	*/
-	return temp;
+	return IndividualsGenerated;
 }
 int Population::ProportionateSelection() {
 	int ChosenIndividual = 0;

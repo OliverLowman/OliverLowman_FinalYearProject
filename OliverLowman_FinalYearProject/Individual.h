@@ -42,10 +42,16 @@ private:
 	Node* CreateTree(Node*);
 	Node* CreateTreeViaCrossover(Node*);
 	Node* CreateNode();
+	Node* ChosenNode;
 	string GivenNodes;
+	int CurrentNode;
 	string PrintOutput;
-	void PrivatePrint(Node*);
-
+	void PrivateFullPrint(Node*);
+	void PrivateCrossoverPrint(Node*, int);
+	void PrivateFindNode(Node*, int);
+	//
+	void PrivateCoutNodes(Node*);
+	int NumOfNodes;
 
 public:
 	//Default constructor
@@ -78,7 +84,13 @@ public:
 	bool GetIsInvalid();
 
 	//Returns a string containing each node of the tree in the order that they are generated
-	string PrintTree();
+	string PrintTree(int);
+
+	//Sets the NumOfNodes value to the current number of nodes in the tree
+	void CountNodes();
+
+	//Sets ChosenNode
+	void FindNode(int);
 };
 
 #endif
