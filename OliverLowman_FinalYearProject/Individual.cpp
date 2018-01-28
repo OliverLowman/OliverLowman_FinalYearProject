@@ -85,9 +85,25 @@ Node* Individual::CreateNode(){
 }
 
 Node* Individual::CreateTreeViaCrossover(Node* CurrentNode) {
-	Node* NewNode = new Node;;
+	Node* NewNode = new Node;
 	bool Cont;
-	if (GivenNodes[0] == 'X' || isdigit(GivenNodes[0]))
+
+	string NewValue = "";
+	int CharCount = 0;
+	for (int i = 0; i < GivenNodes.length(); i++)
+	{
+		if (GivenNodes[i] != ' ')
+		{
+			NewValue += GivenNodes[i];
+			CharCount += 1;
+		}
+		else
+		{
+			CharCount += 1;
+			break;
+		}
+	}
+	if (NewValue != "+" && NewValue != "-" && NewValue != "%" && NewValue != "*")
 	{
 		Cont = false;
 	}
@@ -95,12 +111,12 @@ Node* Individual::CreateTreeViaCrossover(Node* CurrentNode) {
 	{
 		Cont = true;
 	}
-	NewNode->value = GivenNodes[0];
+	NewNode->value = NewValue;
 	NewNode->leftChild = NULL;
 	NewNode->rightChild = NULL;
 	Node* LeftChild = NULL;
 	Node* RightChild = NULL;
-	GivenNodes.erase(0, 1);
+	GivenNodes.erase(0, CharCount);
 	if (GivenNodes.length() > 0 && Cont == true)
 	{
 		NewNode->leftChild = CreateTreeViaCrossover(LeftChild);
@@ -124,6 +140,7 @@ void Individual::PrivatePrint(Node* Current) {
 	if (NewNode->leftChild != NULL)
 	{
 		PrintOutput += NewNode->value;
+		PrintOutput += " ";
 		PrivatePrint(NewNode->leftChild);		
 		PrivatePrint(NewNode->rightChild);
 		
@@ -131,6 +148,7 @@ void Individual::PrivatePrint(Node* Current) {
 	else
 	{
 		PrintOutput += NewNode->value;
+		PrintOutput += " ";
 	}
 }
 /*
