@@ -34,8 +34,10 @@ public:
 	
 	//TestOnly
 	string PrintOutTree(int);
+	string PrintOutNewTree(int);
 	string PrintOutResult(int);
 	string PrintOutTotalDistance(int);
+	string PrintOutTotalDistance2(int);
 	//TestOnly
 private:
 	//Number of individuals in the population
@@ -75,7 +77,9 @@ private:
 
 	//TestOnly
 	string TempReturn;
+	string TempReturn2;
 	void PrintPrivate(Node*);
+	void PrintPrivate2(Node*);
 	//TestOnly
 
 

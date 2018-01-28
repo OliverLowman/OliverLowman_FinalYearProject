@@ -8,8 +8,26 @@ Individual::Individual(){
 	TerminalRange = new int[2]{-5, 5};
 	MaximumDepth = 2;
 	CurrentDepth = 0;
+	GivenNodes = "";
+	PrintOutput = "";
 	isInvalid = false;
 	rootNode = CreateTree(rootNode);
+	//ADD DESTRUCTOR STUFF ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###########============##
+}
+
+//Crossover constructor
+Individual::Individual(string CrossoverInput) {
+	//Default range
+	rootNode = NULL;
+	FunctionSetMax = 4;
+	FunctionSet = new string[FunctionSetMax]{ "-", "+", "*", "%" };
+	TerminalRange = new int[2]{ -5, 5 };
+	MaximumDepth = 2;
+	CurrentDepth = 0;
+	GivenNodes = CrossoverInput;
+	PrintOutput = "";
+	isInvalid = false;
+	rootNode = CreateTreeViaCrossover(rootNode);
 	//ADD DESTRUCTOR STUFF ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###########============##
 }
 
@@ -32,6 +50,8 @@ Node* Individual::CreateTree(Node* CurrentNode){
 	CurrentDepth -= 1;
 	return NewNode;
 }
+
+
 
 Node* Individual::CreateNode(){
 	Node* nodePTR = new Node;
@@ -64,6 +84,82 @@ Node* Individual::CreateNode(){
 	return nodePTR;
 }
 
+Node* Individual::CreateTreeViaCrossover(Node* CurrentNode) {
+	Node* NewNode = new Node;;
+	bool Cont;
+	if (GivenNodes[0] == 'X' || isdigit(GivenNodes[0]))
+	{
+		Cont = false;
+	}
+	else
+	{
+		Cont = true;
+	}
+	NewNode->value = GivenNodes[0];
+	NewNode->leftChild = NULL;
+	NewNode->rightChild = NULL;
+	Node* LeftChild = NULL;
+	Node* RightChild = NULL;
+	GivenNodes.erase(0, 1);
+	if (GivenNodes.length() > 0 && Cont == true)
+	{
+		NewNode->leftChild = CreateTreeViaCrossover(LeftChild);
+		if (GivenNodes.length() > 0)
+		{
+			NewNode->rightChild = CreateTreeViaCrossover(RightChild);
+		}
+	}
+	return NewNode;
+}
+
+string Individual::PrintTree() {
+	PrintOutput = "";
+	PrivatePrint(rootNode);
+	return PrintOutput;
+}
+
+void Individual::PrivatePrint(Node* Current) {
+	Node* NewNode = Current;
+	
+	if (NewNode->leftChild != NULL)
+	{
+		PrintOutput += NewNode->value;
+		PrivatePrint(NewNode->leftChild);		
+		PrivatePrint(NewNode->rightChild);
+		
+	}
+	else
+	{
+		PrintOutput += NewNode->value;
+	}
+}
+/*
+string Population::PrintOutTree(int GivenNum) {
+	int Chosen = GivenNum;
+	Node* GivenNode = Individuals[Chosen].GetRootNode();
+	PrintPrivate(GivenNode);
+
+	return TempReturn;
+}
+
+
+void Population::PrintPrivate(Node* Current)
+{
+	Node* NewNode = Current;
+	if (NewNode->leftChild != NULL)
+	{
+		PrintPrivate(NewNode->leftChild);
+		TempReturn += NewNode->value;
+		TempReturn += " ";
+		PrintPrivate(NewNode->rightChild);
+	}
+	else
+	{
+		TempReturn += NewNode->value;
+		TempReturn += " ";
+	}
+}
+*/
 Node* Individual::GetRootNode(){
 	return rootNode;
 }

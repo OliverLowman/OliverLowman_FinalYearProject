@@ -40,14 +40,19 @@ private:
 	Node* rootNode;
 	//Generate the program tree
 	Node* CreateTree(Node*);
+	Node* CreateTreeViaCrossover(Node*);
 	Node* CreateNode();
+	string GivenNodes;
+	string PrintOutput;
+	void PrivatePrint(Node*);
+
 
 public:
 	//Default constructor
 	Individual();
 
 	//Overload constructor 
-	Individual(int);
+	Individual(string);
 
 	//Destructor
 	~Individual();
@@ -71,6 +76,9 @@ public:
 
 	//Returns whether or not the program is invalid
 	bool GetIsInvalid();
+
+	//Returns a string containing each node of the tree in the order that they are generated
+	string PrintTree();
 };
 
 #endif

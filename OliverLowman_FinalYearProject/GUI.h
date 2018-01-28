@@ -155,9 +155,10 @@ namespace OliverLowman_FinalYearProject {
 		Pop.Evaluate();
 		Pop.CreateNewGen();
 		//TestOnly
-		string test = Pop.PrintOutTree(170);
-		string test2 = Pop.PrintOutResult(170);
-		string test3 = Pop.PrintOutTotalDistance(170);
+		string test = Pop.PrintOutTree(128);
+		string test2 = Pop.PrintOutResult(128);
+		string test3 = Pop.PrintOutTotalDistance(128);
+		string test4 = Pop.PrintOutNewTree(0);
 		ofstream myfile;
 		myfile.open("example.txt");
 		myfile << test;
@@ -165,6 +166,9 @@ namespace OliverLowman_FinalYearProject {
 		myfile << test2;
 		myfile << endl;
 		myfile << test3;
+		myfile << endl;
+		myfile << endl;
+		myfile << test4;
 		myfile.close();
 		//TestONly
 		

@@ -19,6 +19,7 @@ Population::Population(int GivenMaxSize){
 	TargetValues={-3,-2.71f,-2.44f,-2.19f, -1.96f,-1.75f,-1.56f,-1.39f,-1.24f,-1.11f, -0.89f,-0.76f, -0.61f, -0.44f, -0.25f, -0.04f, 0.19f, 0.44f,0.71f,1};
 	//TestOnly
 	TempReturn = "";
+	TempReturn2 = "";
 	//TestOnly
 }
 
@@ -33,17 +34,6 @@ void Population::Generate(){
 	}
 }
 
-/*
-string Population::GetArray(int GivenNum){
-	string* input = Individuals[GivenNum].GetTreeArray();
-	string result;
-	for (int g = 0; g < 31; g++)
-	{
-		result += input[g];
-	}
-	return result;
-}
-*/
 
 float Population::RunProgram(Node* CurrentNode, float CurrentValue)
 {
@@ -160,6 +150,18 @@ void Population::CreateNewGen() {
 }
 
 int Population::Crossover() {
+	
+	float temp = 0;
+	int Parent1Num = 0;
+	Parent1Num = ProportionateSelection();
+	string NodeList = Individuals[Parent1Num].PrintTree();
+	Individual NewIndividual = Individual(NodeList);;
+	NextGeneration[0] = NewIndividual;
+	//GOTTA ACTUALLY DO THE CROSSOVER
+	//Individual NewIndividual;
+	//NewIndividual = Individuals[Parent1Num];
+	
+	/*
 	float NumOfLoops = MaxPopSize * (CrossoverRate / 100);
 	int Parent1 = 0;
 	int Parent2 = 0;
@@ -168,7 +170,8 @@ int Population::Crossover() {
 		Parent1 = ProportionateSelection();
 		Parent2 = ProportionateSelection();
 	}
-	return NumOfLoops;
+	*/
+	return temp;
 }
 int Population::ProportionateSelection() {
 	int ChosenIndividual = 0;
@@ -194,7 +197,7 @@ string Population::PrintOutResult(int GivenNum) {
 	int Chosen = GivenNum;
 	Node* GivenNode = Individuals[Chosen].GetRootNode();
 	string result = "";
-	result = to_string(RunProgram(GivenNode, 2));
+	result = to_string(RunProgram(GivenNode, 1));
 	return result;
 }
 string Population::PrintOutTotalDistance(int GivenNum) {
@@ -205,16 +208,34 @@ string Population::PrintOutTotalDistance(int GivenNum) {
 	result += to_string(Individuals[Chosen].GetFitnessScore());
 	return result;
 }
+
+string Population::PrintOutTotalDistance2(int GivenNum) {
+	int Chosen = GivenNum;
+	string result = "";
+	NextGeneration[Chosen].SetTotalDiff(999);
+	result = to_string(NextGeneration[Chosen].GetTotalDiff());
+	result += " ";
+	result += to_string(Individuals[128].GetTotalDiff());
+	return result;
+}
 string Population::PrintOutTree(int GivenNum){
 	int Chosen = GivenNum;
 	Node* GivenNode = Individuals[Chosen].GetRootNode();
 	PrintPrivate(GivenNode);
+
 	return TempReturn;
 }
+
+string Population::PrintOutNewTree(int GivenNum) {
+	int Chosen = GivenNum;
+	Node* GivenNode = NextGeneration[Chosen].GetRootNode();
+	PrintPrivate2(GivenNode);
+	return TempReturn2;
+}
+
 void Population::PrintPrivate(Node* Current)
 {
 	Node* NewNode = Current;
-	
 	if (NewNode->leftChild != NULL)
 	{
 		PrintPrivate(NewNode->leftChild);
@@ -228,6 +249,24 @@ void Population::PrintPrivate(Node* Current)
 		TempReturn += " ";
 	}
 }
+
+void Population::PrintPrivate2(Node* Current)
+{
+	Node* NewNode = Current;
+	if (NewNode->leftChild != NULL)
+	{
+		PrintPrivate2(NewNode->leftChild);
+		TempReturn2 += NewNode->value;
+		TempReturn2 += " ";
+		PrintPrivate2(NewNode->rightChild);
+	}
+	else
+	{
+		TempReturn2 += NewNode->value;
+		TempReturn2 += " ";
+	}
+}
+
 
 
 //TestOnly
