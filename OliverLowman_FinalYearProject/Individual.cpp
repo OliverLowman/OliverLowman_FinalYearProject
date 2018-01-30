@@ -1,5 +1,6 @@
 #include "Individual.h"
 //Default constructor
+
 Individual::Individual(){
 	//Default range
 	rootNode = NULL;
@@ -17,14 +18,31 @@ Individual::Individual(){
 	//ADD DESTRUCTOR STUFF ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###########============##
 }
 
-//Crossover constructor
-Individual::Individual(string CrossoverInput) {
+Individual::Individual(int GivenMaxTreeDepth) {
 	//Default range
 	rootNode = NULL;
 	FunctionSetMax = 4;
 	FunctionSet = new string[FunctionSetMax]{ "-", "+", "*", "%" };
 	TerminalRange = new int[2]{ -5, 5 };
-	MaximumDepth = 2;
+	MaximumDepth = GivenMaxTreeDepth;
+	CurrentDepth = 0;
+	GivenNodes = "";
+	PrintOutput = "";
+	isInvalid = false;
+	NumOfNodes = 0;
+	CurrentNode = 0;
+	rootNode = CreateTree(rootNode);
+	//ADD DESTRUCTOR STUFF ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###########============##
+}
+
+//Crossover constructor
+Individual::Individual(int GivenMaxTreeDepth, string CrossoverInput) {
+	//Default range
+	rootNode = NULL;
+	FunctionSetMax = 4;
+	FunctionSet = new string[FunctionSetMax]{ "-", "+", "*", "%" };
+	TerminalRange = new int[2]{ -5, 5 };
+	MaximumDepth = GivenMaxTreeDepth;
 	CurrentDepth = 0;
 	GivenNodes = CrossoverInput;
 	PrintOutput = "";
@@ -37,7 +55,7 @@ Individual::Individual(string CrossoverInput) {
 
 
 Individual::~Individual(){
-	
+	//DeleteTree();
 }
 
 Node* Individual::CreateTree(Node* CurrentNode){	
@@ -143,7 +161,8 @@ string Individual::PrintTree(int type) {
 	{
 		CountNodes();
 		CurrentNode = 0;
-		int CrossoverPoint = 2 + (std::rand() % (2 - NumOfNodes + 1));
+		//int CrossoverPoint = 2 + (std::rand() % (2 - NumOfNodes + 1));
+		int CrossoverPoint = (2 + (rand() % (int)(NumOfNodes - 2 + 1)));
 		PrivateCrossoverPrint(rootNode, CrossoverPoint);
 
 	}
@@ -151,7 +170,8 @@ string Individual::PrintTree(int type) {
 	{
 		CountNodes();
 		CurrentNode = 0;
-		int CrossoverPoint = 2 + (std::rand() % (2 - NumOfNodes + 1));
+		//int CrossoverPoint = 2 + (std::rand() % (2 - NumOfNodes + 1));
+		int CrossoverPoint = (2 + (rand() % (int)(NumOfNodes - 2 + 1)));
 		FindNode(CrossoverPoint);
 		PrivateFullPrint(ChosenNode);
 	}
@@ -299,4 +319,19 @@ bool Individual::GetIsInvalid() {
 
 void Individual::SetIsInvalid(bool Input) {
 	isInvalid = Input;
+}
+
+void Individual::DeleteTree()
+{
+	PrivateDeleteTree(rootNode);
+}
+
+void Individual::PrivateDeleteTree(Node * GivenNode)
+{
+	if (GivenNode != NULL)
+	{
+		PrivateDeleteTree(GivenNode->leftChild);
+		PrivateDeleteTree(GivenNode->rightChild);
+		delete GivenNode;
+	}
 }

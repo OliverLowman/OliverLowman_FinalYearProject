@@ -11,11 +11,8 @@ using namespace System::Windows::Forms;
 
 class Population {
 public:
-	//Default constructor
-	Population();
-
-	//Overload constructor 
-	Population(int);
+	//Constructor 
+	Population(int, int);
 
 	//Destructor
 	~Population();
@@ -42,19 +39,22 @@ public:
 private:
 	//Number of individuals in the population
 	int MaxPopSize;
-
+	//Maximum depth of the binary expression trees
+	int MaxTreeDepth;
 	//The current generation of individuals
-	Individual* Individuals;
+	//Individual* Individuals;
+	vector<Individual> Individuals;
 
-	//
+	//The percent of the next generation that will be generated via crossover
 	float CrossoverRate;
-
+	//The percent of the next generation that will be generated via mutation
 	float MutationRate;
 
 	//The percent of the next generation that will be generated via reproduction
 	float ReproductionRate;
 	//Stores the next generation of individuals while it is being generated
-	Individual* NextGeneration;
+	//Individual* NextGeneration;
+	vector<Individual> NextGeneration;
 
 	//Number of values in the test range
 	int TestRangeSize;
@@ -73,7 +73,13 @@ private:
 	int ProportionateSelection();
 
 	//Creates a set of new individuals for the next generation via crossover
-	int Crossover();
+	void Crossover();
+
+	//Creates a set of new individuals for the next generation via mutation
+	void Mutate();
+
+	//Creates a set of new individuals for the next generation via reproduction
+	void Reproduce();
 
 	//TestOnly
 	string TempReturn;

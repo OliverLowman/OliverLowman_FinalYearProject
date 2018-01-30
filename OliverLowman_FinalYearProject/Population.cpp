@@ -1,10 +1,13 @@
 #include "Population.h"
 
 
-Population::Population(int GivenMaxSize){
-	MaxPopSize = GivenMaxSize;
-	Individuals = new Individual[MaxPopSize];
-	NextGeneration = new Individual[MaxPopSize];
+Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth){
+	MaxPopSize = GivenMaxPopSize;
+	MaxTreeDepth = GivenMaxTreeDepth;
+	//Individuals = new Individual[MaxPopSize];
+	Individuals = vector<Individual>(MaxPopSize);
+	//NextGeneration = new Individual[MaxPopSize];
+	NextGeneration = vector<Individual>(MaxPopSize);
 	TargetFormula = "x*x+(x-1)";
 	TestRangeSize = 20;
 	CrossoverRate = 95;
@@ -30,7 +33,7 @@ Population::~Population(){
 void Population::Generate(){
 	for (int i = 0; i < MaxPopSize; i++)
 	{
-		Individuals[i] = Individual();
+		Individuals[i] = Individual(MaxTreeDepth);
 	}
 }
 
@@ -39,6 +42,7 @@ float Population::RunProgram(Node* CurrentNode, float CurrentValue)
 {
 	Node* NewNode = CurrentNode;
 	float xValue = CurrentValue;
+	//if (NewNode !=NULL)
 	if (NewNode->leftChild == NULL && NewNode->rightChild == NULL)
 	{
 		if (NewNode->value == "X")
@@ -145,52 +149,133 @@ void Population::Evaluate() {
 }
 
 void Population::CreateNewGen() {
-	
-	int meme = Crossover();
+	Crossover();
+	Mutate();
+	Reproduce();
+	Individuals = NextGeneration;
 }
 
-int Population::Crossover() {
-	int IndividualsGenerated = 0;
+void Population::Crossover() {
 	float NumOfLoops = MaxPopSize * (CrossoverRate / 100);
 	for (int i = 0; i < NumOfLoops; i++)
-	{
-		if (i == 56)
-		{
-			string gesg = "aw";
-		}
+	{		
 		int Parent1Num = 0;
 		int Parent2Num = 0;
 		Parent1Num = ProportionateSelection();
 		Parent2Num = ProportionateSelection();
 		string NodeList1 = Individuals[Parent1Num].PrintTree(2);
 		string NodeList2 = Individuals[Parent2Num].PrintTree(3);
+		NodeList2 = NodeList2.substr(0, NodeList2.size() - 1);
 		for (int j = 0; j < NodeList1.length(); j++)
 		{
 			if (NodeList1[j] == 'C')
 			{
-				NodeList1.erase(j,j-2);
-				NodeList1.insert(j, NodeList2);
+				//NodeList1.erase(j,j-3);
+				NodeList1.replace(j, 1, NodeList2);
+				//NodeList1.insert(j, NodeList2);
 				break;
 			}
 		}
-		Individual NewIndividual = Individual(NodeList1);;
-		NextGeneration[i] = NewIndividual;
-		IndividualsGenerated += 1;
+
+		NextGeneration[i] = Individual(MaxTreeDepth, NodeList1);
 	}
-	return IndividualsGenerated;
 }
+
+void Population::Mutate() {
+	float CurrentIncrement = MaxPopSize * (CrossoverRate / 100);
+	int CurrentIncrementInt = CurrentIncrement;
+	float NumOfLoops = MaxPopSize * (MutationRate / 100);
+	for (int i = 0; i < NumOfLoops; i++)
+	{
+		int ParentNum = 0;
+		ParentNum = ProportionateSelection();
+		string NodeList1 = Individuals[ParentNum].PrintTree(2);
+		Individual RandomIndividual = Individual(MaxTreeDepth);
+		string NodeList2 = RandomIndividual.PrintTree(1);
+		for (int j = 0; j < NodeList1.length(); j++)
+		{
+			if (NodeList1[j] == 'C')
+			{
+				NodeList1.replace(j, 1, NodeList2);
+				break;
+			}
+		}
+		
+		NextGeneration[CurrentIncrementInt+i] = Individual(MaxTreeDepth, NodeList1);
+	}
+}
+
+void Population::Reproduce()
+{
+	float CurrentIncrement = MaxPopSize * (CrossoverRate / 100);
+	CurrentIncrement += MaxPopSize * (MutationRate / 100);
+	int CurrentIncrementInt = CurrentIncrement;
+	float NumOfLoops = MaxPopSize * (ReproductionRate / 100);
+	for (int i = 0; i < NumOfLoops; i++)
+	{
+		int ParentNum = 0;
+		ParentNum = ProportionateSelection();
+		string NodeList = Individuals[ParentNum].PrintTree(1);
+		
+		NextGeneration[CurrentIncrementInt + i] = Individual(MaxTreeDepth, NodeList);;
+	}
+}
+
+
+/*
+void Population::PointMutate() {
+	float CurrentIncrement = MaxPopSize * (CrossoverRate / 100);
+	CurrentIncrement -= 1;
+	float NumOfLoops = MaxPopSize * (MutationRate / 100);
+	for (int i = 0; i < NumOfLoops; i++)
+	{
+		int ParentNum = 0;
+		ParentNum = ProportionateSelection();
+		string NodeList1 = Individuals[ParentNum].PrintTree(1);
+		int HalfListSize = NodeList1.length() / 4;
+		int ReplaceNum = 2 + (std::rand() % (1 - HalfListSize + 1));
+		string NodesReplaced = "";
+		for (int j = 0; j < ReplaceNum; j++)
+		{
+			int ChosenNode = 0;
+			while (true)
+			{
+				bool valid = true;
+				ChosenNode = 2 + (std::rand() % (1 - NodeList1.length() + 1));
+				if (ChosenNode == ' ')
+				{
+					valid = false;
+				}
+				for (int g = 0; g < NodesReplaced.length(); g++)
+				{
+					if (NodesReplaced[g] == ChosenNode)
+					{
+						valid = false;
+					}
+				}
+				if (valid == true)
+				{
+					NodeList1.erase(ChosenNode, ChosenNode - 2);
+					
+					//NodeList1.insert(j, NodeList2);
+				}
+			}
+		}
+		
+	}
+}
+*/
 int Population::ProportionateSelection() {
 	int ChosenIndividual = 0;
 	int RandIndividual = 0;
 	float RandFloat = 0;
 	while (true)
 	{
-		RandIndividual = 1 + (rand() % static_cast<int>(MaxPopSize - 1 + 1));
+		RandIndividual = 1 + (rand() % static_cast<int>(MaxPopSize - 2 + 1));
 		RandFloat = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 100));
 		if (Individuals[RandIndividual].GetFitnessScore() > RandFloat)
 		{
 			float test = Individuals[RandIndividual].GetFitnessScore();
-			string haha = "faw";
 			ChosenIndividual = RandIndividual;
 			break;
 		}

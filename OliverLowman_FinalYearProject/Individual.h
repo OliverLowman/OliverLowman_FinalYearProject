@@ -49,16 +49,19 @@ private:
 	void PrivateFullPrint(Node*);
 	void PrivateCrossoverPrint(Node*, int);
 	void PrivateFindNode(Node*, int);
-	//
+	void PrivateDeleteTree(Node*);
 	void PrivateCoutNodes(Node*);
 	int NumOfNodes;
+
 
 public:
 	//Default constructor
 	Individual();
 
+	Individual(int);
+
 	//Overload constructor 
-	Individual(string);
+	Individual(int, string);
 
 	//Destructor
 	~Individual();
@@ -91,6 +94,9 @@ public:
 
 	//Sets ChosenNode
 	void FindNode(int);
+
+	//Deletes all nodes below and including the root node
+	void DeleteTree();
 };
 
 #endif
