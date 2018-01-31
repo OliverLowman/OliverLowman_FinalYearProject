@@ -86,6 +86,10 @@ namespace OliverLowman_FinalYearProject {
 	private: System::Windows::Forms::Label^  label19;
 	private: System::Windows::Forms::TextBox^  AvgDiffTextBox;
 	private: System::Windows::Forms::Label^  label20;
+	private: System::Windows::Forms::Label^  label22;
+	private: System::Windows::Forms::Label^  label21;
+	private: System::Windows::Forms::TextBox^  TotalNumOfGensTextbox;
+	private: System::Windows::Forms::TextBox^  RunSuccessfulTextBox;
 
 
 
@@ -135,12 +139,16 @@ namespace OliverLowman_FinalYearProject {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->popSizeTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->TotalNumOfGensTextbox = (gcnew System::Windows::Forms::TextBox());
+			this->RunSuccessfulTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->AvgDiffTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->CurrentGenTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->LowestDiffTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->label20 = (gcnew System::Windows::Forms::Label());
-			this->AvgDiffTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->SuspendLayout();
@@ -473,6 +481,11 @@ namespace OliverLowman_FinalYearProject {
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel2->Controls->Add(this->TotalNumOfGensTextbox);
+			this->panel2->Controls->Add(this->RunSuccessfulTextBox);
+			this->panel2->Controls->Add(this->label22);
+			this->panel2->Controls->Add(this->label21);
 			this->panel2->Controls->Add(this->AvgDiffTextBox);
 			this->panel2->Controls->Add(this->label20);
 			this->panel2->Controls->Add(this->CurrentGenTextBox);
@@ -483,6 +496,57 @@ namespace OliverLowman_FinalYearProject {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(747, 175);
 			this->panel2->TabIndex = 2;
+			// 
+			// TotalNumOfGensTextbox
+			// 
+			this->TotalNumOfGensTextbox->Enabled = false;
+			this->TotalNumOfGensTextbox->Location = System::Drawing::Point(448, 67);
+			this->TotalNumOfGensTextbox->Name = L"TotalNumOfGensTextbox";
+			this->TotalNumOfGensTextbox->Size = System::Drawing::Size(100, 20);
+			this->TotalNumOfGensTextbox->TabIndex = 9;
+			// 
+			// RunSuccessfulTextBox
+			// 
+			this->RunSuccessfulTextBox->Enabled = false;
+			this->RunSuccessfulTextBox->Location = System::Drawing::Point(448, 18);
+			this->RunSuccessfulTextBox->Name = L"RunSuccessfulTextBox";
+			this->RunSuccessfulTextBox->Size = System::Drawing::Size(100, 20);
+			this->RunSuccessfulTextBox->TabIndex = 8;
+			// 
+			// label22
+			// 
+			this->label22->AutoSize = true;
+			this->label22->Location = System::Drawing::Point(320, 68);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(114, 13);
+			this->label22->TabIndex = 7;
+			this->label22->Text = L"Total Number of Gens:";
+			// 
+			// label21
+			// 
+			this->label21->AutoSize = true;
+			this->label21->Location = System::Drawing::Point(341, 21);
+			this->label21->Name = L"label21";
+			this->label21->Size = System::Drawing::Size(88, 13);
+			this->label21->TabIndex = 6;
+			this->label21->Text = L"Run Successful\?";
+			// 
+			// AvgDiffTextBox
+			// 
+			this->AvgDiffTextBox->Enabled = false;
+			this->AvgDiffTextBox->Location = System::Drawing::Point(149, 115);
+			this->AvgDiffTextBox->Name = L"AvgDiffTextBox";
+			this->AvgDiffTextBox->Size = System::Drawing::Size(100, 20);
+			this->AvgDiffTextBox->TabIndex = 5;
+			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Location = System::Drawing::Point(41, 117);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(102, 13);
+			this->label20->TabIndex = 4;
+			this->label20->Text = L"Average Difference:";
 			// 
 			// CurrentGenTextBox
 			// 
@@ -506,7 +570,7 @@ namespace OliverLowman_FinalYearProject {
 			// LowestDiffTextBox
 			// 
 			this->LowestDiffTextBox->Enabled = false;
-			this->LowestDiffTextBox->Location = System::Drawing::Point(149, 69);
+			this->LowestDiffTextBox->Location = System::Drawing::Point(149, 68);
 			this->LowestDiffTextBox->Name = L"LowestDiffTextBox";
 			this->LowestDiffTextBox->Size = System::Drawing::Size(100, 20);
 			this->LowestDiffTextBox->TabIndex = 1;
@@ -519,22 +583,6 @@ namespace OliverLowman_FinalYearProject {
 			this->label18->Size = System::Drawing::Size(127, 13);
 			this->label18->TabIndex = 0;
 			this->label18->Text = L"Current Lowest Differnce:";
-			// 
-			// label20
-			// 
-			this->label20->AutoSize = true;
-			this->label20->Location = System::Drawing::Point(41, 117);
-			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(102, 13);
-			this->label20->TabIndex = 4;
-			this->label20->Text = L"Average Difference:";
-			// 
-			// AvgDiffTextBox
-			// 
-			this->AvgDiffTextBox->Location = System::Drawing::Point(149, 115);
-			this->AvgDiffTextBox->Name = L"AvgDiffTextBox";
-			this->AvgDiffTextBox->Size = System::Drawing::Size(100, 20);
-			this->AvgDiffTextBox->TabIndex = 5;
 			// 
 			// GUI
 			// 
@@ -567,10 +615,10 @@ namespace OliverLowman_FinalYearProject {
 		int CrossoverRate = System::Convert::ToInt16(CrossoverRateInput);
 		String^ MutationRateInput = MutationRateTextbox->Text;
 		int MutationRate = System::Convert::ToInt16(MutationRateInput);
-		Population Pop(MaxPopSize, MaxTreeDepth);
+		Population Pop(MaxPopSize, MaxTreeDepth, CrossoverRate, MutationRate);
 		Pop.Generate();	
 		
-		
+		bool SolutionFound = false;
 		for (int i = 0; i < MaxNoOfGens; i++)
 		{
 			Pop.Evaluate();
@@ -585,11 +633,22 @@ namespace OliverLowman_FinalYearProject {
 			String^ AvgDiffOutput = gcnew String(AvgDiffStr.c_str());
 			AvgDiffTextBox->Text = AvgDiffOutput;
 			if (Pop.GetCriteriaMet() == true) {
+				SolutionFound = true;
 				break;
 			}
 			Pop.CreateNewGen();
 			Update();
 		}
+
+		if (SolutionFound == true) {
+			RunSuccessfulTextBox->Text = "Yes";
+		}
+		else
+		{
+			RunSuccessfulTextBox->Text = "No";
+		}
+		TotalNumOfGensTextbox->Text = CurrentGenTextBox->Text;
+		CurrentGenTextBox->Text = "0";
 		Pop.setLowestDiff(-1);
 
 		//TestOnly 
@@ -608,7 +667,6 @@ namespace OliverLowman_FinalYearProject {
 		myfile.open("example.txt");
 		myfile << test;
 		myfile.close();
-		TestText->Text = "test";
 		//TestOnly
 		
 		

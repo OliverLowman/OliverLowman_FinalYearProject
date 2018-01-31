@@ -1,7 +1,7 @@
 #include "Population.h"
 
 
-Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth){
+Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCrossoverRate, float GivenMutationRate){
 	MaxPopSize = GivenMaxPopSize;
 	MaxTreeDepth = GivenMaxTreeDepth;
 	//Individuals = new Individual[MaxPopSize];
@@ -10,8 +10,8 @@ Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth){
 	NextGeneration = vector<Individual>(MaxPopSize);
 	TargetFormula = "x*x+(x-1)";
 	TestRangeSize = 10;
-	CrossoverRate = 95;
-	MutationRate = 1;
+	CrossoverRate = GivenCrossoverRate;
+	MutationRate = GivenMutationRate;
 	ReproductionRate = 100- (CrossoverRate + MutationRate);
 	LowestDifference = -1;
 	AverageDifference = 0;

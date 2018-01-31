@@ -12,7 +12,7 @@ using namespace System::Windows::Forms;
 class Population {
 public:
 	//Constructor 
-	Population(int, int);
+	Population(int, int,float, float);
 
 	//Destructor
 	~Population();
