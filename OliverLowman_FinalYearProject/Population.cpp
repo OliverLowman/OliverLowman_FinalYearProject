@@ -9,17 +9,22 @@ Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth){
 	//NextGeneration = new Individual[MaxPopSize];
 	NextGeneration = vector<Individual>(MaxPopSize);
 	TargetFormula = "x*x+(x-1)";
-	TestRangeSize = 20;
+	TestRangeSize = 10;
 	CrossoverRate = 95;
 	MutationRate = 1;
 	ReproductionRate = 100- (CrossoverRate + MutationRate);
+	LowestDifference = -1;
+	AverageDifference = 0;
 	//TestRangeSize = 3;
 	TestRange = vector<float>(TestRangeSize);
-	TestRange = { -1, -0.9f, -0.8f, -0.7f, -0.6f, -0.5f, -0.4f, -0.3f, -0.2f, -0.1f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1 };
+	//TestRange = { -1, -0.9f, -0.8f, -0.7f, -0.6f, -0.5f, -0.4f, -0.3f, -0.2f, -0.1f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1 };
+	TestRange = { -1, -0.9f, -0.8f, -0.7f, -0.6f, -0.5f, -0.4f, -0.3f, -0.2f, -0.1f};
 	//TestRange = {1,2,3};
 	TargetValues = vector<float>(TestRangeSize);
 	//TargetValues = {1,5,11};
-	TargetValues={-3,-2.71f,-2.44f,-2.19f, -1.96f,-1.75f,-1.56f,-1.39f,-1.24f,-1.11f, -0.89f,-0.76f, -0.61f, -0.44f, -0.25f, -0.04f, 0.19f, 0.44f,0.71f,1};
+	//TargetValues={-3,-2.71f,-2.44f,-2.19f, -1.96f,-1.75f,-1.56f,-1.39f,-1.24f,-1.11f, -0.89f,-0.76f, -0.61f, -0.44f, -0.25f, -0.04f, 0.19f, 0.44f,0.71f,1};
+	TargetValues = { -3,-2.71f,-2.44f,-2.19f, -1.96f,-1.75f,-1.56f,-1.39f,-1.24f,-1.11f};
+	CriteriaMet = false;
 	//TestOnly
 	TempReturn = "";
 	TempReturn2 = "";
@@ -125,6 +130,7 @@ void Population::Evaluate() {
 			if (CurrentDiffernce < MinDiff)
 			{
 				MinDiff = CurrentDiffernce;
+				CurrentBestIndividual = i;
 			}
 
 		}
@@ -143,9 +149,50 @@ void Population::Evaluate() {
 			Individuals[g].SetFitnessScore(NormalizedFitness);	
 			float temp = 0;
 			temp = Individuals[g].GetTotalDiff();
-			string temparino = "";
 		}
 	}
+	if (LowestDifference == -1)
+	{
+		LowestDifference = MinDiff;
+	}
+	else if (LowestDifference > MinDiff)
+	{
+		LowestDifference = MinDiff;
+	}
+	AverageDifference = 0;
+	float sum = 0;
+	for (int x = x; x < MaxPopSize; x++)
+	{
+		sum += Individuals[x].GetTotalDiff();
+		if (Individuals[x].GetTotalDiff() == 0)
+		{
+			CriteriaMet = true;
+			CurrentBestIndividual = x;
+		}
+	}
+	AverageDifference = sum / MaxPopSize;
+
+}
+
+float Population::GetLowestDiff() {
+	return LowestDifference;
+}
+
+void Population::setLowestDiff(float GivenValue) {
+	float NewDiff = GivenValue;
+	LowestDifference = NewDiff;
+}
+
+float Population::GetAvergeDiff() {
+	return AverageDifference;
+}
+
+int Population::GetBestCurrentIndividual() {
+	return CurrentBestIndividual;
+}
+
+bool Population::GetCriteriaMet() {
+	return CriteriaMet;
 }
 
 void Population::CreateNewGen() {
@@ -319,9 +366,7 @@ string Population::PrintOutTree(int GivenNum){
 
 string Population::PrintOutNewTree(int GivenNum) {
 	int Chosen = GivenNum;
-	Node* GivenNode = NextGeneration[Chosen].GetRootNode();
-	PrintPrivate2(GivenNode);
-	return TempReturn2;
+	return Individuals[Chosen].PrintTree(1);
 }
 
 void Population::PrintPrivate(Node* Current)

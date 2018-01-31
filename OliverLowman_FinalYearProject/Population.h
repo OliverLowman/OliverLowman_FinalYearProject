@@ -26,6 +26,18 @@ public:
 	//Generates a new generation 
 	void CreateNewGen();
 
+	//Returns the lowest difference achived by any individual in the run
+	float GetLowestDiff();
+
+	void setLowestDiff(float);
+
+	//Returns the average differnce across all individuals in the run
+	float GetAvergeDiff();
+
+	bool GetCriteriaMet();
+
+	int GetBestCurrentIndividual();
+
 
 	//~REMEMBER TO DISCLUDE INDIVIDUALS THAT HAVE TRUE ISINVALID VALUES/add appropriate comment
 	
@@ -52,8 +64,11 @@ private:
 
 	//The percent of the next generation that will be generated via reproduction
 	float ReproductionRate;
+	
+	float LowestDifference;
+	float AverageDifference;
+	int CurrentBestIndividual;
 	//Stores the next generation of individuals while it is being generated
-	//Individual* NextGeneration;
 	vector<Individual> NextGeneration;
 
 	//Number of values in the test range
@@ -80,6 +95,9 @@ private:
 
 	//Creates a set of new individuals for the next generation via reproduction
 	void Reproduce();
+
+
+	bool CriteriaMet;
 
 	//TestOnly
 	string TempReturn;

@@ -3,7 +3,7 @@
 #include "Individual.h"
 #include <iostream>
 #include <fstream>
-
+#include <ctime>
 namespace OliverLowman_FinalYearProject {
 	using namespace std;
 	using namespace System;
@@ -58,7 +58,7 @@ namespace OliverLowman_FinalYearProject {
 	private: System::Windows::Forms::Label^  label8;
 	private: System::Windows::Forms::TextBox^  MaxTreeDepthTextBox;
 
-	private: System::Windows::Forms::FlowLayoutPanel^  flowLayoutPanel1;
+
 	private: System::Windows::Forms::ComboBox^  comboBox1;
 	private: System::Windows::Forms::Label^  label9;
 	private: System::Windows::Forms::Label^  label12;
@@ -79,6 +79,13 @@ namespace OliverLowman_FinalYearProject {
 	private: System::Windows::Forms::ComboBox^  comboBox4;
 	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::ComboBox^  comboBox3;
+	private: System::Windows::Forms::Panel^  panel2;
+	private: System::Windows::Forms::TextBox^  LowestDiffTextBox;
+	private: System::Windows::Forms::Label^  label18;
+	private: System::Windows::Forms::TextBox^  CurrentGenTextBox;
+	private: System::Windows::Forms::Label^  label19;
+	private: System::Windows::Forms::TextBox^  AvgDiffTextBox;
+	private: System::Windows::Forms::Label^  label20;
 
 
 
@@ -127,8 +134,15 @@ namespace OliverLowman_FinalYearProject {
 			this->StartButton = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->popSizeTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->CurrentGenTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->LowestDiffTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->AvgDiffTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->panel1->SuspendLayout();
+			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -456,27 +470,86 @@ namespace OliverLowman_FinalYearProject {
 			this->popSizeTextBox->TabIndex = 1;
 			this->popSizeTextBox->Text = L"200";
 			// 
-			// flowLayoutPanel1
+			// panel2
 			// 
-			this->flowLayoutPanel1->BackColor = System::Drawing::SystemColors::ActiveBorder;
-			this->flowLayoutPanel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->flowLayoutPanel1->Location = System::Drawing::Point(256, 383);
-			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(722, 153);
-			this->flowLayoutPanel1->TabIndex = 2;
+			this->panel2->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->panel2->Controls->Add(this->AvgDiffTextBox);
+			this->panel2->Controls->Add(this->label20);
+			this->panel2->Controls->Add(this->CurrentGenTextBox);
+			this->panel2->Controls->Add(this->label19);
+			this->panel2->Controls->Add(this->LowestDiffTextBox);
+			this->panel2->Controls->Add(this->label18);
+			this->panel2->Location = System::Drawing::Point(256, 360);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(747, 175);
+			this->panel2->TabIndex = 2;
+			// 
+			// CurrentGenTextBox
+			// 
+			this->CurrentGenTextBox->BackColor = System::Drawing::SystemColors::Window;
+			this->CurrentGenTextBox->Enabled = false;
+			this->CurrentGenTextBox->Location = System::Drawing::Point(149, 21);
+			this->CurrentGenTextBox->Name = L"CurrentGenTextBox";
+			this->CurrentGenTextBox->Size = System::Drawing::Size(100, 20);
+			this->CurrentGenTextBox->TabIndex = 3;
+			this->CurrentGenTextBox->Text = L"0";
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Location = System::Drawing::Point(44, 21);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(99, 13);
+			this->label19->TabIndex = 2;
+			this->label19->Text = L"Current Generation:";
+			// 
+			// LowestDiffTextBox
+			// 
+			this->LowestDiffTextBox->Enabled = false;
+			this->LowestDiffTextBox->Location = System::Drawing::Point(149, 69);
+			this->LowestDiffTextBox->Name = L"LowestDiffTextBox";
+			this->LowestDiffTextBox->Size = System::Drawing::Size(100, 20);
+			this->LowestDiffTextBox->TabIndex = 1;
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Location = System::Drawing::Point(16, 71);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(127, 13);
+			this->label18->TabIndex = 0;
+			this->label18->Text = L"Current Lowest Differnce:";
+			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Location = System::Drawing::Point(41, 117);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(102, 13);
+			this->label20->TabIndex = 4;
+			this->label20->Text = L"Average Difference:";
+			// 
+			// AvgDiffTextBox
+			// 
+			this->AvgDiffTextBox->Location = System::Drawing::Point(149, 115);
+			this->AvgDiffTextBox->Name = L"AvgDiffTextBox";
+			this->AvgDiffTextBox->Size = System::Drawing::Size(100, 20);
+			this->AvgDiffTextBox->TabIndex = 5;
 			// 
 			// GUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(978, 537);
-			this->Controls->Add(this->flowLayoutPanel1);
+			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Name = L"GUI";
 			this->Text = L"GUI";
 			this->Load += gcnew System::EventHandler(this, &GUI::GUI_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -501,13 +574,26 @@ namespace OliverLowman_FinalYearProject {
 		for (int i = 0; i < MaxNoOfGens; i++)
 		{
 			Pop.Evaluate();
+			//float LowestDiffNum = Pop.GetLowestDiff();
+			string LowestDiffStr = to_string(Pop.GetLowestDiff());
+			String^ LowestDiffOutput = gcnew String(LowestDiffStr.c_str());
+			LowestDiffTextBox->Text = LowestDiffOutput;
+			string CurrGenStr = to_string(i+1);
+			String^ CurrGenOutput = gcnew String(CurrGenStr.c_str());
+			CurrentGenTextBox->Text = CurrGenOutput;
+			string AvgDiffStr = to_string(Pop.GetAvergeDiff());
+			String^ AvgDiffOutput = gcnew String(AvgDiffStr.c_str());
+			AvgDiffTextBox->Text = AvgDiffOutput;
+			if (Pop.GetCriteriaMet() == true) {
+				break;
+			}
 			Pop.CreateNewGen();
+			Update();
 		}
-		
+		Pop.setLowestDiff(-1);
 
-		
-		//TestOnly 19
-		string test = Pop.PrintOutTree(191);
+		//TestOnly 
+		string test = Pop.PrintOutNewTree(Pop.GetBestCurrentIndividual());
 		//string test2 = Pop.PrintOutNewTree(191);
 		//string test2 = Pop.PrintOutResult(2);
 		//string test3 = Pop.PrintOutTotalDistance(2);
@@ -517,21 +603,13 @@ namespace OliverLowman_FinalYearProject {
 		{
 			string test5= Pop.PrintOutTree(j);
 		}
-		*/
-		
+		*/	
 		ofstream myfile;
 		myfile.open("example.txt");
 		myfile << test;
-		myfile << endl;
-		//myfile << test2;
-		myfile << endl;
-		//myfile << test3;
-		myfile << endl;
-		myfile << endl;
-		//myfile << test4;
 		myfile.close();
 		TestText->Text = "test";
-		//TestONly
+		//TestOnly
 		
 		
 		
