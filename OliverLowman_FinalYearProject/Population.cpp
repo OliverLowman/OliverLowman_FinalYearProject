@@ -164,7 +164,7 @@ void Population::Evaluate() {
 	for (int x = x; x < MaxPopSize; x++)
 	{
 		sum += Individuals[x].GetTotalDiff();
-		if (Individuals[x].GetTotalDiff() == 0)
+		if (Individuals[x].GetTotalDiff() == 0 && Individuals[x].GetIsInvalid() == false)
 		{
 			CriteriaMet = true;
 			CurrentBestIndividual = x;
