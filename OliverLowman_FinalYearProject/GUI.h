@@ -730,7 +730,9 @@ namespace OliverLowman_FinalYearProject {
 		{
 			Pop.Evaluate();
 			string LowestDiffStr = to_string(Pop.GetLowestDiff());
-			String^ LowestDiffOutput = gcnew String(LowestDiffStr.c_str());
+			double dobuleValue = Pop.GetLowestDiff();
+			Decimal decimalValue = System::Convert::ToDecimal(dobuleValue);
+			String^ LowestDiffOutput = gcnew String(decimalValue.ToString());
 			LowestDiffTextBox->Text = LowestDiffOutput;
 			string CurrGenStr = to_string(i+1);
 			String^ CurrGenOutput = gcnew String(CurrGenStr.c_str());
@@ -738,6 +740,9 @@ namespace OliverLowman_FinalYearProject {
 			string AvgDiffStr = to_string(Pop.GetAvergeDiff());
 			String^ AvgDiffOutput = gcnew String(AvgDiffStr.c_str());
 			AvgDiffTextBox->Text = AvgDiffOutput;
+			if (i == 100) {
+				string test = ";";
+			}
 			Update();
 			if (Pop.GetCriteriaMet() == true) {
 				SolutionFound = true;

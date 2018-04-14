@@ -39,7 +39,23 @@ Population::~Population(){
 void Population::Generate(){
 	for (int i = 0; i < MaxPopSize; i++)
 	{
-		Individuals[i] = Individual(MaxTreeDepth, TreeGenMethod);
+		if (TreeGenMethod == 2) {
+			if (i == 99)
+			{
+				string test = "";
+			}
+			if (i < MaxPopSize / 2) {
+
+				Individuals[i] = Individual(MaxTreeDepth, 0);
+			}
+			else {
+				Individuals[i] = Individual(MaxTreeDepth, 1);
+			}
+		}
+		else
+		{
+			Individuals[i] = Individual(MaxTreeDepth, TreeGenMethod);
+		}
 	}
 }
 
@@ -175,8 +191,9 @@ void Population::Evaluate() {
 
 }
 
-float Population::GetLowestDiff() {
-	return LowestDifference;
+double Population::GetLowestDiff() {
+	double doubleVal = System::Convert::ToDouble(LowestDifference);
+	return doubleVal;
 }
 
 void Population::setLowestDiff(float GivenValue) {
@@ -314,12 +331,12 @@ void Population::PointMutate() {
 int Population::ProportionateSelection() {
 	int ChosenIndividual = 0;
 	int RandIndividual = 0;
-	float RandFloat = 0;
+	float Randfloat = 0;
 	while (true)
 	{
 		RandIndividual = 1 + (rand() % static_cast<int>(MaxPopSize - 2 + 1));
-		RandFloat = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 100));
-		if (Individuals[RandIndividual].GetFitnessScore() > RandFloat)
+		Randfloat = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 100));
+		if (Individuals[RandIndividual].GetFitnessScore() > Randfloat)
 		{
 			float test = Individuals[RandIndividual].GetFitnessScore();
 			ChosenIndividual = RandIndividual;

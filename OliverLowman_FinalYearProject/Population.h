@@ -27,7 +27,7 @@ public:
 	void CreateNewGen();
 
 	//Returns the lowest difference achived by any individual in the run
-	float GetLowestDiff();
+	double GetLowestDiff();
 
 	void setLowestDiff(float);
 
