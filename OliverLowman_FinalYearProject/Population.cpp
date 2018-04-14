@@ -1,9 +1,10 @@
 #include "Population.h"
 
 
-Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCrossoverRate, float GivenMutationRate){
+Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCrossoverRate, float GivenMutationRate, int GivenTreeGenMethod){
 	MaxPopSize = GivenMaxPopSize;
 	MaxTreeDepth = GivenMaxTreeDepth;
+	TreeGenMethod = GivenTreeGenMethod;
 	//Individuals = new Individual[MaxPopSize];
 	Individuals = vector<Individual>(MaxPopSize);
 	//NextGeneration = new Individual[MaxPopSize];
@@ -38,7 +39,7 @@ Population::~Population(){
 void Population::Generate(){
 	for (int i = 0; i < MaxPopSize; i++)
 	{
-		Individuals[i] = Individual(MaxTreeDepth);
+		Individuals[i] = Individual(MaxTreeDepth, TreeGenMethod);
 	}
 }
 
@@ -217,14 +218,12 @@ void Population::Crossover() {
 		{
 			if (NodeList1[j] == 'C')
 			{
-				//NodeList1.erase(j,j-3);
 				NodeList1.replace(j, 1, NodeList2);
-				//NodeList1.insert(j, NodeList2);
 				break;
 			}
 		}
 
-		NextGeneration[i] = Individual(MaxTreeDepth, NodeList1);
+		NextGeneration[i] = Individual(MaxTreeDepth,TreeGenMethod, NodeList1);
 	}
 }
 
@@ -237,7 +236,7 @@ void Population::Mutate() {
 		int ParentNum = 0;
 		ParentNum = ProportionateSelection();
 		string NodeList1 = Individuals[ParentNum].PrintTree(2);
-		Individual RandomIndividual = Individual(MaxTreeDepth);
+		Individual RandomIndividual = Individual(MaxTreeDepth,TreeGenMethod);
 		string NodeList2 = RandomIndividual.PrintTree(1);
 		for (int j = 0; j < NodeList1.length(); j++)
 		{
@@ -248,7 +247,7 @@ void Population::Mutate() {
 			}
 		}
 		
-		NextGeneration[CurrentIncrementInt+i] = Individual(MaxTreeDepth, NodeList1);
+		NextGeneration[CurrentIncrementInt+i] = Individual(MaxTreeDepth,TreeGenMethod, NodeList1);
 	}
 }
 
@@ -264,7 +263,7 @@ void Population::Reproduce()
 		ParentNum = ProportionateSelection();
 		string NodeList = Individuals[ParentNum].PrintTree(1);
 		
-		NextGeneration[CurrentIncrementInt + i] = Individual(MaxTreeDepth, NodeList);;
+		NextGeneration[CurrentIncrementInt + i] = Individual(MaxTreeDepth,TreeGenMethod, NodeList);;
 	}
 }
 

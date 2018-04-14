@@ -12,8 +12,8 @@ using namespace System::Windows::Forms;
 class Population {
 public:
 	//Constructor 
-	Population(int, int,float, float);
-
+	Population(int, int,float, float,int);
+	
 	//Destructor
 	~Population();
 
@@ -54,8 +54,9 @@ private:
 	//Maximum depth of the binary expression trees
 	int MaxTreeDepth;
 	//The current generation of individuals
-	//Individual* Individuals;
 	vector<Individual> Individuals;
+	//The Given tree generation method
+	int TreeGenMethod;
 
 	//The percent of the next generation that will be generated via crossover
 	float CrossoverRate;

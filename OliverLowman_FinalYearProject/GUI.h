@@ -112,7 +112,8 @@ namespace OliverLowman_FinalYearProject {
 	private: System::Windows::Forms::Label^  label8;
 	private: System::Windows::Forms::TextBox^  MaxTreeDepthTextBox;
 	private: System::Windows::Forms::Label^  label9;
-	private: System::Windows::Forms::ComboBox^  comboBox1;
+	private: System::Windows::Forms::ComboBox^  TreeGenComboBox;
+
 	private: System::Windows::Forms::Label^  label10;
 	private: System::Windows::Forms::Label^  label11;
 	private: System::Windows::Forms::ComboBox^  comboBox2;
@@ -179,7 +180,7 @@ namespace OliverLowman_FinalYearProject {
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->MaxTreeDepthTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->TreeGenComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
@@ -492,15 +493,15 @@ namespace OliverLowman_FinalYearProject {
 			this->label9->TabIndex = 16;
 			this->label9->Text = L"Tree Gen Method:";
 			// 
-			// comboBox1
+			// TreeGenComboBox
 			// 
-			this->comboBox1->Enabled = false;
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(102, 233);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(100, 21);
-			this->comboBox1->TabIndex = 17;
-			this->comboBox1->Text = L"Full";
+			this->TreeGenComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->TreeGenComboBox->FormattingEnabled = true;
+			this->TreeGenComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Full", L"Grow", L"Ramped Half & Half" });
+			this->TreeGenComboBox->Location = System::Drawing::Point(102, 233);
+			this->TreeGenComboBox->Name = L"TreeGenComboBox";
+			this->TreeGenComboBox->Size = System::Drawing::Size(131, 21);
+			this->TreeGenComboBox->TabIndex = 17;
 			// 
 			// label10
 			// 
@@ -654,7 +655,7 @@ namespace OliverLowman_FinalYearProject {
 			this->panel1->Controls->Add(this->comboBox2);
 			this->panel1->Controls->Add(this->label11);
 			this->panel1->Controls->Add(this->label10);
-			this->panel1->Controls->Add(this->comboBox1);
+			this->panel1->Controls->Add(this->TreeGenComboBox);
 			this->panel1->Controls->Add(this->label9);
 			this->panel1->Controls->Add(this->MaxTreeDepthTextBox);
 			this->panel1->Controls->Add(this->label8);
@@ -702,9 +703,10 @@ namespace OliverLowman_FinalYearProject {
 		}
 #pragma endregion
 	private: System::Void GUI_Load(System::Object^  sender, System::EventArgs^  e) {
+		TreeGenComboBox->SelectedIndex = 0;
 	}
 	private: System::Void StartButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		
+
 		String^ PopSizeInput = popSizeTextBox->Text;
 		int MaxPopSize = System::Convert::ToInt16(PopSizeInput);
 		String^ MaxNoOfGensInput = NoOfGensTextBox->Text;
@@ -715,11 +717,14 @@ namespace OliverLowman_FinalYearProject {
 		int CrossoverRate = System::Convert::ToInt16(CrossoverRateInput);
 		String^ MutationRateInput = MutationRateTextbox->Text;
 		int MutationRate = System::Convert::ToInt16(MutationRateInput);
-		Population Pop(MaxPopSize, MaxTreeDepth, CrossoverRate, MutationRate);
-		Pop.Generate();	
+		int ChosenTreeGenMethod = TreeGenComboBox->SelectedIndex;
 
-		
-		
+		Population Pop(MaxPopSize, MaxTreeDepth, CrossoverRate, MutationRate,ChosenTreeGenMethod);
+		Pop.Generate();	
+		//
+
+		//
+
 		bool SolutionFound = false;
 		for (int i = 0; i < MaxNoOfGens; i++)
 		{
@@ -752,6 +757,7 @@ namespace OliverLowman_FinalYearProject {
 		TotalNumOfGensTextbox->Text = CurrentGenTextBox->Text;
 		CurrentGenTextBox->Text = "0";
 		Pop.setLowestDiff(-1);
+
 
 		//TestOnly 
 		string test = Pop.PrintOutNewTree(Pop.GetBestCurrentIndividual());

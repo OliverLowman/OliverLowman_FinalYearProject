@@ -1,6 +1,6 @@
 #include "Individual.h"
-//Default constructor
 
+//Default constructor
 Individual::Individual(){
 	//Default range
 	rootNode = NULL;
@@ -18,13 +18,14 @@ Individual::Individual(){
 	//ADD DESTRUCTOR STUFF ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###########============##
 }
 
-Individual::Individual(int GivenMaxTreeDepth) {
+Individual::Individual(int GivenMaxTreeDepth, int GivenTreeGenMethod) {
 	//Default range
 	rootNode = NULL;
 	FunctionSetMax = 4;
 	FunctionSet = new string[FunctionSetMax]{ "-", "+", "*", "%" };
 	TerminalRange = new int[2]{ -5, 5 };
 	MaximumDepth = GivenMaxTreeDepth;
+	TreeGenMethod = GivenTreeGenMethod;
 	CurrentDepth = 0;
 	GivenNodes = "";
 	PrintOutput = "";
@@ -36,13 +37,14 @@ Individual::Individual(int GivenMaxTreeDepth) {
 }
 
 //Crossover constructor
-Individual::Individual(int GivenMaxTreeDepth, string CrossoverInput) {
+Individual::Individual(int GivenMaxTreeDepth,int GivenTreeGenMethod, string CrossoverInput) {
 	//Default range
 	rootNode = NULL;
 	FunctionSetMax = 4;
 	FunctionSet = new string[FunctionSetMax]{ "-", "+", "*", "%" };
 	TerminalRange = new int[2]{ -5, 5 };
 	MaximumDepth = GivenMaxTreeDepth;
+	TreeGenMethod = GivenTreeGenMethod;
 	CurrentDepth = 0;
 	GivenNodes = CrossoverInput;
 	PrintOutput = "";
@@ -77,28 +79,79 @@ Node* Individual::CreateTree(Node* CurrentNode){
 
 Node* Individual::CreateNode(){
 	Node* nodePTR = new Node;
-	if (CurrentDepth < MaximumDepth+1)
+	if (TreeGenMethod == 0)
 	{
-		int randNum = rand() % FunctionSetMax;
-		nodePTR->value = FunctionSet[randNum];
-	}
-	else
-	{
-		if (rand() % 100 < 50) {
-			nodePTR->value = 'X';
+		if (CurrentDepth < MaximumDepth + 1)
+		{
+			int randNum = rand() % FunctionSetMax;
+			nodePTR->value = FunctionSet[randNum];
 		}
-		else{
-			int randNum;
-			while (true)
-			{
-				randNum = TerminalRange[0] + (rand() % (TerminalRange[1] - TerminalRange[0] + 1));
-				if (randNum != 0)
-				{
-					break;
-				}
+		else
+		{
+			if (rand() % 100 < 50) {
+				nodePTR->value = 'X';
 			}
-			nodePTR->value = to_string(randNum);
+			else {
+				int randNum;
+				while (true)
+				{
+					randNum = TerminalRange[0] + (rand() % (TerminalRange[1] - TerminalRange[0] + 1));
+					if (randNum != 0)
+					{
+						break;
+					}
+				}
+				nodePTR->value = to_string(randNum);
+
+			}
+		}
+	}
+	else if (TreeGenMethod == 1) {
+		if (CurrentDepth < MaximumDepth + 1)
+		{
+			if (rand() % 100 < 50 && CurrentDepth > 1) {
+				if (rand() % 100 < 50) {
+					nodePTR->value = 'X';
+				}
+				else {
+					int randNum;
+					while (true)
+					{
+						randNum = TerminalRange[0] + (rand() % (TerminalRange[1] - TerminalRange[0] + 1));
+						if (randNum != 0)
+						{
+							break;
+						}
+					}
+					nodePTR->value = to_string(randNum);
+				}
+				
+			}
+			else
+			{
+				int randNum = rand() % FunctionSetMax;
+				nodePTR->value = FunctionSet[randNum];
+			}
 			
+		}
+		else
+		{
+			if (rand() % 100 < 50) {
+				nodePTR->value = 'X';
+			}
+			else {
+				int randNum;
+				while (true)
+				{
+					randNum = TerminalRange[0] + (rand() % (TerminalRange[1] - TerminalRange[0] + 1));
+					if (randNum != 0)
+					{
+						break;
+					}
+				}
+				nodePTR->value = to_string(randNum);
+
+			}
 		}
 	}
 	nodePTR->leftChild = NULL;

@@ -24,6 +24,8 @@ private:
 	int* TerminalRange;
 	//Max depth of the tree
 	int MaximumDepth;
+	//Given tree generation method, 0 = full, 1 = grow and 2 = ramped half and half
+	int TreeGenMethod;
 	//Nodes to be inserted into the tree
 	string* TreeNodes;
 	//Number of nodes in the tree
@@ -58,10 +60,10 @@ public:
 	//Default constructor
 	Individual();
 
-	Individual(int);
+	Individual(int, int);
 
 	//Overload constructor 
-	Individual(int, string);
+	Individual(int,int,string);
 
 	//Destructor
 	~Individual();
