@@ -1,13 +1,12 @@
 #include "Population.h"
 
 
-Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCrossoverRate, float GivenMutationRate, int GivenTreeGenMethod){
+Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCrossoverRate, float GivenMutationRate, int GivenTreeGenMethod, int GivenSelectionMethod){
 	MaxPopSize = GivenMaxPopSize;
 	MaxTreeDepth = GivenMaxTreeDepth;
 	TreeGenMethod = GivenTreeGenMethod;
-	//Individuals = new Individual[MaxPopSize];
+	SelectionMethod = GivenSelectionMethod;
 	Individuals = vector<Individual>(MaxPopSize);
-	//NextGeneration = new Individual[MaxPopSize];
 	NextGeneration = vector<Individual>(MaxPopSize);
 	TargetFormula = "x*x+(x-1)";
 	TestRangeSize = 10;
@@ -16,13 +15,11 @@ Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCr
 	ReproductionRate = 100- (CrossoverRate + MutationRate);
 	LowestDifference = -1;
 	AverageDifference = 0;
-	//TestRangeSize = 3;
 	TestRange = vector<float>(TestRangeSize);
 	//TestRange = { -1, -0.9f, -0.8f, -0.7f, -0.6f, -0.5f, -0.4f, -0.3f, -0.2f, -0.1f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1 };
 	TestRange = { -1, -0.9f, -0.8f, -0.7f, -0.6f, -0.5f, -0.4f, -0.3f, -0.2f, -0.1f};
 	//TestRange = {1,2,3};
 	TargetValues = vector<float>(TestRangeSize);
-	//TargetValues = {1,5,11};
 	//TargetValues={-3,-2.71f,-2.44f,-2.19f, -1.96f,-1.75f,-1.56f,-1.39f,-1.24f,-1.11f, -0.89f,-0.76f, -0.61f, -0.44f, -0.25f, -0.04f, 0.19f, 0.44f,0.71f,1};
 	TargetValues = { -3,-2.71f,-2.44f,-2.19f, -1.96f,-1.75f,-1.56f,-1.39f,-1.24f,-1.11f};
 	CriteriaMet = false;
@@ -226,8 +223,16 @@ void Population::Crossover() {
 	{		
 		int Parent1Num = 0;
 		int Parent2Num = 0;
-		Parent1Num = ProportionateSelection();
-		Parent2Num = ProportionateSelection();
+		if (SelectionMethod == 0) {
+			Parent1Num = ProportionateSelection();
+			Parent2Num = ProportionateSelection();
+		}
+		else if (SelectionMethod==1)
+		{
+			Parent1Num = TournamentSelection();
+			Parent2Num = TournamentSelection();
+		}
+		
 		string NodeList1 = Individuals[Parent1Num].PrintTree(2);
 		string NodeList2 = Individuals[Parent2Num].PrintTree(3);
 		NodeList2 = NodeList2.substr(0, NodeList2.size() - 1);
@@ -342,6 +347,37 @@ int Population::ProportionateSelection() {
 			ChosenIndividual = RandIndividual;
 			break;
 		}
+	}
+	return ChosenIndividual;
+}
+
+int Population::TournamentSelection() {
+	int ChosenIndividual = 0;
+	bool Individual1Found = false;
+	bool Individual2Found = false;
+	int RandIndividual1 = 0;
+	int RandIndividual2 = 0;
+	while (true) {
+		int Rand1 = 1 + (rand() % static_cast<int>(MaxPopSize - 2 + 1));
+		int Rand2 = 1 + (rand() % static_cast<int>(MaxPopSize - 2 + 1));
+		if (!Individuals[Rand1].GetIsInvalid() && Individual1Found == false) {
+			RandIndividual1 = Rand1;
+			Individual1Found = true;
+		}
+		if (!Individuals[Rand2].GetIsInvalid() && Individual2Found == false) {
+			RandIndividual2 = Rand2;
+			Individual2Found = true;
+		}
+		if (Individual1Found && Individual2Found) {
+			break;
+		}
+	}
+	
+	if (Individuals[RandIndividual1].GetFitnessScore() > Individuals[RandIndividual2].GetFitnessScore()) {
+		return RandIndividual1;
+	}
+	else {
+		return RandIndividual2;
 	}
 	return ChosenIndividual;
 }

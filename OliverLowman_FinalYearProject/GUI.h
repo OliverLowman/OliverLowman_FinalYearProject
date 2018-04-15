@@ -116,7 +116,8 @@ namespace OliverLowman_FinalYearProject {
 
 	private: System::Windows::Forms::Label^  label10;
 	private: System::Windows::Forms::Label^  label11;
-	private: System::Windows::Forms::ComboBox^  comboBox2;
+	private: System::Windows::Forms::ComboBox^  SelectionComboBox;
+
 	private: System::Windows::Forms::Label^  label12;
 	private: System::Windows::Forms::ComboBox^  comboBox3;
 	private: System::Windows::Forms::Label^  label13;
@@ -183,7 +184,7 @@ namespace OliverLowman_FinalYearProject {
 			this->TreeGenComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->SelectionComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
@@ -523,15 +524,16 @@ namespace OliverLowman_FinalYearProject {
 			this->label11->TabIndex = 19;
 			this->label11->Text = L"Selection Method:";
 			// 
-			// comboBox2
+			// SelectionComboBox
 			// 
-			this->comboBox2->Enabled = false;
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(102, 298);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(131, 21);
-			this->comboBox2->TabIndex = 20;
-			this->comboBox2->Text = L"Proportinate Selection";
+			this->SelectionComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->SelectionComboBox->FormattingEnabled = true;
+			this->SelectionComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Proportionate", L"Tournament" });
+			this->SelectionComboBox->Location = System::Drawing::Point(102, 298);
+			this->SelectionComboBox->Name = L"SelectionComboBox";
+			this->SelectionComboBox->Size = System::Drawing::Size(131, 21);
+			this->SelectionComboBox->TabIndex = 20;
+			this->SelectionComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &GUI::comboBox2_SelectedIndexChanged);
 			// 
 			// label12
 			// 
@@ -652,7 +654,7 @@ namespace OliverLowman_FinalYearProject {
 			this->panel1->Controls->Add(this->label13);
 			this->panel1->Controls->Add(this->comboBox3);
 			this->panel1->Controls->Add(this->label12);
-			this->panel1->Controls->Add(this->comboBox2);
+			this->panel1->Controls->Add(this->SelectionComboBox);
 			this->panel1->Controls->Add(this->label11);
 			this->panel1->Controls->Add(this->label10);
 			this->panel1->Controls->Add(this->TreeGenComboBox);
@@ -704,6 +706,7 @@ namespace OliverLowman_FinalYearProject {
 #pragma endregion
 	private: System::Void GUI_Load(System::Object^  sender, System::EventArgs^  e) {
 		TreeGenComboBox->SelectedIndex = 0;
+		SelectionComboBox->SelectedIndex = 0;
 	}
 	private: System::Void StartButton_Click(System::Object^  sender, System::EventArgs^  e) {
 
@@ -718,11 +721,11 @@ namespace OliverLowman_FinalYearProject {
 		String^ MutationRateInput = MutationRateTextbox->Text;
 		int MutationRate = System::Convert::ToInt16(MutationRateInput);
 		int ChosenTreeGenMethod = TreeGenComboBox->SelectedIndex;
+		int ChosenSelectionMethod = SelectionComboBox->SelectedIndex;
 
-		Population Pop(MaxPopSize, MaxTreeDepth, CrossoverRate, MutationRate,ChosenTreeGenMethod);
+		Population Pop(MaxPopSize, MaxTreeDepth, CrossoverRate, MutationRate,ChosenTreeGenMethod, ChosenSelectionMethod);
 		Pop.Generate();	
 		//
-
 		//
 
 		bool SolutionFound = false;
@@ -795,6 +798,8 @@ private: System::Void textBox8_TextChanged(System::Object^  sender, System::Even
 
 }
 private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void comboBox2_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }

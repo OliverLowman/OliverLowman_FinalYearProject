@@ -12,7 +12,7 @@ using namespace System::Windows::Forms;
 class Population {
 public:
 	//Constructor 
-	Population(int, int,float, float,int);
+	Population(int, int,float, float,int, int);
 	
 	//Destructor
 	~Population();
@@ -55,8 +55,11 @@ private:
 	int MaxTreeDepth;
 	//The current generation of individuals
 	vector<Individual> Individuals;
-	//The Given tree generation method
+	//The given tree generation method, 0 = Full, 1 = Grow & 2 = Ramped Half and Half
 	int TreeGenMethod;
+
+	//The given selection method, 0 = proportinate, 1 = tournament 
+	int SelectionMethod;
 
 	//The percent of the next generation that will be generated via crossover
 	float CrossoverRate;
@@ -87,6 +90,9 @@ private:
 
 	//Returns the array index of a random individual but individuals with higher FitnessScores are more likely to be selected
 	int ProportionateSelection();
+	
+	//Selects two random individuals, compares their FitnessScores and returns the array index of the individual with the highest score
+	int TournamentSelection();
 
 	//Creates a set of new individuals for the next generation via crossover
 	void Crossover();
