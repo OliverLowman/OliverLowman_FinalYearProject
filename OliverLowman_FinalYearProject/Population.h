@@ -40,6 +40,8 @@ public:
 
 	Individual GetBestCurrentIndividualObj();
 
+	vector<float> GetCurrentBestResults();
+
 
 	//~REMEMBER TO DISCLUDE INDIVIDUALS THAT HAVE TRUE ISINVALID VALUES/add appropriate comment
 	
@@ -75,6 +77,10 @@ private:
 	float AverageDifference;
 	int CurrentBestIndividual;
 	Individual CurrentBestObj;
+	//Results for the current best individual across all generations
+	vector<float> CurrentBestResults;
+	//Results for the current best individual for this generation
+	vector<float> CurrentRunBestResults;
 	//Stores the next generation of individuals while it is being generated
 	vector<Individual> NextGeneration;
 

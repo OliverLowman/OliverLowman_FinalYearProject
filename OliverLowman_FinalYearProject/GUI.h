@@ -105,6 +105,12 @@ private: System::Windows::Forms::TabPage^  tabPage4;
 private: System::Windows::Forms::Label^  label26;
 private: System::Windows::Forms::Label^  label28;
 private: System::Windows::Forms::Label^  label27;
+	private: System::Windows::Forms::Label^  label29;
+	private: System::Windows::Forms::Panel^  panel5;
+	private: System::Windows::Forms::Panel^  panel3;
+	private: System::Windows::Forms::Panel^  panel4;
+	private: System::Windows::Forms::Label^  label30;
+	private: System::Windows::Forms::Label^  label31;
 
 
 
@@ -148,6 +154,7 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->popSizeTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -182,6 +189,11 @@ private: System::Windows::Forms::Label^  label27;
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->label30 = (gcnew System::Windows::Forms::Label());
+			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->panel2->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
@@ -190,6 +202,7 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabPage3->SuspendLayout();
 			this->tabPage4->SuspendLayout();
 			this->panel1->SuspendLayout();
+			this->panel3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel2
@@ -333,6 +346,10 @@ private: System::Windows::Forms::Label^  label27;
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->Controls->Add(this->label31);
+			this->tabPage2->Controls->Add(this->label30);
+			this->tabPage2->Controls->Add(this->panel5);
+			this->tabPage2->Controls->Add(this->panel3);
 			this->tabPage2->Controls->Add(this->label28);
 			this->tabPage2->Controls->Add(this->label27);
 			this->tabPage2->Controls->Add(this->pictureBox1);
@@ -348,7 +365,7 @@ private: System::Windows::Forms::Label^  label27;
 			// label28
 			// 
 			this->label28->AutoSize = true;
-			this->label28->Location = System::Drawing::Point(317, 300);
+			this->label28->Location = System::Drawing::Point(317, 316);
 			this->label28->Name = L"label28";
 			this->label28->Size = System::Drawing::Size(63, 13);
 			this->label28->TabIndex = 4;
@@ -358,7 +375,7 @@ private: System::Windows::Forms::Label^  label27;
 			// label27
 			// 
 			this->label27->AutoSize = true;
-			this->label27->Location = System::Drawing::Point(113, 139);
+			this->label27->Location = System::Drawing::Point(64, 135);
 			this->label27->Name = L"label27";
 			this->label27->Size = System::Drawing::Size(37, 13);
 			this->label27->TabIndex = 3;
@@ -369,7 +386,7 @@ private: System::Windows::Forms::Label^  label27;
 			this->pictureBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->pictureBox1->Location = System::Drawing::Point(107, 39);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(486, 284);
+			this->pictureBox1->Size = System::Drawing::Size(486, 274);
 			this->pictureBox1->TabIndex = 2;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -404,6 +421,7 @@ private: System::Windows::Forms::Label^  label27;
 			// 
 			// tabPage4
 			// 
+			this->tabPage4->Controls->Add(this->label29);
 			this->tabPage4->Controls->Add(this->label26);
 			this->tabPage4->Location = System::Drawing::Point(4, 22);
 			this->tabPage4->Name = L"tabPage4";
@@ -412,6 +430,15 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabPage4->TabIndex = 3;
 			this->tabPage4->Text = L"Info";
 			this->tabPage4->UseVisualStyleBackColor = true;
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Location = System::Drawing::Point(187, 111);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(358, 13);
+			this->label29->TabIndex = 2;
+			this->label29->Text = L"Explain language used, Population, Individual, Generation, Differeence ect";
 			// 
 			// label26
 			// 
@@ -767,6 +794,50 @@ private: System::Windows::Forms::Label^  label27;
 			this->panel1->TabIndex = 1;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::panel1_Paint);
 			// 
+			// panel3
+			// 
+			this->panel3->BackColor = System::Drawing::Color::Red;
+			this->panel3->Controls->Add(this->panel4);
+			this->panel3->Location = System::Drawing::Point(6, 243);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(10, 10);
+			this->panel3->TabIndex = 5;
+			// 
+			// panel4
+			// 
+			this->panel4->BackColor = System::Drawing::Color::Red;
+			this->panel4->Location = System::Drawing::Point(0, 20);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(10, 10);
+			this->panel4->TabIndex = 6;
+			// 
+			// panel5
+			// 
+			this->panel5->BackColor = System::Drawing::Color::Black;
+			this->panel5->Location = System::Drawing::Point(6, 260);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(10, 10);
+			this->panel5->TabIndex = 6;
+			// 
+			// label30
+			// 
+			this->label30->AutoSize = true;
+			this->label30->Location = System::Drawing::Point(17, 241);
+			this->label30->Name = L"label30";
+			this->label30->Size = System::Drawing::Size(89, 13);
+			this->label30->TabIndex = 7;
+			this->label30->Text = L"- Target Equation";
+			this->label30->Click += gcnew System::EventHandler(this, &GUI::label30_Click);
+			// 
+			// label31
+			// 
+			this->label31->AutoSize = true;
+			this->label31->Location = System::Drawing::Point(17, 257);
+			this->label31->Name = L"label31";
+			this->label31->Size = System::Drawing::Size(71, 13);
+			this->label31->TabIndex = 8;
+			this->label31->Text = L"- Current Best";
+			// 
 			// GUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -794,6 +865,7 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabPage4->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->panel3->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -806,15 +878,18 @@ private: System::Windows::Forms::Label^  label27;
 	void pictureBox1_Paint(Object^, System::Windows::Forms::PaintEventArgs^ e)
 	{
 		Graphics^ g = e->Graphics;
-		Point point1 = Point(40, 230);
-		Point point2 = Point(445, 230);
-		Point point3 = Point(60, 250);
+		Point point1 = Point(40, 240);
+		Point point2 = Point(445, 240);
+		Point point3 = Point(60, 260);
 		Point point4 = Point(60, 20);
 		g->DrawLine(System::Drawing::Pens::Black, point1, point2);
 		g->DrawLine(System::Drawing::Pens::Black, point3, point4);
 	}
+	
+	array<Point>^ CurrentBestResultArray = gcnew array<Point>(30);
 	void UpdateGraph1(Object^, System::Windows::Forms::PaintEventArgs^ e)
 	{
+		
 		String^ TestRangeInput1 = TestRangeBox1->Text;
 		String^ TestRangeInput2 = TestRangeBox2->Text;
 		int TestRange1Int = Convert::ToInt16(TestRangeInput1);
@@ -822,42 +897,87 @@ private: System::Windows::Forms::Label^  label27;
 		float TestRange1Value = TestRange1Int;
 		float TestRange2Value = TestRange2Int;
 		int Diff = abs(TestRange1Value - TestRange2Value);
+		
 		vector<float> TestRange(Diff * 10);
 		float CurrentValue = TestRange1Value;
-		for (int i = 0; i < Diff * 10; i++) {
-			TestRange[i] = CurrentValue;
+		for (int i = 0; i < Diff * 10; i++) {			
 			CurrentValue = CurrentValue + 0.1;
-
+			TestRange[i] = CurrentValue;
 		}
 		//float rounded_up = roundf(TestRange[6] * 10) / 10;
 
 		float Interval = 400 / (Diff*10);
 		Graphics^ g = e->Graphics;
+		//Draws the X Axis notches
 		for (int i = 0; i < Diff * 10; i++) {
-			Point point1 = Point(80 + (Interval * i+1), 220);
-			Point point2 = Point(80 + (Interval * i+1), 240);
-			Point point3 = Point((80 + (Interval * i + 1))-7, 240);
+			Point point1 = Point(80 + (Interval * i), 230);
+			Point point2 = Point(80 + (Interval * i), 250);
+			Point point3 = Point((80 + (Interval * i))-7, 250);
 			float roundedFloat = roundf(TestRange[i] * 10) / 10;
 			g->DrawLine(System::Drawing::Pens::Black, point1, point2);
 			g->DrawString(roundedFloat.ToString(),gcnew System::Drawing::Font("Arial", 10), System::Drawing::Brushes::Black, point3);
 		}
-		//x*x + (x - 1)
+		
+		//Calculates the results for each test value
 		vector<float> TargetValues(Diff * 10);
 		for (int i = 0; i < Diff * 10; i++) {
 			float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
 			result = roundf(result * 100) / 100;
 			TargetValues[i] = result;
 		}
+		//Gets the lowest and highest target values
+		int LowestIndex = -1;
+		int HighestIndex = -1;
+		for (int i = 0; i < Diff * 10; i++) {
+			if (LowestIndex == -1) {
+				LowestIndex = i;
+				HighestIndex = i;
+			}
+			else if (TargetValues[i] < TargetValues[LowestIndex]) {
+				LowestIndex = i;
+			}
+			else if (TargetValues[i] > TargetValues[HighestIndex]) {
+				HighestIndex = i;
+			}
+		}
+		float LowestValue = TargetValues[LowestIndex];
+		float HighestValue = TargetValues[HighestIndex];
+		float HigLowDiff = HighestValue - LowestValue;
+		//Draws the Y Axis notches
 		float Interval2 = 230 / (Diff * 10) / 2;
-		for (int i = 0; i < (Diff * 10) / 2; i++) {
-			Point point1 = Point(50, 40+ (Interval * i + 1));
-			Point point2 = Point(70, 40 + (Interval * i + 1));
-			Point point3 = Point(15, (40 + (Interval * i + 1))-7);
+		//for (int i = 0; i < (Diff * 10) / 2; i++) {
+		for (int i = 0; i < 5; i++) {
+			Point point1 = Point(50, 40+ (Interval * i));
+			Point point2 = Point(70, 40 + (Interval * i));
+			Point point3 = Point(15, (40 + (Interval * i))-7);
 			g->DrawLine(System::Drawing::Pens::Black, point1, point2);
-			g->DrawString(TargetValues[i*2].ToString(), gcnew System::Drawing::Font("Arial", 10), System::Drawing::Brushes::Black, point3);
+			float AxisLabel = LowestValue + ((HigLowDiff / 5)*(5-i));
+			g->DrawString(AxisLabel.ToString(), gcnew System::Drawing::Font("Arial", 10), System::Drawing::Brushes::Black, point3);
+		}
+		Point point1 = Point(60, 40);
+		Point point2 = Point(60, 240);
+
+		//Normalizes the target values to the size of the Y axis in pixels
+		vector<float> NormalizedTargetValues(Diff * 10);
+		float NormalizedValue = 0;
+		for (int i = 0; i < Diff * 10; i++) {
+			NormalizedValue = 0;
+			NormalizedValue = (TargetValues[i] - LowestValue)*(200 - 0);
+			NormalizedValue = NormalizedValue / (HighestValue - LowestValue) + 1;
+			NormalizedTargetValues[i] = NormalizedValue;
 		}
 
-		string Test = "";
+		//Draws the graphline for the target equation
+		array<Point>^ PointsArray = gcnew array<Point>(Diff*10);
+		Point currentPoint;
+		for (int i = 0; i < Diff * 10; i++) {
+			Point NewPoint = Point(80 + (Interval * i), 240 - NormalizedTargetValues[i]);
+			PointsArray[i] = NewPoint;
+		}
+		
+		g->DrawCurve(System::Drawing::Pens::Red, PointsArray);
+
+
 		/*
 		Point point1 = Point(10, 10);
 		Point point2 = Point(30, 30);
@@ -867,7 +987,14 @@ private: System::Windows::Forms::Label^  label27;
 		//g->DrawLine(System::Drawing::Pens::Black, point1, point2);
 		*/
 	}
+	
+	void UpdateGraph2(Object^, System::Windows::Forms::PaintEventArgs^ e) {
+		Graphics^ g = e->Graphics;
+		g->DrawCurve(System::Drawing::Pens::Black, CurrentBestResultArray);
+	}
+
 	private: System::Void StartButton_Click(System::Object^  sender, System::EventArgs^  e) {
+
 
 		
 		pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph1);
@@ -884,6 +1011,45 @@ private: System::Windows::Forms::Label^  label27;
 		int MutationRate = Convert::ToInt16(MutationRateInput);
 		int ChosenTreeGenMethod = TreeGenComboBox->SelectedIndex;
 		int ChosenSelectionMethod = SelectionComboBox->SelectedIndex;
+		String^ TestRangeInput1 = TestRangeBox1->Text;
+		String^ TestRangeInput2 = TestRangeBox2->Text;
+		int TestRange1Int = Convert::ToInt16(TestRangeInput1);
+		int TestRange2Int = Convert::ToInt16(TestRangeInput2);
+		float TestRange1Value = TestRange1Int;
+		float TestRange2Value = TestRange2Int;
+		int Diff = abs(TestRange1Value - TestRange2Value);
+		float Interval = 400 / (Diff * 10);
+		//Populates the TestRange vector
+		vector<float> TestRange(Diff * 10);
+		float CurrentValue = TestRange1Value;
+		for (int i = 0; i < Diff * 10; i++) {
+			CurrentValue = CurrentValue + 0.1;
+			TestRange[i] = CurrentValue;
+		}	
+		//Calculates the results for each test value
+		vector<float> TargetValues(Diff * 10);
+		for (int i = 0; i < Diff * 10; i++) {
+			float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+			result = roundf(result * 100) / 100;
+			TargetValues[i] = result;
+		}
+		//Gets the lowest and highest target values
+		int LowestIndex = -1;
+		int HighestIndex = -1;
+		for (int i = 0; i < Diff * 10; i++) {
+			if (LowestIndex == -1) {
+				LowestIndex = i;
+				HighestIndex = i;
+			}
+			else if (TargetValues[i] < TargetValues[LowestIndex]) {
+				LowestIndex = i;
+			}
+			else if (TargetValues[i] > TargetValues[HighestIndex]) {
+				HighestIndex = i;
+			}
+		}
+		float LowestValue = TargetValues[LowestIndex];
+		float HighestValue = TargetValues[HighestIndex];
 
 		Population Pop(MaxPopSize, MaxTreeDepth, CrossoverRate, MutationRate,ChosenTreeGenMethod, ChosenSelectionMethod);
 		Pop.Generate();	
@@ -893,10 +1059,33 @@ private: System::Windows::Forms::Label^  label27;
 		bool SolutionFound = false;
 		for (int i = 0; i < MaxNoOfGens; i++)
 		{
-			if (i == 12) {
+			if (i == 24) {
 				string test = "";
 			}
 			Pop.Evaluate();
+			vector<float> CurrentBestResults = Pop.GetCurrentBestResults();			
+			vector<float> NormalizedResults(Diff * 10);
+			float NormalizedValue = 0;
+			for (int i = 0; i < Diff * 10; i++) {
+				NormalizedValue = 0;
+				NormalizedValue = (CurrentBestResults[i] - LowestValue)*(200 - 0);
+				NormalizedValue = NormalizedValue / (HighestValue - LowestValue) + 1;
+				NormalizedResults[i] = NormalizedValue;
+			}
+			Point CurrentPoint;
+			for (int i = 0; i < 30; i++) {
+				if (i < Diff * 10)
+				{
+					Point NewPoint = Point(80 + (Interval * i), 240 - NormalizedResults[i]);
+					CurrentBestResultArray[i] = NewPoint;
+					CurrentPoint = NewPoint;
+				}
+				else {
+					CurrentBestResultArray[i] = CurrentPoint;
+				}
+			}
+			pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph2);
+			pictureBox1->Refresh();
 			string LowestDiffStr = to_string(Pop.GetLowestDiff());
 			double dobuleValue = Pop.GetLowestDiff();
 			Decimal decimalValue = System::Convert::ToDecimal(dobuleValue);
@@ -967,6 +1156,8 @@ private: System::Void comboBox2_SelectedIndexChanged(System::Object^  sender, Sy
 private: System::Void chart1_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void label28_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label30_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }

@@ -15,6 +15,9 @@ Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCr
 	ReproductionRate = 100- (CrossoverRate + MutationRate);
 	LowestDifference = -1;
 	AverageDifference = 0;
+	
+	CurrentBestResults = vector<float>(TestRangeSize);
+	CurrentRunBestResults = vector<float>(TestRangeSize);
 	TestRange = vector<float>(TestRangeSize);
 	//TestRange = { -1, -0.9f, -0.8f, -0.7f, -0.6f, -0.5f, -0.4f, -0.3f, -0.2f, -0.1f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1 };
 	//TestRange = { -1, -0.9f, -0.8f, -0.7f, -0.6f, -0.5f, -0.4f, -0.3f, -0.2f, -0.1f};
@@ -25,6 +28,7 @@ Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCr
 	//TargetValues = { -3,-2.71f,-2.44f,-2.19f, -1.96f,-1.75f,-1.56f,-1.39f,-1.24f,-1.11f};
 
 	TargetValues = { -0.89f,-0.76f, -0.61f, -0.44f, -0.25f, -0.04f, 0.19f, 0.44f,0.71f,1 };
+
 	CriteriaMet = false;
 	//TestOnly
 	TempReturn = "";
@@ -113,14 +117,14 @@ void Population::Evaluate() {
 	for (int i = 0; i < MaxPopSize; i++)
 	{
 		float CurrentDiffernce = 0;
+		vector<float> CurrentResults(TestRangeSize);
 		for (int j = 0; j < TestRangeSize; j++)
 		{	
-			if (i == 145) {
-				string teest = "";
-			}
+
 			float CurrentResult = 0;
 			CurrentResult = RunProgram(Individuals[i].GetRootNode(), TestRange[j]);
 			CurrentResult = roundf(CurrentResult * 100) / 100;
+			CurrentResults[j] = CurrentResult;
 			if (CurrentResult > TargetValues[j])
 			{
 				CurrentDiffernce += (CurrentResult - TargetValues[j]);
@@ -152,6 +156,7 @@ void Population::Evaluate() {
 			{
 				MinDiff = CurrentDiffernce;
 				CurrentBestIndividual = i;
+				CurrentRunBestResults = CurrentResults;
 			}
 
 		}
@@ -175,16 +180,15 @@ void Population::Evaluate() {
 	if (LowestDifference == -1)
 	{
 		LowestDifference = MinDiff;
-
+		CurrentBestObj = Individuals[CurrentBestIndividual];
+		CurrentBestResults = CurrentRunBestResults;
 	}
 	else if (LowestDifference > MinDiff)
 	{
 		LowestDifference = MinDiff;
 		CurrentBestObj = Individuals[CurrentBestIndividual];
-		if (LowestDifference < 0.01) {
-			
-			string test = "";
-		}
+		CurrentBestResults = CurrentRunBestResults;
+		string test = "";
 	}
 	AverageDifference = 0;
 	float sum = 0;
@@ -217,6 +221,10 @@ float Population::GetAvergeDiff() {
 
 int Population::GetBestCurrentIndividual() {
 	return CurrentBestIndividual;
+}
+
+vector<float> Population::GetCurrentBestResults() {
+	return CurrentBestResults;
 }
 
 Individual Population::GetBestCurrentIndividualObj() {
