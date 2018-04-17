@@ -38,47 +38,10 @@ namespace OliverLowman_FinalYearProject {
 				delete components;
 			}
 		}
-
+	
 	protected:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	
 	private: System::Windows::Forms::Panel^  panel2;
 	private: System::Windows::Forms::TextBox^  LowestDiffTextBox;
 	private: System::Windows::Forms::Label^  label18;
@@ -105,8 +68,11 @@ namespace OliverLowman_FinalYearProject {
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::TextBox^  textBox2;
 	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::TextBox^  textBox3;
-	private: System::Windows::Forms::TextBox^  textBox4;
+	private: System::Windows::Forms::TextBox^  TestRangeBox1;
+
+	private: System::Windows::Forms::TextBox^  TestRangeBox2;
+
+
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label7;
 	private: System::Windows::Forms::Label^  label8;
@@ -130,6 +96,16 @@ namespace OliverLowman_FinalYearProject {
 	private: System::Windows::Forms::Label^  label17;
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Panel^  panel1;
+private: System::Windows::Forms::Label^  label23;
+private: System::Windows::Forms::PictureBox^  pictureBox1;
+private: System::Windows::Forms::Label^  label24;
+private: System::Windows::Forms::TabPage^  tabPage3;
+private: System::Windows::Forms::Label^  label25;
+private: System::Windows::Forms::TabPage^  tabPage4;
+private: System::Windows::Forms::Label^  label26;
+private: System::Windows::Forms::Label^  label28;
+private: System::Windows::Forms::Label^  label27;
+
 
 
 
@@ -163,7 +139,16 @@ namespace OliverLowman_FinalYearProject {
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->popSizeTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -174,8 +159,8 @@ namespace OliverLowman_FinalYearProject {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->TestRangeBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->TestRangeBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
@@ -199,6 +184,11 @@ namespace OliverLowman_FinalYearProject {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel2->SuspendLayout();
 			this->tabControl1->SuspendLayout();
+			this->tabPage1->SuspendLayout();
+			this->tabPage2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->tabPage3->SuspendLayout();
+			this->tabPage4->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -313,6 +303,8 @@ namespace OliverLowman_FinalYearProject {
 			// 
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
+			this->tabControl1->Controls->Add(this->tabPage3);
+			this->tabControl1->Controls->Add(this->tabPage4);
 			this->tabControl1->Location = System::Drawing::Point(256, 0);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
@@ -321,23 +313,114 @@ namespace OliverLowman_FinalYearProject {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->label23);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage1->Size = System::Drawing::Size(717, 337);
 			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"tabPage1";
+			this->tabPage1->Text = L"Tree View";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// label23
+			// 
+			this->label23->AutoSize = true;
+			this->label23->Location = System::Drawing::Point(293, 28);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(83, 13);
+			this->label23->TabIndex = 0;
+			this->label23->Text = L"Tree View Page";
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->Controls->Add(this->label28);
+			this->tabPage2->Controls->Add(this->label27);
+			this->tabPage2->Controls->Add(this->pictureBox1);
+			this->tabPage2->Controls->Add(this->label24);
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage2->Size = System::Drawing::Size(717, 337);
 			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"tabPage2";
+			this->tabPage2->Text = L"Current Best Graph";
 			this->tabPage2->UseVisualStyleBackColor = true;
+			// 
+			// label28
+			// 
+			this->label28->AutoSize = true;
+			this->label28->Location = System::Drawing::Point(317, 300);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(63, 13);
+			this->label28->TabIndex = 4;
+			this->label28->Text = L"Test Values";
+			this->label28->Click += gcnew System::EventHandler(this, &GUI::label28_Click);
+			// 
+			// label27
+			// 
+			this->label27->AutoSize = true;
+			this->label27->Location = System::Drawing::Point(113, 139);
+			this->label27->Name = L"label27";
+			this->label27->Size = System::Drawing::Size(37, 13);
+			this->label27->TabIndex = 3;
+			this->label27->Text = L"Result";
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->pictureBox1->Location = System::Drawing::Point(107, 39);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(486, 284);
+			this->pictureBox1->TabIndex = 2;
+			this->pictureBox1->TabStop = false;
+			// 
+			// label24
+			// 
+			this->label24->AutoSize = true;
+			this->label24->Location = System::Drawing::Point(273, 3);
+			this->label24->Name = L"label24";
+			this->label24->Size = System::Drawing::Size(173, 13);
+			this->label24->TabIndex = 1;
+			this->label24->Text = L"Current Best Individual Graph Page";
+			// 
+			// tabPage3
+			// 
+			this->tabPage3->Controls->Add(this->label25);
+			this->tabPage3->Location = System::Drawing::Point(4, 22);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Size = System::Drawing::Size(717, 337);
+			this->tabPage3->TabIndex = 2;
+			this->tabPage3->Text = L"Average Distance Graph";
+			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->Location = System::Drawing::Point(301, 25);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(107, 13);
+			this->label25->TabIndex = 1;
+			this->label25->Text = L"Avg Dist Graph Page";
+			// 
+			// tabPage4
+			// 
+			this->tabPage4->Controls->Add(this->label26);
+			this->tabPage4->Location = System::Drawing::Point(4, 22);
+			this->tabPage4->Name = L"tabPage4";
+			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage4->Size = System::Drawing::Size(717, 337);
+			this->tabPage4->TabIndex = 3;
+			this->tabPage4->Text = L"Info";
+			this->tabPage4->UseVisualStyleBackColor = true;
+			// 
+			// label26
+			// 
+			this->label26->AutoSize = true;
+			this->label26->Location = System::Drawing::Point(295, 33);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(53, 13);
+			this->label26->TabIndex = 1;
+			this->label26->Text = L"Info Page";
 			// 
 			// label1
 			// 
@@ -431,21 +514,23 @@ namespace OliverLowman_FinalYearProject {
 			this->label5->TabIndex = 9;
 			this->label5->Text = L"Test Value Range:";
 			// 
-			// textBox3
+			// TestRangeBox1
 			// 
-			this->textBox3->Enabled = false;
-			this->textBox3->Location = System::Drawing::Point(102, 125);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(36, 20);
-			this->textBox3->TabIndex = 10;
+			this->TestRangeBox1->Enabled = false;
+			this->TestRangeBox1->Location = System::Drawing::Point(102, 125);
+			this->TestRangeBox1->Name = L"TestRangeBox1";
+			this->TestRangeBox1->Size = System::Drawing::Size(36, 20);
+			this->TestRangeBox1->TabIndex = 10;
+			this->TestRangeBox1->Text = L"0";
 			// 
-			// textBox4
+			// TestRangeBox2
 			// 
-			this->textBox4->Enabled = false;
-			this->textBox4->Location = System::Drawing::Point(166, 125);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(36, 20);
-			this->textBox4->TabIndex = 11;
+			this->TestRangeBox2->Enabled = false;
+			this->TestRangeBox2->Location = System::Drawing::Point(166, 125);
+			this->TestRangeBox2->Name = L"TestRangeBox2";
+			this->TestRangeBox2->Size = System::Drawing::Size(36, 20);
+			this->TestRangeBox2->TabIndex = 11;
+			this->TestRangeBox2->Text = L"1";
 			// 
 			// label6
 			// 
@@ -663,8 +748,8 @@ namespace OliverLowman_FinalYearProject {
 			this->panel1->Controls->Add(this->label8);
 			this->panel1->Controls->Add(this->label7);
 			this->panel1->Controls->Add(this->label6);
-			this->panel1->Controls->Add(this->textBox4);
-			this->panel1->Controls->Add(this->textBox3);
+			this->panel1->Controls->Add(this->TestRangeBox2);
+			this->panel1->Controls->Add(this->TestRangeBox1);
 			this->panel1->Controls->Add(this->label5);
 			this->panel1->Controls->Add(this->textBox2);
 			this->panel1->Controls->Add(this->label4);
@@ -698,6 +783,15 @@ namespace OliverLowman_FinalYearProject {
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
+			this->tabPage1->ResumeLayout(false);
+			this->tabPage1->PerformLayout();
+			this->tabPage2->ResumeLayout(false);
+			this->tabPage2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->tabPage3->ResumeLayout(false);
+			this->tabPage3->PerformLayout();
+			this->tabPage4->ResumeLayout(false);
+			this->tabPage4->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
@@ -707,19 +801,87 @@ namespace OliverLowman_FinalYearProject {
 	private: System::Void GUI_Load(System::Object^  sender, System::EventArgs^  e) {
 		TreeGenComboBox->SelectedIndex = 0;
 		SelectionComboBox->SelectedIndex = 0;
+		pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::pictureBox1_Paint);
+	}
+	void pictureBox1_Paint(Object^, System::Windows::Forms::PaintEventArgs^ e)
+	{
+		Graphics^ g = e->Graphics;
+		Point point1 = Point(40, 230);
+		Point point2 = Point(445, 230);
+		Point point3 = Point(60, 250);
+		Point point4 = Point(60, 20);
+		g->DrawLine(System::Drawing::Pens::Black, point1, point2);
+		g->DrawLine(System::Drawing::Pens::Black, point3, point4);
+	}
+	void UpdateGraph1(Object^, System::Windows::Forms::PaintEventArgs^ e)
+	{
+		String^ TestRangeInput1 = TestRangeBox1->Text;
+		String^ TestRangeInput2 = TestRangeBox2->Text;
+		int TestRange1Int = Convert::ToInt16(TestRangeInput1);
+		int TestRange2Int = Convert::ToInt16(TestRangeInput2);
+		float TestRange1Value = TestRange1Int;
+		float TestRange2Value = TestRange2Int;
+		int Diff = abs(TestRange1Value - TestRange2Value);
+		vector<float> TestRange(Diff * 10);
+		float CurrentValue = TestRange1Value;
+		for (int i = 0; i < Diff * 10; i++) {
+			TestRange[i] = CurrentValue;
+			CurrentValue = CurrentValue + 0.1;
+
+		}
+		//float rounded_up = roundf(TestRange[6] * 10) / 10;
+
+		float Interval = 400 / (Diff*10);
+		Graphics^ g = e->Graphics;
+		for (int i = 0; i < Diff * 10; i++) {
+			Point point1 = Point(80 + (Interval * i+1), 220);
+			Point point2 = Point(80 + (Interval * i+1), 240);
+			Point point3 = Point((80 + (Interval * i + 1))-7, 240);
+			float roundedFloat = roundf(TestRange[i] * 10) / 10;
+			g->DrawLine(System::Drawing::Pens::Black, point1, point2);
+			g->DrawString(roundedFloat.ToString(),gcnew System::Drawing::Font("Arial", 10), System::Drawing::Brushes::Black, point3);
+		}
+		//x*x + (x - 1)
+		vector<float> TargetValues(Diff * 10);
+		for (int i = 0; i < Diff * 10; i++) {
+			float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+			result = roundf(result * 100) / 100;
+			TargetValues[i] = result;
+		}
+		float Interval2 = 230 / (Diff * 10) / 2;
+		for (int i = 0; i < (Diff * 10) / 2; i++) {
+			Point point1 = Point(50, 40+ (Interval * i + 1));
+			Point point2 = Point(70, 40 + (Interval * i + 1));
+			Point point3 = Point(15, (40 + (Interval * i + 1))-7);
+			g->DrawLine(System::Drawing::Pens::Black, point1, point2);
+			g->DrawString(TargetValues[i*2].ToString(), gcnew System::Drawing::Font("Arial", 10), System::Drawing::Brushes::Black, point3);
+		}
+
+		string Test = "";
+		/*
+		Point point1 = Point(10, 10);
+		Point point2 = Point(30, 30);
+		Point point3 = Point(10, 50);
+		array<Point>^ curvePoints = { point1,point2, point3};
+		g->DrawCurve(System::Drawing::Pens::Black, curvePoints);
+		//g->DrawLine(System::Drawing::Pens::Black, point1, point2);
+		*/
 	}
 	private: System::Void StartButton_Click(System::Object^  sender, System::EventArgs^  e) {
 
+		
+		pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph1);
+		pictureBox1->Refresh();		
 		String^ PopSizeInput = popSizeTextBox->Text;
-		int MaxPopSize = System::Convert::ToInt16(PopSizeInput);
+		int MaxPopSize = Convert::ToInt16(PopSizeInput);
 		String^ MaxNoOfGensInput = NoOfGensTextBox->Text;
-		int MaxNoOfGens = System::Convert::ToInt16(MaxNoOfGensInput);
+		int MaxNoOfGens = Convert::ToInt16(MaxNoOfGensInput);
 		String^ MaxTreeDepthInput = MaxTreeDepthTextBox->Text;
-		int MaxTreeDepth = System::Convert::ToInt16(MaxTreeDepthInput);
+		int MaxTreeDepth = Convert::ToInt16(MaxTreeDepthInput);
 		String^ CrossoverRateInput = CrossoverRateTextBox->Text;
-		int CrossoverRate = System::Convert::ToInt16(CrossoverRateInput);
+		int CrossoverRate = Convert::ToInt16(CrossoverRateInput);
 		String^ MutationRateInput = MutationRateTextbox->Text;
-		int MutationRate = System::Convert::ToInt16(MutationRateInput);
+		int MutationRate = Convert::ToInt16(MutationRateInput);
 		int ChosenTreeGenMethod = TreeGenComboBox->SelectedIndex;
 		int ChosenSelectionMethod = SelectionComboBox->SelectedIndex;
 
@@ -731,6 +893,9 @@ namespace OliverLowman_FinalYearProject {
 		bool SolutionFound = false;
 		for (int i = 0; i < MaxNoOfGens; i++)
 		{
+			if (i == 12) {
+				string test = "";
+			}
 			Pop.Evaluate();
 			string LowestDiffStr = to_string(Pop.GetLowestDiff());
 			double dobuleValue = Pop.GetLowestDiff();
@@ -743,9 +908,6 @@ namespace OliverLowman_FinalYearProject {
 			string AvgDiffStr = to_string(Pop.GetAvergeDiff());
 			String^ AvgDiffOutput = gcnew String(AvgDiffStr.c_str());
 			AvgDiffTextBox->Text = AvgDiffOutput;
-			if (i == 100) {
-				string test = ";";
-			}
 			Update();
 			if (Pop.GetCriteriaMet() == true) {
 				SolutionFound = true;
@@ -766,6 +928,7 @@ namespace OliverLowman_FinalYearProject {
 		CurrentGenTextBox->Text = "0";
 		Pop.setLowestDiff(-1);
 
+		/*
 
 		//TestOnly 
 		string test = Pop.PrintOutNewTree(Pop.GetBestCurrentIndividual());
@@ -778,13 +941,13 @@ namespace OliverLowman_FinalYearProject {
 		{
 			string test5= Pop.PrintOutTree(j);
 		}
-		*/	
+		
 		ofstream myfile;
 		myfile.open("example.txt");
 		myfile << test;
 		myfile.close();
 		//TestOnly
-		
+		*/
 		
 		
 	}
@@ -800,6 +963,10 @@ private: System::Void textBox8_TextChanged(System::Object^  sender, System::Even
 private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void comboBox2_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void chart1_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label28_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
