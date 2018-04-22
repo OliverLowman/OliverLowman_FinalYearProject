@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <ctime>
+#include <sstream>
 namespace OliverLowman_FinalYearProject {
 	using namespace std;
 	using namespace System;
@@ -114,6 +115,11 @@ private: System::Windows::Forms::Label^  label27;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::Label^  label33;
 	private: System::Windows::Forms::Label^  label32;
+	private: System::Windows::Forms::PictureBox^  pictureBox3;
+	private: System::Windows::Forms::Panel^  panel6;
+	private: System::Windows::Forms::Label^  label34;
+	private: System::Windows::Forms::TextBox^  BestFormulaTextBox;
+
 
 
 
@@ -149,6 +155,10 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->panel6 = (gcnew System::Windows::Forms::Panel());
+			this->label34 = (gcnew System::Windows::Forms::Label());
+			this->BestFormulaTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->label30 = (gcnew System::Windows::Forms::Label());
@@ -160,6 +170,8 @@ private: System::Windows::Forms::Label^  label27;
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->label33 = (gcnew System::Windows::Forms::Label());
+			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
@@ -198,11 +210,11 @@ private: System::Windows::Forms::Label^  label27;
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label32 = (gcnew System::Windows::Forms::Label());
-			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->panel2->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
+			this->panel6->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->tabPage2->SuspendLayout();
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -333,6 +345,8 @@ private: System::Windows::Forms::Label^  label27;
 			// tabPage1
 			// 
 			this->tabPage1->Controls->Add(this->label23);
+			this->tabPage1->Controls->Add(this->panel6);
+			this->tabPage1->Controls->Add(this->pictureBox3);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
@@ -344,14 +358,54 @@ private: System::Windows::Forms::Label^  label27;
 			// label23
 			// 
 			this->label23->AutoSize = true;
-			this->label23->Location = System::Drawing::Point(293, 28);
+			this->label23->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label23->Location = System::Drawing::Point(303, 3);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(83, 13);
+			this->label23->Size = System::Drawing::Size(92, 15);
 			this->label23->TabIndex = 0;
-			this->label23->Text = L"Tree View Page";
+			this->label23->Text = L"Current Best Tree";
+			this->label23->Click += gcnew System::EventHandler(this, &GUI::label23_Click);
+			// 
+			// panel6
+			// 
+			this->panel6->BackColor = System::Drawing::Color::Gainsboro;
+			this->panel6->Controls->Add(this->label34);
+			this->panel6->Controls->Add(this->BestFormulaTextBox);
+			this->panel6->Location = System::Drawing::Point(-4, 276);
+			this->panel6->Name = L"panel6";
+			this->panel6->Size = System::Drawing::Size(725, 61);
+			this->panel6->TabIndex = 6;
+			// 
+			// label34
+			// 
+			this->label34->AutoSize = true;
+			this->label34->Location = System::Drawing::Point(307, 4);
+			this->label34->Name = L"label34";
+			this->label34->Size = System::Drawing::Size(105, 13);
+			this->label34->TabIndex = 7;
+			this->label34->Text = L"Current Best Formula";
+			// 
+			// BestFormulaTextBox
+			// 
+			this->BestFormulaTextBox->Enabled = false;
+			this->BestFormulaTextBox->Location = System::Drawing::Point(238, 24);
+			this->BestFormulaTextBox->Name = L"BestFormulaTextBox";
+			this->BestFormulaTextBox->Size = System::Drawing::Size(231, 20);
+			this->BestFormulaTextBox->TabIndex = 10;
+			this->BestFormulaTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->pictureBox3->Location = System::Drawing::Point(111, 9);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(486, 261);
+			this->pictureBox3->TabIndex = 3;
+			this->pictureBox3->TabStop = false;
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->Controls->Add(this->label24);
 			this->tabPage2->Controls->Add(this->label31);
 			this->tabPage2->Controls->Add(this->label30);
 			this->tabPage2->Controls->Add(this->panel5);
@@ -359,7 +413,6 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabPage2->Controls->Add(this->label28);
 			this->tabPage2->Controls->Add(this->label27);
 			this->tabPage2->Controls->Add(this->pictureBox1);
-			this->tabPage2->Controls->Add(this->label24);
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
@@ -443,18 +496,19 @@ private: System::Windows::Forms::Label^  label27;
 			// label24
 			// 
 			this->label24->AutoSize = true;
-			this->label24->Location = System::Drawing::Point(273, 3);
+			this->label24->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label24->Location = System::Drawing::Point(273, 33);
 			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(173, 13);
+			this->label24->Size = System::Drawing::Size(147, 15);
 			this->label24->TabIndex = 1;
-			this->label24->Text = L"Current Best Individual Graph Page";
+			this->label24->Text = L"Current Best Individual Graph";
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->Controls->Add(this->label25);
 			this->tabPage3->Controls->Add(this->label33);
 			this->tabPage3->Controls->Add(this->label32);
 			this->tabPage3->Controls->Add(this->pictureBox2);
-			this->tabPage3->Controls->Add(this->label25);
 			this->tabPage3->Location = System::Drawing::Point(4, 22);
 			this->tabPage3->Name = L"tabPage3";
 			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
@@ -463,10 +517,28 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabPage3->Text = L"Average Distance Graph";
 			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
+			// label33
+			// 
+			this->label33->AutoSize = true;
+			this->label33->Location = System::Drawing::Point(6, 150);
+			this->label33->Name = L"label33";
+			this->label33->Size = System::Drawing::Size(99, 13);
+			this->label33->TabIndex = 5;
+			this->label33->Text = L"Average Difference";
+			// 
+			// label32
+			// 
+			this->label32->AutoSize = true;
+			this->label32->Location = System::Drawing::Point(312, 315);
+			this->label32->Name = L"label32";
+			this->label32->Size = System::Drawing::Size(96, 13);
+			this->label32->TabIndex = 4;
+			this->label32->Text = L"Current Generation";
+			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->pictureBox2->Location = System::Drawing::Point(115, 31);
+			this->pictureBox2->Location = System::Drawing::Point(107, 39);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(486, 274);
 			this->pictureBox2->TabIndex = 3;
@@ -475,11 +547,12 @@ private: System::Windows::Forms::Label^  label27;
 			// label25
 			// 
 			this->label25->AutoSize = true;
-			this->label25->Location = System::Drawing::Point(301, 13);
+			this->label25->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label25->Location = System::Drawing::Point(282, 33);
 			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(107, 13);
+			this->label25->Size = System::Drawing::Size(126, 15);
 			this->label25->TabIndex = 1;
-			this->label25->Text = L"Avg Dist Graph Page";
+			this->label25->Text = L"Average Distance Graph";
 			// 
 			// tabPage4
 			// 
@@ -498,9 +571,10 @@ private: System::Windows::Forms::Label^  label27;
 			this->label29->AutoSize = true;
 			this->label29->Location = System::Drawing::Point(187, 111);
 			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(358, 13);
+			this->label29->Size = System::Drawing::Size(358, 39);
 			this->label29->TabIndex = 2;
-			this->label29->Text = L"Explain language used, Population, Individual, Generation, Differeence ect";
+			this->label29->Text = L"Explain language used, Population, Individual, Generation, Differeence ect\r\n\r\nAls"
+				L"o Explain each page\r\n";
 			// 
 			// label26
 			// 
@@ -854,24 +928,6 @@ private: System::Windows::Forms::Label^  label27;
 			this->panel1->TabIndex = 1;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::panel1_Paint);
 			// 
-			// label32
-			// 
-			this->label32->AutoSize = true;
-			this->label32->Location = System::Drawing::Point(312, 309);
-			this->label32->Name = L"label32";
-			this->label32->Size = System::Drawing::Size(96, 13);
-			this->label32->TabIndex = 4;
-			this->label32->Text = L"Current Generation";
-			// 
-			// label33
-			// 
-			this->label33->AutoSize = true;
-			this->label33->Location = System::Drawing::Point(12, 150);
-			this->label33->Name = L"label33";
-			this->label33->Size = System::Drawing::Size(99, 13);
-			this->label33->TabIndex = 5;
-			this->label33->Text = L"Average Difference";
-			// 
 			// GUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -890,6 +946,9 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
+			this->panel6->ResumeLayout(false);
+			this->panel6->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
 			this->panel3->ResumeLayout(false);
@@ -1058,7 +1117,7 @@ private: System::Windows::Forms::Label^  label27;
 	array<String^>^ Lables = gcnew array<String^>(5);
 	void UpdateGraph4(Object^, System::Windows::Forms::PaintEventArgs^ e) {
 		Graphics^ g = e->Graphics;
-		
+
 		if (FirstRun == true)
 		{
 			float AxisMax = CurrentAverageDistance + 10;
@@ -1141,11 +1200,85 @@ private: System::Windows::Forms::Label^  label27;
 		}
 
 	}
+	array<String^>^ Nodes;
+	int CurrentIndex;
+	int CurrentIndex2;
+	int CurrentLevel;
+	int NumOfNodes;
+	int MaxLevel = 5;
+
+	array<Point>^ NodesPoints;
+
+
+
+	//COUNT NODES BENEATH EACH LEAF BEFORE POSITIONING ITS CHILDREN, BASE POS OFF NUM OF NODE BENEATH
+	void DrawTree(string Position, Point LastPoint) {
+		CurrentLevel = CurrentLevel + 1;
+		CurrentIndex = CurrentIndex + 1;
+		Point NewPoint = LastPoint;
+		if (Position == "Center")
+		{
+			NodesPoints[CurrentIndex] = NewPoint;
+		}
+		else if (Position == "Left") {
+			NewPoint.X = NewPoint.X - 20 * (MaxLevel - CurrentLevel);
+			NewPoint.Y = NewPoint.Y + 50;
+			NodesPoints[CurrentIndex] = NewPoint;
+		}
+		else if (Position == "Right") {
+			NewPoint.X = NewPoint.X + 20 * (MaxLevel - CurrentLevel);
+			NewPoint.Y = NewPoint.Y + 50;
+			NodesPoints[CurrentIndex] = NewPoint;
+		}
+		
+		if (Nodes[CurrentIndex] == "-" || Nodes[CurrentIndex] == "+" || Nodes[CurrentIndex] == "*" || Nodes[CurrentIndex] == "%")
+		{
+			DrawTree("Left", NewPoint);
+
+			DrawTree("Right", NewPoint);
+		}
+		CurrentLevel = CurrentLevel - 1;
+	}
+	String^ CurrentBestFormula;
+	void CompileBestFormula() {
+		CurrentIndex2 = CurrentIndex2 + 1;
+		String^ CurrentNode = Nodes[CurrentIndex2];
+		if (Nodes[CurrentIndex2] == "-" || Nodes[CurrentIndex2] == "+" || Nodes[CurrentIndex2] == "*" || Nodes[CurrentIndex2] == "%") {
+			CurrentBestFormula = CurrentBestFormula + "(";
+			CompileBestFormula();
+			CurrentBestFormula = CurrentBestFormula + CurrentNode;
+			CompileBestFormula();
+			CurrentBestFormula = CurrentBestFormula + ")";
+		}
+		else {
+			CurrentBestFormula = CurrentBestFormula + CurrentNode;
+		}
+	}
+
+
+	void UpdateGraph6(Object^, System::Windows::Forms::PaintEventArgs^ e) {
+		Graphics^ g = e->Graphics;
+		for (int i = 0; i < NumOfNodes; i++) {
+			g->DrawString(Nodes[i], gcnew System::Drawing::Font("Arial", 20), System::Drawing::Brushes::Black, NodesPoints[i]);
+			Pen^ NewPen = gcnew Pen(Color::Black, 2);
+			g->DrawEllipse(NewPen, NodesPoints[i].X-2, NodesPoints[i].Y, 36, 36);
+		}
+		
+	}
+
 	bool FirstPass = true;
 	private: System::Void StartButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		FirstRun = true;
 		CurrentGeneration = 0;
 		CurrentArrayIndex = 0;
+		CurrentIndex = -1;
+		CurrentIndex2 = -1;
+		CurrentLevel = 0;
+
+
+		string TempArray[200] = {};
+		Nodes = gcnew array<String^>(200);
+		NodesPoints = gcnew array<Point>(200);
 		pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph1);
 		pictureBox1->Refresh();		
 		pictureBox2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph3);
@@ -1205,6 +1338,8 @@ private: System::Windows::Forms::Label^  label27;
 		float LowestValue = TargetValues[LowestIndex];
 		float HighestValue = TargetValues[HighestIndex];
 
+
+
 		Population Pop(MaxPopSize, MaxTreeDepth, CrossoverRate, MutationRate,ChosenTreeGenMethod, ChosenSelectionMethod);
 		Pop.Generate();	
 		bool SolutionFound = false;
@@ -1251,9 +1386,40 @@ private: System::Windows::Forms::Label^  label27;
 			if (First == true && FirstPass == true)
 			{
 				pictureBox2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph5);
-				First =false;
+				
 			}
 			pictureBox2->Refresh();
+			Individual test = Pop.GetBestCurrentIndividualObj();
+			string test2 = test.PrintTree(1);
+			int BestIndividualIndex = Pop.GetBestCurrentIndividual();
+			string TreeString = Pop.PrintOutNewTree(BestIndividualIndex);
+			NumOfNodes = count(TreeString.begin(), TreeString.end(), ' ');
+			stringstream ss(TreeString);
+			
+			while (ss.good() && i < NumOfNodes) {
+
+				ss >> TempArray[i];
+				++i;
+			}
+			for (int i = 0; i < NumOfNodes; i++) {
+				Nodes[i] = gcnew String(TempArray[i].c_str());
+			}
+			CurrentIndex = -1;
+			CurrentIndex2 = -1;
+			CurrentLevel = 0;
+
+			Point StartPoint = Point(225, 20);
+
+			DrawTree("Center", StartPoint);
+			if (First == true && FirstPass == true)
+			{
+				pictureBox3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph6);
+				First = false;
+			}
+			pictureBox3->Refresh();
+			CurrentBestFormula = "";
+			CompileBestFormula();
+			BestFormulaTextBox->Text = CurrentBestFormula;
 			string LowestDiffStr = to_string(Pop.GetLowestDiff());
 			double dobuleValue = Pop.GetLowestDiff();
 			Decimal decimalValue = System::Convert::ToDecimal(dobuleValue);
@@ -1326,6 +1492,8 @@ private: System::Void chart1_Click(System::Object^  sender, System::EventArgs^  
 private: System::Void label28_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void label30_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label23_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
