@@ -217,7 +217,7 @@ string Individual::PrintTree(int type) {
 		//int CrossoverPoint = 2 + (std::rand() % (2 - NumOfNodes + 1));
 		int CrossoverPoint = (2 + (rand() % (int)(NumOfNodes - 2 + 1)));
 		PrivateCrossoverPrint(rootNode, CrossoverPoint);
-
+		string test = "";
 	}
 	else if (ChosenType == 3)
 	{

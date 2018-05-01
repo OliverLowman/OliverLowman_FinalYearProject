@@ -44,10 +44,7 @@ void Population::Generate(){
 	for (int i = 0; i < MaxPopSize; i++)
 	{
 		if (TreeGenMethod == 2) {
-			if (i == 99)
-			{
-				string test = "";
-			}
+
 			if (i < MaxPopSize / 2) {
 
 				Individuals[i] = Individual(MaxTreeDepth, 0);
@@ -196,9 +193,13 @@ void Population::Evaluate() {
 	{
 		sum += Individuals[x].GetTotalDiff();
 		if (Individuals[x].GetTotalDiff() == 0 && Individuals[x].GetIsInvalid() == false)
-		{
+		{			
 			CriteriaMet = true;
 			CurrentBestIndividual = x;
+			CurrentBestObj = Individuals[x];
+			string test = Individuals[x].PrintTree(1);
+			
+
 		}
 	}
 	AverageDifference = sum / MaxPopSize;
@@ -359,6 +360,7 @@ void Population::PointMutate() {
 	}
 }
 */
+
 int Population::ProportionateSelection() {
 	int ChosenIndividual = 0;
 	int RandIndividual = 0;
@@ -369,7 +371,6 @@ int Population::ProportionateSelection() {
 		Randfloat = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 100));
 		if (Individuals[RandIndividual].GetFitnessScore() > Randfloat)
 		{
-			float test = Individuals[RandIndividual].GetFitnessScore();
 			ChosenIndividual = RandIndividual;
 			break;
 		}

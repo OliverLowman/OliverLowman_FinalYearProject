@@ -106,7 +106,7 @@ private: System::Windows::Forms::TabPage^  tabPage4;
 private: System::Windows::Forms::Label^  label26;
 private: System::Windows::Forms::Label^  label28;
 private: System::Windows::Forms::Label^  label27;
-	private: System::Windows::Forms::Label^  label29;
+
 	private: System::Windows::Forms::Panel^  panel5;
 	private: System::Windows::Forms::Panel^  panel3;
 	private: System::Windows::Forms::Panel^  panel4;
@@ -119,6 +119,24 @@ private: System::Windows::Forms::Label^  label27;
 	private: System::Windows::Forms::Panel^  panel6;
 	private: System::Windows::Forms::Label^  label34;
 	private: System::Windows::Forms::TextBox^  BestFormulaTextBox;
+private: System::Windows::Forms::TabControl^  tabControl2;
+private: System::Windows::Forms::TabPage^  tabPage5;
+private: System::Windows::Forms::TabPage^  tabPage6;
+private: System::Windows::Forms::PictureBox^  pictureBox4;
+private: System::Windows::Forms::TabPage^  tabPage7;
+private: System::Windows::Forms::TabPage^  tabPage8;
+private: System::Windows::Forms::TabPage^  tabPage9;
+private: System::Windows::Forms::TabPage^  tabPage10;
+private: System::Windows::Forms::Button^  button11;
+private: System::Windows::Forms::Button^  button10;
+private: System::Windows::Forms::Button^  button9;
+private: System::Windows::Forms::Button^  button8;
+private: System::Windows::Forms::Button^  button7;
+private: System::Windows::Forms::Button^  button6;
+private: System::Windows::Forms::Button^  button5;
+private: System::Windows::Forms::Button^  button4;
+private: System::Windows::Forms::Button^  button3;
+private: System::Windows::Forms::Button^  button2;
 
 
 
@@ -141,6 +159,7 @@ private: System::Windows::Forms::Label^  label27;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(GUI::typeid));
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->TotalNumOfGensTextbox = (gcnew System::Windows::Forms::TextBox());
 			this->RunSuccessfulTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -160,6 +179,7 @@ private: System::Windows::Forms::Label^  label27;
 			this->BestFormulaTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->label30 = (gcnew System::Windows::Forms::Label());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
@@ -168,14 +188,12 @@ private: System::Windows::Forms::Label^  label27;
 			this->label28 = (gcnew System::Windows::Forms::Label());
 			this->label27 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
-			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->popSizeTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -210,6 +228,24 @@ private: System::Windows::Forms::Label^  label27;
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
+			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
+			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage8 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage9 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage10 = (gcnew System::Windows::Forms::TabPage());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->button10 = (gcnew System::Windows::Forms::Button());
+			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->panel2->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
@@ -222,6 +258,8 @@ private: System::Windows::Forms::Label^  label27;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->tabPage4->SuspendLayout();
 			this->panel1->SuspendLayout();
+			this->tabControl2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel2
@@ -421,6 +459,16 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabPage2->Text = L"Current Best Graph";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
+			// label24
+			// 
+			this->label24->AutoSize = true;
+			this->label24->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label24->Location = System::Drawing::Point(273, 33);
+			this->label24->Name = L"label24";
+			this->label24->Size = System::Drawing::Size(147, 15);
+			this->label24->TabIndex = 1;
+			this->label24->Text = L"Current Best Individual Graph";
+			// 
 			// label31
 			// 
 			this->label31->AutoSize = true;
@@ -493,16 +541,6 @@ private: System::Windows::Forms::Label^  label27;
 			this->pictureBox1->TabIndex = 2;
 			this->pictureBox1->TabStop = false;
 			// 
-			// label24
-			// 
-			this->label24->AutoSize = true;
-			this->label24->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label24->Location = System::Drawing::Point(273, 33);
-			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(147, 15);
-			this->label24->TabIndex = 1;
-			this->label24->Text = L"Current Best Individual Graph";
-			// 
 			// tabPage3
 			// 
 			this->tabPage3->Controls->Add(this->label25);
@@ -516,6 +554,16 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Average Distance Graph";
 			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label25->Location = System::Drawing::Point(282, 33);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(126, 15);
+			this->label25->TabIndex = 1;
+			this->label25->Text = L"Average Distance Graph";
 			// 
 			// label33
 			// 
@@ -544,19 +592,10 @@ private: System::Windows::Forms::Label^  label27;
 			this->pictureBox2->TabIndex = 3;
 			this->pictureBox2->TabStop = false;
 			// 
-			// label25
-			// 
-			this->label25->AutoSize = true;
-			this->label25->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label25->Location = System::Drawing::Point(282, 33);
-			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(126, 15);
-			this->label25->TabIndex = 1;
-			this->label25->Text = L"Average Distance Graph";
-			// 
 			// tabPage4
 			// 
-			this->tabPage4->Controls->Add(this->label29);
+			this->tabPage4->Controls->Add(this->pictureBox4);
+			this->tabPage4->Controls->Add(this->tabControl2);
 			this->tabPage4->Controls->Add(this->label26);
 			this->tabPage4->Location = System::Drawing::Point(4, 22);
 			this->tabPage4->Name = L"tabPage4";
@@ -565,25 +604,16 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabPage4->TabIndex = 3;
 			this->tabPage4->Text = L"Info";
 			this->tabPage4->UseVisualStyleBackColor = true;
-			// 
-			// label29
-			// 
-			this->label29->AutoSize = true;
-			this->label29->Location = System::Drawing::Point(187, 111);
-			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(358, 39);
-			this->label29->TabIndex = 2;
-			this->label29->Text = L"Explain language used, Population, Individual, Generation, Differeence ect\r\n\r\nAls"
-				L"o Explain each page\r\n";
+			this->tabPage4->Click += gcnew System::EventHandler(this, &GUI::tabPage4_Click);
 			// 
 			// label26
 			// 
 			this->label26->AutoSize = true;
-			this->label26->Location = System::Drawing::Point(295, 33);
+			this->label26->Location = System::Drawing::Point(272, 3);
 			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(53, 13);
+			this->label26->Size = System::Drawing::Size(143, 13);
 			this->label26->TabIndex = 1;
-			this->label26->Text = L"Info Page";
+			this->label26->Text = L"Genetic Algorithm Flow Chart";
 			// 
 			// label1
 			// 
@@ -877,7 +907,7 @@ private: System::Windows::Forms::Label^  label27;
 			this->button1->Cursor = System::Windows::Forms::Cursors::Help;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::System;
 			this->button1->ForeColor = System::Drawing::Color::Black;
-			this->button1->Location = System::Drawing::Point(226, 49);
+			this->button1->Location = System::Drawing::Point(226, 45);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(24, 23);
 			this->button1->TabIndex = 31;
@@ -889,6 +919,16 @@ private: System::Windows::Forms::Label^  label27;
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel1->Controls->Add(this->button11);
+			this->panel1->Controls->Add(this->button10);
+			this->panel1->Controls->Add(this->button9);
+			this->panel1->Controls->Add(this->button8);
+			this->panel1->Controls->Add(this->button7);
+			this->panel1->Controls->Add(this->button6);
+			this->panel1->Controls->Add(this->button5);
+			this->panel1->Controls->Add(this->button4);
+			this->panel1->Controls->Add(this->button3);
+			this->panel1->Controls->Add(this->button2);
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->label17);
 			this->panel1->Controls->Add(this->label16);
@@ -928,6 +968,246 @@ private: System::Windows::Forms::Label^  label27;
 			this->panel1->TabIndex = 1;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::panel1_Paint);
 			// 
+			// tabControl2
+			// 
+			this->tabControl2->Controls->Add(this->tabPage5);
+			this->tabControl2->Controls->Add(this->tabPage6);
+			this->tabControl2->Controls->Add(this->tabPage7);
+			this->tabControl2->Controls->Add(this->tabPage8);
+			this->tabControl2->Controls->Add(this->tabPage9);
+			this->tabControl2->Controls->Add(this->tabPage10);
+			this->tabControl2->Location = System::Drawing::Point(0, 150);
+			this->tabControl2->Name = L"tabControl2";
+			this->tabControl2->SelectedIndex = 0;
+			this->tabControl2->Size = System::Drawing::Size(721, 191);
+			this->tabControl2->TabIndex = 3;
+			// 
+			// tabPage5
+			// 
+			this->tabPage5->Location = System::Drawing::Point(4, 22);
+			this->tabPage5->Name = L"tabPage5";
+			this->tabPage5->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage5->Size = System::Drawing::Size(713, 165);
+			this->tabPage5->TabIndex = 0;
+			this->tabPage5->Text = L"Instructions";
+			this->tabPage5->UseVisualStyleBackColor = true;
+			// 
+			// tabPage6
+			// 
+			this->tabPage6->Location = System::Drawing::Point(4, 22);
+			this->tabPage6->Name = L"tabPage6";
+			this->tabPage6->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage6->Size = System::Drawing::Size(713, 165);
+			this->tabPage6->TabIndex = 1;
+			this->tabPage6->Text = L"Initialize Population";
+			this->tabPage6->UseVisualStyleBackColor = true;
+			// 
+			// pictureBox4
+			// 
+			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
+			this->pictureBox4->Location = System::Drawing::Point(80, 19);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(544, 125);
+			this->pictureBox4->TabIndex = 4;
+			this->pictureBox4->TabStop = false;
+			// 
+			// tabPage7
+			// 
+			this->tabPage7->Location = System::Drawing::Point(4, 22);
+			this->tabPage7->Name = L"tabPage7";
+			this->tabPage7->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage7->Size = System::Drawing::Size(713, 165);
+			this->tabPage7->TabIndex = 2;
+			this->tabPage7->Text = L"Evaluate Population";
+			this->tabPage7->UseVisualStyleBackColor = true;
+			// 
+			// tabPage8
+			// 
+			this->tabPage8->Location = System::Drawing::Point(4, 22);
+			this->tabPage8->Name = L"tabPage8";
+			this->tabPage8->Size = System::Drawing::Size(713, 165);
+			this->tabPage8->TabIndex = 3;
+			this->tabPage8->Text = L"Selection";
+			this->tabPage8->UseVisualStyleBackColor = true;
+			// 
+			// tabPage9
+			// 
+			this->tabPage9->Location = System::Drawing::Point(4, 22);
+			this->tabPage9->Name = L"tabPage9";
+			this->tabPage9->Size = System::Drawing::Size(713, 165);
+			this->tabPage9->TabIndex = 4;
+			this->tabPage9->Text = L"Crossover";
+			this->tabPage9->UseVisualStyleBackColor = true;
+			// 
+			// tabPage10
+			// 
+			this->tabPage10->Location = System::Drawing::Point(4, 22);
+			this->tabPage10->Name = L"tabPage10";
+			this->tabPage10->Size = System::Drawing::Size(713, 165);
+			this->tabPage10->TabIndex = 5;
+			this->tabPage10->Text = L"Mutation";
+			this->tabPage10->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->button2->Cursor = System::Windows::Forms::Cursors::Help;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button2->ForeColor = System::Drawing::Color::Black;
+			this->button2->Location = System::Drawing::Point(226, 71);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(24, 23);
+			this->button2->TabIndex = 32;
+			this->button2->Text = L"\?";
+			this->button2->UseMnemonic = false;
+			this->button2->UseVisualStyleBackColor = false;
+			// 
+			// button3
+			// 
+			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->button3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->button3->Cursor = System::Windows::Forms::Cursors::Help;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button3->ForeColor = System::Drawing::Color::Black;
+			this->button3->Location = System::Drawing::Point(226, 96);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(24, 23);
+			this->button3->TabIndex = 33;
+			this->button3->Text = L"\?";
+			this->button3->UseMnemonic = false;
+			this->button3->UseVisualStyleBackColor = false;
+			// 
+			// button4
+			// 
+			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->button4->Cursor = System::Windows::Forms::Cursors::Help;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button4->ForeColor = System::Drawing::Color::Black;
+			this->button4->Location = System::Drawing::Point(226, 125);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(24, 23);
+			this->button4->TabIndex = 34;
+			this->button4->Text = L"\?";
+			this->button4->UseMnemonic = false;
+			this->button4->UseVisualStyleBackColor = false;
+			// 
+			// button5
+			// 
+			this->button5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->button5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->button5->Cursor = System::Windows::Forms::Cursors::Help;
+			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button5->ForeColor = System::Drawing::Color::Black;
+			this->button5->Location = System::Drawing::Point(226, 195);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(24, 23);
+			this->button5->TabIndex = 35;
+			this->button5->Text = L"\?";
+			this->button5->UseMnemonic = false;
+			this->button5->UseVisualStyleBackColor = false;
+			// 
+			// button6
+			// 
+			this->button6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->button6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->button6->Cursor = System::Windows::Forms::Cursors::Help;
+			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button6->ForeColor = System::Drawing::Color::Black;
+			this->button6->Location = System::Drawing::Point(231, 232);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(24, 23);
+			this->button6->TabIndex = 36;
+			this->button6->Text = L"\?";
+			this->button6->UseMnemonic = false;
+			this->button6->UseVisualStyleBackColor = false;
+			// 
+			// button7
+			// 
+			this->button7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->button7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->button7->Cursor = System::Windows::Forms::Cursors::Help;
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button7->ForeColor = System::Drawing::Color::Black;
+			this->button7->Location = System::Drawing::Point(232, 297);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(24, 23);
+			this->button7->TabIndex = 37;
+			this->button7->Text = L"\?";
+			this->button7->UseMnemonic = false;
+			this->button7->UseVisualStyleBackColor = false;
+			// 
+			// button8
+			// 
+			this->button8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->button8->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->button8->Cursor = System::Windows::Forms::Cursors::Help;
+			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button8->ForeColor = System::Drawing::Color::Black;
+			this->button8->Location = System::Drawing::Point(226, 331);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(24, 23);
+			this->button8->TabIndex = 38;
+			this->button8->Text = L"\?";
+			this->button8->UseMnemonic = false;
+			this->button8->UseVisualStyleBackColor = false;
+			// 
+			// button9
+			// 
+			this->button9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->button9->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->button9->Cursor = System::Windows::Forms::Cursors::Help;
+			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button9->ForeColor = System::Drawing::Color::Black;
+			this->button9->Location = System::Drawing::Point(226, 360);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(24, 23);
+			this->button9->TabIndex = 39;
+			this->button9->Text = L"\?";
+			this->button9->UseMnemonic = false;
+			this->button9->UseVisualStyleBackColor = false;
+			// 
+			// button10
+			// 
+			this->button10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->button10->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->button10->Cursor = System::Windows::Forms::Cursors::Help;
+			this->button10->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button10->ForeColor = System::Drawing::Color::Black;
+			this->button10->Location = System::Drawing::Point(226, 393);
+			this->button10->Name = L"button10";
+			this->button10->Size = System::Drawing::Size(24, 23);
+			this->button10->TabIndex = 40;
+			this->button10->Text = L"\?";
+			this->button10->UseMnemonic = false;
+			this->button10->UseVisualStyleBackColor = false;
+			// 
+			// button11
+			// 
+			this->button11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->button11->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->button11->Cursor = System::Windows::Forms::Cursors::Help;
+			this->button11->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button11->ForeColor = System::Drawing::Color::Black;
+			this->button11->Location = System::Drawing::Point(226, 426);
+			this->button11->Name = L"button11";
+			this->button11->Size = System::Drawing::Size(24, 23);
+			this->button11->TabIndex = 41;
+			this->button11->Text = L"\?";
+			this->button11->UseMnemonic = false;
+			this->button11->UseVisualStyleBackColor = false;
+			// 
 			// GUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -960,6 +1240,8 @@ private: System::Windows::Forms::Label^  label27;
 			this->tabPage4->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->tabControl2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1003,7 +1285,6 @@ private: System::Windows::Forms::Label^  label27;
 			CurrentValue = CurrentValue + 0.1;
 			TestRange[i] = CurrentValue;
 		}
-		//float rounded_up = roundf(TestRange[6] * 10) / 10;
 
 		float Interval = 400 / (Diff*10);
 		Graphics^ g = e->Graphics;
@@ -1046,7 +1327,6 @@ private: System::Windows::Forms::Label^  label27;
 		float HigLowDiff = HighestValue - LowestValue;
 		//Draws the Y Axis notches
 		float Interval2 = 230 / (Diff * 10) / 2;
-		//for (int i = 0; i < (Diff * 10) / 2; i++) {
 		for (int i = 0; i < 5; i++) {
 			Point point1 = Point(50, 40+ (Interval * i));
 			Point point2 = Point(70, 40 + (Interval * i));
@@ -1068,15 +1348,13 @@ private: System::Windows::Forms::Label^  label27;
 			NormalizedValue = NormalizedValue / (HighestValue - LowestValue) + 1;
 			NormalizedTargetValues[i] = NormalizedValue;
 		}
-
 		//Draws the graphline for the target equation
 		array<Point>^ PointsArray = gcnew array<Point>(Diff*10);
 		Point currentPoint;
 		for (int i = 0; i < Diff * 10; i++) {
 			Point NewPoint = Point(80 + (Interval * i), 240 - NormalizedTargetValues[i]);
 			PointsArray[i] = NewPoint;
-		}
-		
+		}		
 		g->DrawCurve(System::Drawing::Pens::Red, PointsArray);
 	}
 	
@@ -1141,6 +1419,7 @@ private: System::Windows::Forms::Label^  label27;
 			}
 		}
 	}
+
 	Point PreviousPoint;
 	void UpdateGraph5(Object^, System::Windows::Forms::PaintEventArgs^ e) {
 		Graphics^ g = e->Graphics;
@@ -1205,6 +1484,7 @@ private: System::Windows::Forms::Label^  label27;
 	int CurrentIndex2;
 	int CurrentLevel;
 	int NumOfNodes;
+
 	int MaxLevel = 5;
 
 	array<Point>^ NodesPoints;
@@ -1345,9 +1625,7 @@ private: System::Windows::Forms::Label^  label27;
 		bool SolutionFound = false;
 		for (int i = 0; i < MaxNoOfGens; i++)
 		{
-			if (i == 24) {
-				string test = "";
-			}
+
 			Pop.Evaluate();
 			vector<float> CurrentBestResults = Pop.GetCurrentBestResults();			
 			vector<float> NormalizedResults(Diff * 10);
@@ -1394,6 +1672,7 @@ private: System::Windows::Forms::Label^  label27;
 			int BestIndividualIndex = Pop.GetBestCurrentIndividual();
 			string TreeString = Pop.PrintOutNewTree(BestIndividualIndex);
 			NumOfNodes = count(TreeString.begin(), TreeString.end(), ' ');
+			//MaxLevel = NumOfNodes/5;
 			stringstream ss(TreeString);
 			
 			while (ss.good() && i < NumOfNodes) {
@@ -1409,6 +1688,8 @@ private: System::Windows::Forms::Label^  label27;
 			CurrentLevel = 0;
 
 			Point StartPoint = Point(225, 20);
+
+
 
 			DrawTree("Center", StartPoint);
 			if (First == true && FirstPass == true)
@@ -1494,6 +1775,8 @@ private: System::Void label28_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void label30_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void label23_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void tabPage4_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
