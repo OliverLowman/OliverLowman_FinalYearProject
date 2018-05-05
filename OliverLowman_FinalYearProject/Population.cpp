@@ -1,7 +1,7 @@
 #include "Population.h"
 
 
-Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCrossoverRate, float GivenMutationRate, int GivenTreeGenMethod, int GivenSelectionMethod){
+Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCrossoverRate, float GivenMutationRate, int GivenTreeGenMethod, int GivenSelectionMethod, int ChosenFormula, int TestValue1, int TestValue2){
 	MaxPopSize = GivenMaxPopSize;
 	MaxTreeDepth = GivenMaxTreeDepth;
 	TreeGenMethod = GivenTreeGenMethod;
@@ -9,9 +9,11 @@ Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCr
 	Individuals = vector<Individual>(MaxPopSize);
 	NextGeneration = vector<Individual>(MaxPopSize);
 	TargetFormula = "x*x+(x-1)";
-	TestRangeSize = 10;
+	int diff = abs(TestValue1 - TestValue2);
+	TestRangeSize = diff*10;
 	CrossoverRate = GivenCrossoverRate;
 	MutationRate = GivenMutationRate;
+	ChosenTargetFormula = ChosenFormula;
 	ReproductionRate = 100- (CrossoverRate + MutationRate);
 	LowestDifference = -1;
 	AverageDifference = 0;
@@ -21,13 +23,38 @@ Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCr
 	TestRange = vector<float>(TestRangeSize);
 	//TestRange = { -1, -0.9f, -0.8f, -0.7f, -0.6f, -0.5f, -0.4f, -0.3f, -0.2f, -0.1f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1 };
 	//TestRange = { -1, -0.9f, -0.8f, -0.7f, -0.6f, -0.5f, -0.4f, -0.3f, -0.2f, -0.1f};
-	TestRange = {0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1 };
+	//vector<float> TestRange(diff * 10);
+	float CurrentValue = TestValue1;
+	for (int i = 0; i < diff * 10; i++) {
+		CurrentValue = CurrentValue + 0.1;
+		TestRange[i] = CurrentValue;
+	}
+	//TestRange = {0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1 };
 	//TestRange = {1,2,3};
 	TargetValues = vector<float>(TestRangeSize);
 	//TargetValues={-3,-2.71f,-2.44f,-2.19f, -1.96f,-1.75f,-1.56f,-1.39f,-1.24f,-1.11f, -0.89f,-0.76f, -0.61f, -0.44f, -0.25f, -0.04f, 0.19f, 0.44f,0.71f,1};
 	//TargetValues = { -3,-2.71f,-2.44f,-2.19f, -1.96f,-1.75f,-1.56f,-1.39f,-1.24f,-1.11f};
+	if (ChosenTargetFormula == 0)
+	{
 
-	TargetValues = { -0.89f,-0.76f, -0.61f, -0.44f, -0.25f, -0.04f, 0.19f, 0.44f,0.71f,1 };
+		for (int i = 0; i < TestRangeSize; i++) {
+			float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+			result = roundf(result * 100) / 100;
+			TargetValues[i] = result;
+		}
+	}
+	if (ChosenTargetFormula == 1)
+	{
+
+		for (int i = 0; i < TestRangeSize; i++) {
+			float currentTestValue = roundf(TestRange[i] * 100) / 100;
+			float result = currentTestValue * currentTestValue + (currentTestValue - 1);
+			result = result * 2;
+			result = roundf(result * 100) / 100;
+			TargetValues[i] = result;
+		}
+	}
+	//TargetValues = { -0.89f,-0.76f, -0.61f, -0.44f, -0.25f, -0.04f, 0.19f, 0.44f,0.71f,1 };
 
 	CriteriaMet = false;
 	//TestOnly
@@ -117,18 +144,20 @@ void Population::Evaluate() {
 		vector<float> CurrentResults(TestRangeSize);
 		for (int j = 0; j < TestRangeSize; j++)
 		{	
-
+			float CurrentTestValue = roundf(TestRange[j] * 100) / 100;
 			float CurrentResult = 0;
-			CurrentResult = RunProgram(Individuals[i].GetRootNode(), TestRange[j]);
+			float CurrentTarget = 0;
+			CurrentResult = RunProgram(Individuals[i].GetRootNode(), CurrentTestValue);
 			CurrentResult = roundf(CurrentResult * 100) / 100;
+			CurrentTarget = roundf(TargetValues[j] * 100) / 100;
 			CurrentResults[j] = CurrentResult;
-			if (CurrentResult > TargetValues[j])
+			if (CurrentResult > CurrentTarget)
 			{
-				CurrentDiffernce += (CurrentResult - TargetValues[j]);
+				CurrentDiffernce += (CurrentResult - CurrentTarget);
 			}
 			else
 			{
-				CurrentDiffernce += (TargetValues[j] - CurrentResult);
+				CurrentDiffernce += (CurrentTarget - CurrentResult);
 			}			
 		}
 		if (CurrentDiffernce == INFINITY || CurrentDiffernce != CurrentDiffernce)
@@ -143,6 +172,8 @@ void Population::Evaluate() {
 			{
 				MaxDiff = CurrentDiffernce;
 				MinDiff = CurrentDiffernce;
+				CurrentBestIndividual = i;
+				CurrentRunBestResults = CurrentResults;
 				first = false;
 			}
 			if (CurrentDiffernce > MaxDiff)
@@ -185,7 +216,6 @@ void Population::Evaluate() {
 		LowestDifference = MinDiff;
 		CurrentBestObj = Individuals[CurrentBestIndividual];
 		CurrentBestResults = CurrentRunBestResults;
-		string test = "";
 	}
 	AverageDifference = 0;
 	float sum = 0;
@@ -198,13 +228,22 @@ void Population::Evaluate() {
 			CurrentBestIndividual = x;
 			CurrentBestObj = Individuals[x];
 			string test = Individuals[x].PrintTree(1);
-			
+			string test2 = "";
+
+		}
+		else if (Individuals[x].GetTotalDiff() <= 2 && Individuals[x].GetIsInvalid() == false) {
+			string test = Individuals[x].PrintTree(1);
+			float test3 = Individuals[x].GetTotalDiff();
+
+			string test2 = "";
 
 		}
 	}
 	AverageDifference = sum / MaxPopSize;
 
 }
+
+
 
 double Population::GetLowestDiff() {
 	double doubleVal = System::Convert::ToDouble(LowestDifference);
@@ -248,6 +287,9 @@ void Population::Crossover() {
 	float NumOfLoops = MaxPopSize * (CrossoverRate / 100);
 	for (int i = 0; i < NumOfLoops; i++)
 	{		
+		if (i == 10) {
+			string test = "";
+		}
 		int Parent1Num = 0;
 		int Parent2Num = 0;
 		if (SelectionMethod == 0) {
@@ -369,6 +411,7 @@ int Population::ProportionateSelection() {
 	{
 		RandIndividual = 1 + (rand() % static_cast<int>(MaxPopSize - 2 + 1));
 		Randfloat = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 100));
+		float test = Individuals[RandIndividual].GetFitnessScore();
 		if (Individuals[RandIndividual].GetFitnessScore() > Randfloat)
 		{
 			ChosenIndividual = RandIndividual;

@@ -67,7 +67,7 @@ namespace OliverLowman_FinalYearProject {
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::TextBox^  NoOfGensTextBox;
 	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::TextBox^  textBox2;
+
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::TextBox^  TestRangeBox1;
 
@@ -95,7 +95,8 @@ namespace OliverLowman_FinalYearProject {
 	private: System::Windows::Forms::TextBox^  MutationRateTextbox;
 	private: System::Windows::Forms::Label^  label16;
 	private: System::Windows::Forms::Label^  label17;
-	private: System::Windows::Forms::Button^  button1;
+
+
 	private: System::Windows::Forms::Panel^  panel1;
 private: System::Windows::Forms::Label^  label23;
 private: System::Windows::Forms::PictureBox^  pictureBox1;
@@ -127,16 +128,27 @@ private: System::Windows::Forms::TabPage^  tabPage7;
 private: System::Windows::Forms::TabPage^  tabPage8;
 private: System::Windows::Forms::TabPage^  tabPage9;
 private: System::Windows::Forms::TabPage^  tabPage10;
-private: System::Windows::Forms::Button^  button11;
-private: System::Windows::Forms::Button^  button10;
-private: System::Windows::Forms::Button^  button9;
-private: System::Windows::Forms::Button^  button8;
-private: System::Windows::Forms::Button^  button7;
-private: System::Windows::Forms::Button^  button6;
-private: System::Windows::Forms::Button^  button5;
-private: System::Windows::Forms::Button^  button4;
-private: System::Windows::Forms::Button^  button3;
-private: System::Windows::Forms::Button^  button2;
+
+
+
+
+
+
+
+
+
+
+private: System::Windows::Forms::Label^  label29;
+private: System::Windows::Forms::PictureBox^  pictureBox5;
+private: System::Windows::Forms::Label^  label35;
+private: System::Windows::Forms::ComboBox^  FormulaComboBox;
+private: System::Windows::Forms::ToolTip^  toolTip2;
+
+
+
+
+
+
 
 
 
@@ -159,6 +171,7 @@ private: System::Windows::Forms::Button^  button2;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(GUI::typeid));
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->TotalNumOfGensTextbox = (gcnew System::Windows::Forms::TextBox());
@@ -172,12 +185,6 @@ private: System::Windows::Forms::Button^  button2;
 			this->LowestDiffTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->label23 = (gcnew System::Windows::Forms::Label());
-			this->panel6 = (gcnew System::Windows::Forms::Panel());
-			this->label34 = (gcnew System::Windows::Forms::Label());
-			this->BestFormulaTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->label31 = (gcnew System::Windows::Forms::Label());
@@ -194,7 +201,24 @@ private: System::Windows::Forms::Button^  button2;
 			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
+			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
+			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
+			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+			this->label35 = (gcnew System::Windows::Forms::Label());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage8 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage9 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage10 = (gcnew System::Windows::Forms::TabPage());
 			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->panel6 = (gcnew System::Windows::Forms::Panel());
+			this->label34 = (gcnew System::Windows::Forms::Label());
+			this->BestFormulaTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->popSizeTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -203,7 +227,6 @@ private: System::Windows::Forms::Button^  button2;
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->NoOfGensTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->TestRangeBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->TestRangeBox2 = (gcnew System::Windows::Forms::TextBox());
@@ -226,40 +249,25 @@ private: System::Windows::Forms::Button^  button2;
 			this->MutationRateTextbox = (gcnew System::Windows::Forms::TextBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label17 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
-			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
-			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage8 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage9 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage10 = (gcnew System::Windows::Forms::TabPage());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->FormulaComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->toolTip2 = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->panel2->SuspendLayout();
 			this->tabControl1->SuspendLayout();
-			this->tabPage1->SuspendLayout();
-			this->panel6->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->tabPage2->SuspendLayout();
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->tabPage3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->tabPage4->SuspendLayout();
-			this->panel1->SuspendLayout();
-			this->tabControl2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
+			this->tabControl2->SuspendLayout();
+			this->tabPage6->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
+			this->tabPage1->SuspendLayout();
+			this->panel6->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel2
@@ -370,76 +378,15 @@ private: System::Windows::Forms::Button^  button2;
 			// 
 			// tabControl1
 			// 
-			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Controls->Add(this->tabPage4);
+			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Location = System::Drawing::Point(256, 0);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(725, 363);
 			this->tabControl1->TabIndex = 3;
-			// 
-			// tabPage1
-			// 
-			this->tabPage1->Controls->Add(this->label23);
-			this->tabPage1->Controls->Add(this->panel6);
-			this->tabPage1->Controls->Add(this->pictureBox3);
-			this->tabPage1->Location = System::Drawing::Point(4, 22);
-			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(717, 337);
-			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"Tree View";
-			this->tabPage1->UseVisualStyleBackColor = true;
-			// 
-			// label23
-			// 
-			this->label23->AutoSize = true;
-			this->label23->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label23->Location = System::Drawing::Point(303, 3);
-			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(92, 15);
-			this->label23->TabIndex = 0;
-			this->label23->Text = L"Current Best Tree";
-			this->label23->Click += gcnew System::EventHandler(this, &GUI::label23_Click);
-			// 
-			// panel6
-			// 
-			this->panel6->BackColor = System::Drawing::Color::Gainsboro;
-			this->panel6->Controls->Add(this->label34);
-			this->panel6->Controls->Add(this->BestFormulaTextBox);
-			this->panel6->Location = System::Drawing::Point(-4, 276);
-			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(725, 61);
-			this->panel6->TabIndex = 6;
-			// 
-			// label34
-			// 
-			this->label34->AutoSize = true;
-			this->label34->Location = System::Drawing::Point(307, 4);
-			this->label34->Name = L"label34";
-			this->label34->Size = System::Drawing::Size(105, 13);
-			this->label34->TabIndex = 7;
-			this->label34->Text = L"Current Best Formula";
-			// 
-			// BestFormulaTextBox
-			// 
-			this->BestFormulaTextBox->Enabled = false;
-			this->BestFormulaTextBox->Location = System::Drawing::Point(238, 24);
-			this->BestFormulaTextBox->Name = L"BestFormulaTextBox";
-			this->BestFormulaTextBox->Size = System::Drawing::Size(231, 20);
-			this->BestFormulaTextBox->TabIndex = 10;
-			this->BestFormulaTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
-			// pictureBox3
-			// 
-			this->pictureBox3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->pictureBox3->Location = System::Drawing::Point(111, 9);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(486, 261);
-			this->pictureBox3->TabIndex = 3;
-			this->pictureBox3->TabStop = false;
 			// 
 			// tabPage2
 			// 
@@ -606,367 +553,14 @@ private: System::Windows::Forms::Button^  button2;
 			this->tabPage4->UseVisualStyleBackColor = true;
 			this->tabPage4->Click += gcnew System::EventHandler(this, &GUI::tabPage4_Click);
 			// 
-			// label26
-			// 
-			this->label26->AutoSize = true;
-			this->label26->Location = System::Drawing::Point(272, 3);
-			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(143, 13);
-			this->label26->TabIndex = 1;
-			this->label26->Text = L"Genetic Algorithm Flow Chart";
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(62, 12);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(100, 21);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Setup Values";
-			// 
-			// popSizeTextBox
-			// 
-			this->popSizeTextBox->Location = System::Drawing::Point(102, 46);
-			this->popSizeTextBox->Name = L"popSizeTextBox";
-			this->popSizeTextBox->Size = System::Drawing::Size(100, 20);
-			this->popSizeTextBox->TabIndex = 1;
-			this->popSizeTextBox->Text = L"200";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(15, 49);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(83, 13);
-			this->label2->TabIndex = 2;
-			this->label2->Text = L"Population Size:";
-			// 
-			// StartButton
-			// 
-			this->StartButton->Location = System::Drawing::Point(81, 476);
-			this->StartButton->Name = L"StartButton";
-			this->StartButton->Size = System::Drawing::Size(75, 23);
-			this->StartButton->TabIndex = 3;
-			this->StartButton->Text = L"Start";
-			this->StartButton->UseVisualStyleBackColor = true;
-			this->StartButton->Click += gcnew System::EventHandler(this, &GUI::StartButton_Click);
-			// 
-			// TestText
-			// 
-			this->TestText->AutoSize = true;
-			this->TestText->Location = System::Drawing::Point(166, 453);
-			this->TestText->Name = L"TestText";
-			this->TestText->Size = System::Drawing::Size(0, 13);
-			this->TestText->TabIndex = 4;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(13, 75);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(87, 13);
-			this->label3->TabIndex = 5;
-			this->label3->Text = L"Max No of Gens:";
-			// 
-			// NoOfGensTextBox
-			// 
-			this->NoOfGensTextBox->Location = System::Drawing::Point(102, 72);
-			this->NoOfGensTextBox->Name = L"NoOfGensTextBox";
-			this->NoOfGensTextBox->Size = System::Drawing::Size(100, 20);
-			this->NoOfGensTextBox->TabIndex = 6;
-			this->NoOfGensTextBox->Text = L"500";
-			this->NoOfGensTextBox->TextChanged += gcnew System::EventHandler(this, &GUI::textBox1_TextChanged);
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(17, 99);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(81, 13);
-			this->label4->TabIndex = 7;
-			this->label4->Text = L"Target Formula:";
-			// 
-			// textBox2
-			// 
-			this->textBox2->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textBox2->Enabled = false;
-			this->textBox2->Location = System::Drawing::Point(102, 98);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 20);
-			this->textBox2->TabIndex = 8;
-			this->textBox2->Text = L"X*X+(X-1)";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(6, 128);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(96, 13);
-			this->label5->TabIndex = 9;
-			this->label5->Text = L"Test Value Range:";
-			// 
-			// TestRangeBox1
-			// 
-			this->TestRangeBox1->Location = System::Drawing::Point(102, 125);
-			this->TestRangeBox1->Name = L"TestRangeBox1";
-			this->TestRangeBox1->Size = System::Drawing::Size(36, 20);
-			this->TestRangeBox1->TabIndex = 10;
-			this->TestRangeBox1->Text = L"0";
-			// 
-			// TestRangeBox2
-			// 
-			this->TestRangeBox2->Location = System::Drawing::Point(166, 125);
-			this->TestRangeBox2->Name = L"TestRangeBox2";
-			this->TestRangeBox2->Size = System::Drawing::Size(36, 20);
-			this->TestRangeBox2->TabIndex = 11;
-			this->TestRangeBox2->Text = L"1";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(144, 130);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(16, 13);
-			this->label6->TabIndex = 12;
-			this->label6->Text = L"to";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(54, 171);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(121, 21);
-			this->label7->TabIndex = 13;
-			this->label7->Text = L"Tree Generation";
-			this->label7->Click += gcnew System::EventHandler(this, &GUI::label7_Click);
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(12, 201);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(87, 13);
-			this->label8->TabIndex = 14;
-			this->label8->Text = L"Max Tree Depth:";
-			// 
-			// MaxTreeDepthTextBox
-			// 
-			this->MaxTreeDepthTextBox->Location = System::Drawing::Point(102, 198);
-			this->MaxTreeDepthTextBox->Name = L"MaxTreeDepthTextBox";
-			this->MaxTreeDepthTextBox->Size = System::Drawing::Size(100, 20);
-			this->MaxTreeDepthTextBox->TabIndex = 15;
-			this->MaxTreeDepthTextBox->Text = L"2";
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(6, 233);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(94, 13);
-			this->label9->TabIndex = 16;
-			this->label9->Text = L"Tree Gen Method:";
-			// 
-			// TreeGenComboBox
-			// 
-			this->TreeGenComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->TreeGenComboBox->FormattingEnabled = true;
-			this->TreeGenComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Full", L"Grow", L"Ramped Half & Half" });
-			this->TreeGenComboBox->Location = System::Drawing::Point(102, 233);
-			this->TreeGenComboBox->Name = L"TreeGenComboBox";
-			this->TreeGenComboBox->Size = System::Drawing::Size(131, 21);
-			this->TreeGenComboBox->TabIndex = 17;
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(62, 270);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(104, 21);
-			this->label10->TabIndex = 18;
-			this->label10->Text = L"Reproduction";
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(6, 302);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(93, 13);
-			this->label11->TabIndex = 19;
-			this->label11->Text = L"Selection Method:";
-			// 
-			// SelectionComboBox
-			// 
-			this->SelectionComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->SelectionComboBox->FormattingEnabled = true;
-			this->SelectionComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Proportionate", L"Tournament" });
-			this->SelectionComboBox->Location = System::Drawing::Point(102, 298);
-			this->SelectionComboBox->Name = L"SelectionComboBox";
-			this->SelectionComboBox->Size = System::Drawing::Size(131, 21);
-			this->SelectionComboBox->TabIndex = 20;
-			this->SelectionComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &GUI::comboBox2_SelectedIndexChanged);
-			// 
-			// label12
-			// 
-			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(2, 331);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(96, 13);
-			this->label12->TabIndex = 21;
-			this->label12->Text = L"Crossover Method:";
-			// 
-			// comboBox3
-			// 
-			this->comboBox3->Enabled = false;
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(102, 330);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(100, 21);
-			this->comboBox3->TabIndex = 22;
-			// 
-			// label13
-			// 
-			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(6, 361);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(90, 13);
-			this->label13->TabIndex = 23;
-			this->label13->Text = L"Mutation Method:";
-			// 
-			// comboBox4
-			// 
-			this->comboBox4->Enabled = false;
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Location = System::Drawing::Point(102, 358);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(100, 21);
-			this->comboBox4->TabIndex = 24;
-			// 
-			// label14
-			// 
-			this->label14->AutoSize = true;
-			this->label14->Location = System::Drawing::Point(10, 397);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(83, 13);
-			this->label14->TabIndex = 25;
-			this->label14->Text = L"Crossover Rate:";
-			// 
-			// CrossoverRateTextBox
-			// 
-			this->CrossoverRateTextBox->Location = System::Drawing::Point(101, 395);
-			this->CrossoverRateTextBox->Name = L"CrossoverRateTextBox";
-			this->CrossoverRateTextBox->Size = System::Drawing::Size(37, 20);
-			this->CrossoverRateTextBox->TabIndex = 26;
-			this->CrossoverRateTextBox->Text = L"95";
-			// 
-			// label15
-			// 
-			this->label15->AutoSize = true;
-			this->label15->Location = System::Drawing::Point(13, 426);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(77, 13);
-			this->label15->TabIndex = 27;
-			this->label15->Text = L"Mutation Rate:";
-			// 
-			// MutationRateTextbox
-			// 
-			this->MutationRateTextbox->Location = System::Drawing::Point(101, 423);
-			this->MutationRateTextbox->Name = L"MutationRateTextbox";
-			this->MutationRateTextbox->Size = System::Drawing::Size(37, 20);
-			this->MutationRateTextbox->TabIndex = 28;
-			this->MutationRateTextbox->Text = L"1";
-			// 
-			// label16
-			// 
-			this->label16->AutoSize = true;
-			this->label16->Location = System::Drawing::Point(141, 398);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(15, 13);
-			this->label16->TabIndex = 29;
-			this->label16->Text = L"%";
-			// 
-			// label17
-			// 
-			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(142, 426);
-			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(15, 13);
-			this->label17->TabIndex = 30;
-			this->label17->Text = L"%";
-			// 
-			// button1
-			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button1->Cursor = System::Windows::Forms::Cursors::Help;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button1->ForeColor = System::Drawing::Color::Black;
-			this->button1->Location = System::Drawing::Point(226, 45);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(24, 23);
-			this->button1->TabIndex = 31;
-			this->button1->Text = L"\?";
-			this->button1->UseMnemonic = false;
-			this->button1->UseVisualStyleBackColor = false;
-			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel1->Controls->Add(this->button11);
-			this->panel1->Controls->Add(this->button10);
-			this->panel1->Controls->Add(this->button9);
-			this->panel1->Controls->Add(this->button8);
-			this->panel1->Controls->Add(this->button7);
-			this->panel1->Controls->Add(this->button6);
-			this->panel1->Controls->Add(this->button5);
-			this->panel1->Controls->Add(this->button4);
-			this->panel1->Controls->Add(this->button3);
-			this->panel1->Controls->Add(this->button2);
-			this->panel1->Controls->Add(this->button1);
-			this->panel1->Controls->Add(this->label17);
-			this->panel1->Controls->Add(this->label16);
-			this->panel1->Controls->Add(this->MutationRateTextbox);
-			this->panel1->Controls->Add(this->label15);
-			this->panel1->Controls->Add(this->CrossoverRateTextBox);
-			this->panel1->Controls->Add(this->label14);
-			this->panel1->Controls->Add(this->comboBox4);
-			this->panel1->Controls->Add(this->label13);
-			this->panel1->Controls->Add(this->comboBox3);
-			this->panel1->Controls->Add(this->label12);
-			this->panel1->Controls->Add(this->SelectionComboBox);
-			this->panel1->Controls->Add(this->label11);
-			this->panel1->Controls->Add(this->label10);
-			this->panel1->Controls->Add(this->TreeGenComboBox);
-			this->panel1->Controls->Add(this->label9);
-			this->panel1->Controls->Add(this->MaxTreeDepthTextBox);
-			this->panel1->Controls->Add(this->label8);
-			this->panel1->Controls->Add(this->label7);
-			this->panel1->Controls->Add(this->label6);
-			this->panel1->Controls->Add(this->TestRangeBox2);
-			this->panel1->Controls->Add(this->TestRangeBox1);
-			this->panel1->Controls->Add(this->label5);
-			this->panel1->Controls->Add(this->textBox2);
-			this->panel1->Controls->Add(this->label4);
-			this->panel1->Controls->Add(this->NoOfGensTextBox);
-			this->panel1->Controls->Add(this->label3);
-			this->panel1->Controls->Add(this->TestText);
-			this->panel1->Controls->Add(this->StartButton);
-			this->panel1->Controls->Add(this->label2);
-			this->panel1->Controls->Add(this->popSizeTextBox);
-			this->panel1->Controls->Add(this->label1);
-			this->panel1->ForeColor = System::Drawing::Color::Black;
-			this->panel1->Location = System::Drawing::Point(-1, 0);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(319, 536);
-			this->panel1->TabIndex = 1;
-			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::panel1_Paint);
+			// pictureBox4
+			// 
+			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
+			this->pictureBox4->Location = System::Drawing::Point(80, 19);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(544, 125);
+			this->pictureBox4->TabIndex = 4;
+			this->pictureBox4->TabStop = false;
 			// 
 			// tabControl2
 			// 
@@ -994,6 +588,9 @@ private: System::Windows::Forms::Button^  button2;
 			// 
 			// tabPage6
 			// 
+			this->tabPage6->Controls->Add(this->pictureBox5);
+			this->tabPage6->Controls->Add(this->label35);
+			this->tabPage6->Controls->Add(this->label29);
 			this->tabPage6->Location = System::Drawing::Point(4, 22);
 			this->tabPage6->Name = L"tabPage6";
 			this->tabPage6->Padding = System::Windows::Forms::Padding(3);
@@ -1002,14 +599,32 @@ private: System::Windows::Forms::Button^  button2;
 			this->tabPage6->Text = L"Initialize Population";
 			this->tabPage6->UseVisualStyleBackColor = true;
 			// 
-			// pictureBox4
+			// pictureBox5
 			// 
-			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
-			this->pictureBox4->Location = System::Drawing::Point(80, 19);
-			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(544, 125);
-			this->pictureBox4->TabIndex = 4;
-			this->pictureBox4->TabStop = false;
+			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
+			this->pictureBox5->Location = System::Drawing::Point(248, 5);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(173, 157);
+			this->pictureBox5->TabIndex = 2;
+			this->pictureBox5->TabStop = false;
+			// 
+			// label35
+			// 
+			this->label35->AutoSize = true;
+			this->label35->Location = System::Drawing::Point(474, 18);
+			this->label35->Name = L"label35";
+			this->label35->Size = System::Drawing::Size(204, 91);
+			this->label35->TabIndex = 1;
+			this->label35->Text = resources->GetString(L"label35.Text");
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Location = System::Drawing::Point(6, 18);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(226, 104);
+			this->label29->TabIndex = 0;
+			this->label29->Text = resources->GetString(L"label29.Text");
 			// 
 			// tabPage7
 			// 
@@ -1048,165 +663,425 @@ private: System::Windows::Forms::Button^  button2;
 			this->tabPage10->Text = L"Mutation";
 			this->tabPage10->UseVisualStyleBackColor = true;
 			// 
-			// button2
+			// label26
 			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button2->Cursor = System::Windows::Forms::Cursors::Help;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button2->ForeColor = System::Drawing::Color::Black;
-			this->button2->Location = System::Drawing::Point(226, 71);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(24, 23);
-			this->button2->TabIndex = 32;
-			this->button2->Text = L"\?";
-			this->button2->UseMnemonic = false;
-			this->button2->UseVisualStyleBackColor = false;
+			this->label26->AutoSize = true;
+			this->label26->Location = System::Drawing::Point(272, 3);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(143, 13);
+			this->label26->TabIndex = 1;
+			this->label26->Text = L"Genetic Algorithm Flow Chart";
 			// 
-			// button3
+			// tabPage1
 			// 
-			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button3->Cursor = System::Windows::Forms::Cursors::Help;
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button3->ForeColor = System::Drawing::Color::Black;
-			this->button3->Location = System::Drawing::Point(226, 96);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(24, 23);
-			this->button3->TabIndex = 33;
-			this->button3->Text = L"\?";
-			this->button3->UseMnemonic = false;
-			this->button3->UseVisualStyleBackColor = false;
+			this->tabPage1->Controls->Add(this->label23);
+			this->tabPage1->Controls->Add(this->panel6);
+			this->tabPage1->Controls->Add(this->pictureBox3);
+			this->tabPage1->Location = System::Drawing::Point(4, 22);
+			this->tabPage1->Name = L"tabPage1";
+			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage1->Size = System::Drawing::Size(717, 337);
+			this->tabPage1->TabIndex = 0;
+			this->tabPage1->Text = L"Tree View";
+			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
-			// button4
+			// label23
 			// 
-			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button4->Cursor = System::Windows::Forms::Cursors::Help;
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button4->ForeColor = System::Drawing::Color::Black;
-			this->button4->Location = System::Drawing::Point(226, 125);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(24, 23);
-			this->button4->TabIndex = 34;
-			this->button4->Text = L"\?";
-			this->button4->UseMnemonic = false;
-			this->button4->UseVisualStyleBackColor = false;
+			this->label23->AutoSize = true;
+			this->label23->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label23->Location = System::Drawing::Point(303, 3);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(92, 15);
+			this->label23->TabIndex = 0;
+			this->label23->Text = L"Current Best Tree";
+			this->label23->Click += gcnew System::EventHandler(this, &GUI::label23_Click);
 			// 
-			// button5
+			// panel6
 			// 
-			this->button5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button5->Cursor = System::Windows::Forms::Cursors::Help;
-			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button5->ForeColor = System::Drawing::Color::Black;
-			this->button5->Location = System::Drawing::Point(226, 195);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(24, 23);
-			this->button5->TabIndex = 35;
-			this->button5->Text = L"\?";
-			this->button5->UseMnemonic = false;
-			this->button5->UseVisualStyleBackColor = false;
+			this->panel6->BackColor = System::Drawing::Color::Gainsboro;
+			this->panel6->Controls->Add(this->label34);
+			this->panel6->Controls->Add(this->BestFormulaTextBox);
+			this->panel6->Location = System::Drawing::Point(-4, 276);
+			this->panel6->Name = L"panel6";
+			this->panel6->Size = System::Drawing::Size(725, 61);
+			this->panel6->TabIndex = 6;
 			// 
-			// button6
+			// label34
 			// 
-			this->button6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button6->Cursor = System::Windows::Forms::Cursors::Help;
-			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button6->ForeColor = System::Drawing::Color::Black;
-			this->button6->Location = System::Drawing::Point(231, 232);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(24, 23);
-			this->button6->TabIndex = 36;
-			this->button6->Text = L"\?";
-			this->button6->UseMnemonic = false;
-			this->button6->UseVisualStyleBackColor = false;
+			this->label34->AutoSize = true;
+			this->label34->Location = System::Drawing::Point(307, 4);
+			this->label34->Name = L"label34";
+			this->label34->Size = System::Drawing::Size(105, 13);
+			this->label34->TabIndex = 7;
+			this->label34->Text = L"Current Best Formula";
 			// 
-			// button7
+			// BestFormulaTextBox
 			// 
-			this->button7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button7->Cursor = System::Windows::Forms::Cursors::Help;
-			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button7->ForeColor = System::Drawing::Color::Black;
-			this->button7->Location = System::Drawing::Point(232, 297);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(24, 23);
-			this->button7->TabIndex = 37;
-			this->button7->Text = L"\?";
-			this->button7->UseMnemonic = false;
-			this->button7->UseVisualStyleBackColor = false;
+			this->BestFormulaTextBox->Enabled = false;
+			this->BestFormulaTextBox->Location = System::Drawing::Point(238, 24);
+			this->BestFormulaTextBox->Name = L"BestFormulaTextBox";
+			this->BestFormulaTextBox->Size = System::Drawing::Size(231, 20);
+			this->BestFormulaTextBox->TabIndex = 10;
+			this->BestFormulaTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// button8
+			// pictureBox3
 			// 
-			this->button8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button8->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button8->Cursor = System::Windows::Forms::Cursors::Help;
-			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button8->ForeColor = System::Drawing::Color::Black;
-			this->button8->Location = System::Drawing::Point(226, 331);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(24, 23);
-			this->button8->TabIndex = 38;
-			this->button8->Text = L"\?";
-			this->button8->UseMnemonic = false;
-			this->button8->UseVisualStyleBackColor = false;
+			this->pictureBox3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->pictureBox3->Location = System::Drawing::Point(111, 9);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(486, 261);
+			this->pictureBox3->TabIndex = 3;
+			this->pictureBox3->TabStop = false;
 			// 
-			// button9
+			// label1
 			// 
-			this->button9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button9->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button9->Cursor = System::Windows::Forms::Cursors::Help;
-			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button9->ForeColor = System::Drawing::Color::Black;
-			this->button9->Location = System::Drawing::Point(226, 360);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(24, 23);
-			this->button9->TabIndex = 39;
-			this->button9->Text = L"\?";
-			this->button9->UseMnemonic = false;
-			this->button9->UseVisualStyleBackColor = false;
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(62, 12);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(100, 21);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Setup Values";
 			// 
-			// button10
+			// popSizeTextBox
 			// 
-			this->button10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button10->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button10->Cursor = System::Windows::Forms::Cursors::Help;
-			this->button10->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button10->ForeColor = System::Drawing::Color::Black;
-			this->button10->Location = System::Drawing::Point(226, 393);
-			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(24, 23);
-			this->button10->TabIndex = 40;
-			this->button10->Text = L"\?";
-			this->button10->UseMnemonic = false;
-			this->button10->UseVisualStyleBackColor = false;
+			this->popSizeTextBox->Location = System::Drawing::Point(102, 46);
+			this->popSizeTextBox->Name = L"popSizeTextBox";
+			this->popSizeTextBox->Size = System::Drawing::Size(100, 20);
+			this->popSizeTextBox->TabIndex = 1;
+			this->popSizeTextBox->Text = L"200";
+			this->toolTip2->SetToolTip(this->popSizeTextBox, L"The number of individuals \r\n in each generation");
 			// 
-			// button11
+			// label2
 			// 
-			this->button11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button11->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button11->Cursor = System::Windows::Forms::Cursors::Help;
-			this->button11->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->button11->ForeColor = System::Drawing::Color::Black;
-			this->button11->Location = System::Drawing::Point(226, 426);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(24, 23);
-			this->button11->TabIndex = 41;
-			this->button11->Text = L"\?";
-			this->button11->UseMnemonic = false;
-			this->button11->UseVisualStyleBackColor = false;
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(15, 49);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(83, 13);
+			this->label2->TabIndex = 2;
+			this->label2->Text = L"Population Size:";
+			// 
+			// StartButton
+			// 
+			this->StartButton->Location = System::Drawing::Point(169, 476);
+			this->StartButton->Name = L"StartButton";
+			this->StartButton->Size = System::Drawing::Size(75, 23);
+			this->StartButton->TabIndex = 3;
+			this->StartButton->Text = L"Start";
+			this->StartButton->UseVisualStyleBackColor = true;
+			this->StartButton->Click += gcnew System::EventHandler(this, &GUI::StartButton_Click);
+			// 
+			// TestText
+			// 
+			this->TestText->AutoSize = true;
+			this->TestText->Location = System::Drawing::Point(166, 453);
+			this->TestText->Name = L"TestText";
+			this->TestText->Size = System::Drawing::Size(0, 13);
+			this->TestText->TabIndex = 4;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(13, 75);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(87, 13);
+			this->label3->TabIndex = 5;
+			this->label3->Text = L"Max No of Gens:";
+			// 
+			// NoOfGensTextBox
+			// 
+			this->NoOfGensTextBox->Location = System::Drawing::Point(102, 72);
+			this->NoOfGensTextBox->Name = L"NoOfGensTextBox";
+			this->NoOfGensTextBox->Size = System::Drawing::Size(100, 20);
+			this->NoOfGensTextBox->TabIndex = 6;
+			this->NoOfGensTextBox->Text = L"500";
+			this->toolTip2->SetToolTip(this->NoOfGensTextBox, L"The maximum number of generations \r\nthat can be created before the run\r\nis ended");
+			this->NoOfGensTextBox->TextChanged += gcnew System::EventHandler(this, &GUI::textBox1_TextChanged);
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(17, 99);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(81, 13);
+			this->label4->TabIndex = 7;
+			this->label4->Text = L"Target Formula:";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(6, 128);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(96, 13);
+			this->label5->TabIndex = 9;
+			this->label5->Text = L"Test Value Range:";
+			// 
+			// TestRangeBox1
+			// 
+			this->TestRangeBox1->Location = System::Drawing::Point(102, 125);
+			this->TestRangeBox1->Name = L"TestRangeBox1";
+			this->TestRangeBox1->Size = System::Drawing::Size(36, 20);
+			this->TestRangeBox1->TabIndex = 10;
+			this->TestRangeBox1->Text = L"0";
+			this->toolTip2->SetToolTip(this->TestRangeBox1, resources->GetString(L"TestRangeBox1.ToolTip"));
+			// 
+			// TestRangeBox2
+			// 
+			this->TestRangeBox2->Location = System::Drawing::Point(166, 125);
+			this->TestRangeBox2->Name = L"TestRangeBox2";
+			this->TestRangeBox2->Size = System::Drawing::Size(36, 20);
+			this->TestRangeBox2->TabIndex = 11;
+			this->TestRangeBox2->Text = L"1";
+			this->toolTip2->SetToolTip(this->TestRangeBox2, resources->GetString(L"TestRangeBox2.ToolTip"));
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(144, 130);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(16, 13);
+			this->label6->TabIndex = 12;
+			this->label6->Text = L"to";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->Location = System::Drawing::Point(54, 171);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(121, 21);
+			this->label7->TabIndex = 13;
+			this->label7->Text = L"Tree Generation";
+			this->label7->Click += gcnew System::EventHandler(this, &GUI::label7_Click);
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(12, 201);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(87, 13);
+			this->label8->TabIndex = 14;
+			this->label8->Text = L"Max Tree Depth:";
+			// 
+			// MaxTreeDepthTextBox
+			// 
+			this->MaxTreeDepthTextBox->Location = System::Drawing::Point(102, 198);
+			this->MaxTreeDepthTextBox->Name = L"MaxTreeDepthTextBox";
+			this->MaxTreeDepthTextBox->Size = System::Drawing::Size(100, 20);
+			this->MaxTreeDepthTextBox->TabIndex = 15;
+			this->MaxTreeDepthTextBox->Text = L"2";
+			this->toolTip2->SetToolTip(this->MaxTreeDepthTextBox, L"The maximum level that the each binary expression\r\ntree will grow to when they ar"
+				L"e first created");
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(6, 233);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(94, 13);
+			this->label9->TabIndex = 16;
+			this->label9->Text = L"Tree Gen Method:";
+			// 
+			// TreeGenComboBox
+			// 
+			this->TreeGenComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->TreeGenComboBox->FormattingEnabled = true;
+			this->TreeGenComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Full", L"Grow", L"Ramped Half & Half" });
+			this->TreeGenComboBox->Location = System::Drawing::Point(102, 233);
+			this->TreeGenComboBox->Name = L"TreeGenComboBox";
+			this->TreeGenComboBox->Size = System::Drawing::Size(131, 21);
+			this->TreeGenComboBox->TabIndex = 17;
+			this->toolTip2->SetToolTip(this->TreeGenComboBox, L"The method the system will use to generate the binary \r\nexpression trees to popul"
+				L"ate the first generation");
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label10->Location = System::Drawing::Point(62, 270);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(104, 21);
+			this->label10->TabIndex = 18;
+			this->label10->Text = L"Reproduction";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(6, 302);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(93, 13);
+			this->label11->TabIndex = 19;
+			this->label11->Text = L"Selection Method:";
+			// 
+			// SelectionComboBox
+			// 
+			this->SelectionComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->SelectionComboBox->FormattingEnabled = true;
+			this->SelectionComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Proportionate", L"Tournament" });
+			this->SelectionComboBox->Location = System::Drawing::Point(102, 298);
+			this->SelectionComboBox->Name = L"SelectionComboBox";
+			this->SelectionComboBox->Size = System::Drawing::Size(131, 21);
+			this->SelectionComboBox->TabIndex = 20;
+			this->toolTip2->SetToolTip(this->SelectionComboBox, L"The method the system will use to select \r\nindividuals for reproduction");
+			this->SelectionComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &GUI::comboBox2_SelectedIndexChanged);
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(2, 331);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(96, 13);
+			this->label12->TabIndex = 21;
+			this->label12->Text = L"Crossover Method:";
+			// 
+			// comboBox3
+			// 
+			this->comboBox3->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Location = System::Drawing::Point(102, 330);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(100, 21);
+			this->comboBox3->TabIndex = 22;
+			this->toolTip2->SetToolTip(this->comboBox3, L"The method the system will use to create a new individual by \r\ncrossing over the "
+				L"features of two parent individuals");
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(6, 361);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(90, 13);
+			this->label13->TabIndex = 23;
+			this->label13->Text = L"Mutation Method:";
+			// 
+			// comboBox4
+			// 
+			this->comboBox4->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox4->FormattingEnabled = true;
+			this->comboBox4->Location = System::Drawing::Point(102, 358);
+			this->comboBox4->Name = L"comboBox4";
+			this->comboBox4->Size = System::Drawing::Size(100, 21);
+			this->comboBox4->TabIndex = 24;
+			this->toolTip2->SetToolTip(this->comboBox4, L"The method the system will use to create a new individual \r\nby randomly altering "
+				L"a parent individual");
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Location = System::Drawing::Point(10, 397);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(83, 13);
+			this->label14->TabIndex = 25;
+			this->label14->Text = L"Crossover Rate:";
+			// 
+			// CrossoverRateTextBox
+			// 
+			this->CrossoverRateTextBox->Location = System::Drawing::Point(101, 395);
+			this->CrossoverRateTextBox->Name = L"CrossoverRateTextBox";
+			this->CrossoverRateTextBox->Size = System::Drawing::Size(37, 20);
+			this->CrossoverRateTextBox->TabIndex = 26;
+			this->CrossoverRateTextBox->Text = L"95";
+			this->toolTip2->SetToolTip(this->CrossoverRateTextBox, L"The percentage of each new generation that \r\nwill be generated via crossover");
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Location = System::Drawing::Point(13, 426);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(77, 13);
+			this->label15->TabIndex = 27;
+			this->label15->Text = L"Mutation Rate:";
+			// 
+			// MutationRateTextbox
+			// 
+			this->MutationRateTextbox->Location = System::Drawing::Point(101, 423);
+			this->MutationRateTextbox->Name = L"MutationRateTextbox";
+			this->MutationRateTextbox->Size = System::Drawing::Size(37, 20);
+			this->MutationRateTextbox->TabIndex = 28;
+			this->MutationRateTextbox->Text = L"1";
+			this->toolTip2->SetToolTip(this->MutationRateTextbox, L"The percentage of each new generation that \r\nwill be generated via mutation");
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(141, 398);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(15, 13);
+			this->label16->TabIndex = 29;
+			this->label16->Text = L"%";
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Location = System::Drawing::Point(142, 426);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(15, 13);
+			this->label17->TabIndex = 30;
+			this->label17->Text = L"%";
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel1->Controls->Add(this->FormulaComboBox);
+			this->panel1->Controls->Add(this->label17);
+			this->panel1->Controls->Add(this->label16);
+			this->panel1->Controls->Add(this->MutationRateTextbox);
+			this->panel1->Controls->Add(this->label15);
+			this->panel1->Controls->Add(this->CrossoverRateTextBox);
+			this->panel1->Controls->Add(this->label14);
+			this->panel1->Controls->Add(this->comboBox4);
+			this->panel1->Controls->Add(this->label13);
+			this->panel1->Controls->Add(this->comboBox3);
+			this->panel1->Controls->Add(this->label12);
+			this->panel1->Controls->Add(this->SelectionComboBox);
+			this->panel1->Controls->Add(this->label11);
+			this->panel1->Controls->Add(this->label10);
+			this->panel1->Controls->Add(this->TreeGenComboBox);
+			this->panel1->Controls->Add(this->label9);
+			this->panel1->Controls->Add(this->MaxTreeDepthTextBox);
+			this->panel1->Controls->Add(this->label8);
+			this->panel1->Controls->Add(this->label7);
+			this->panel1->Controls->Add(this->label6);
+			this->panel1->Controls->Add(this->TestRangeBox2);
+			this->panel1->Controls->Add(this->TestRangeBox1);
+			this->panel1->Controls->Add(this->label5);
+			this->panel1->Controls->Add(this->label4);
+			this->panel1->Controls->Add(this->NoOfGensTextBox);
+			this->panel1->Controls->Add(this->label3);
+			this->panel1->Controls->Add(this->TestText);
+			this->panel1->Controls->Add(this->StartButton);
+			this->panel1->Controls->Add(this->label2);
+			this->panel1->Controls->Add(this->popSizeTextBox);
+			this->panel1->Controls->Add(this->label1);
+			this->panel1->ForeColor = System::Drawing::Color::Black;
+			this->panel1->Location = System::Drawing::Point(-1, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(319, 536);
+			this->panel1->TabIndex = 1;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::panel1_Paint);
+			// 
+			// FormulaComboBox
+			// 
+			this->FormulaComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->FormulaComboBox->FormattingEnabled = true;
+			this->FormulaComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"X*X+(X-1)", L"(X*X+(X-1))*2" });
+			this->FormulaComboBox->Location = System::Drawing::Point(100, 96);
+			this->FormulaComboBox->Name = L"FormulaComboBox";
+			this->FormulaComboBox->Size = System::Drawing::Size(131, 21);
+			this->FormulaComboBox->TabIndex = 42;
+			this->toolTip2->SetToolTip(this->FormulaComboBox, L"The formula that the genetic \r\nalgorithm will try to emulate");
+			// 
+			// toolTip2
+			// 
+			this->toolTip2->AutoPopDelay = 10000;
+			this->toolTip2->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->toolTip2->InitialDelay = 500;
+			this->toolTip2->IsBalloon = true;
+			this->toolTip2->ReshowDelay = 100;
 			// 
 			// GUI
 			// 
@@ -1224,11 +1099,6 @@ private: System::Windows::Forms::Button^  button2;
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
-			this->tabPage1->ResumeLayout(false);
-			this->tabPage1->PerformLayout();
-			this->panel6->ResumeLayout(false);
-			this->panel6->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
 			this->panel3->ResumeLayout(false);
@@ -1238,10 +1108,18 @@ private: System::Windows::Forms::Button^  button2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->tabPage4->ResumeLayout(false);
 			this->tabPage4->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+			this->tabControl2->ResumeLayout(false);
+			this->tabPage6->ResumeLayout(false);
+			this->tabPage6->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
+			this->tabPage1->ResumeLayout(false);
+			this->tabPage1->PerformLayout();
+			this->panel6->ResumeLayout(false);
+			this->panel6->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
-			this->tabControl2->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1249,6 +1127,7 @@ private: System::Windows::Forms::Button^  button2;
 	private: System::Void GUI_Load(System::Object^  sender, System::EventArgs^  e) {
 		TreeGenComboBox->SelectedIndex = 0;
 		SelectionComboBox->SelectedIndex = 0;
+		FormulaComboBox->SelectedIndex = 0;
 		pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::pictureBox1_Paint);
 		pictureBox2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::pictureBox1_Paint);
 	}
@@ -1299,14 +1178,32 @@ private: System::Windows::Forms::Button^  button2;
 			g->DrawString(roundedFloat.ToString(), gcnew System::Drawing::Font("Arial", 10), System::Drawing::Brushes::Black, point3);
 			
 		}
-		
+	
+
+
 		//Calculates the results for each test value
 		vector<float> TargetValues(Diff * 10);
-		for (int i = 0; i < Diff * 10; i++) {
-			float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
-			result = roundf(result * 100) / 100;
-			TargetValues[i] = result;
+		if (FormulaComboBox->SelectedIndex == 0)
+		{
+
+			for (int i = 0; i < Diff * 10; i++) {
+				float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+				result = roundf(result * 100) / 100;
+				TargetValues[i] = result;
+			}
 		}
+		if (FormulaComboBox->SelectedIndex == 1)
+		{
+
+			for (int i = 0; i < Diff * 10; i++) {
+				float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+				result = result * 2;
+				result = roundf(result * 100) / 100;				
+				TargetValues[i] = result;
+			}
+		}
+
+
 		//Gets the lowest and highest target values
 		int LowestIndex = -1;
 		int HighestIndex = -1;
@@ -1484,11 +1381,10 @@ private: System::Windows::Forms::Button^  button2;
 	int CurrentIndex2;
 	int CurrentLevel;
 	int NumOfNodes;
-
 	int MaxLevel = 5;
-
 	array<Point>^ NodesPoints;
-
+	bool ToolTipShown = false;
+	int CurrentToolip = 0;
 
 
 	//COUNT NODES BENEATH EACH LEAF BEFORE POSITIONING ITS CHILDREN, BASE POS OFF NUM OF NODE BENEATH
@@ -1539,9 +1435,13 @@ private: System::Windows::Forms::Button^  button2;
 	void UpdateGraph6(Object^, System::Windows::Forms::PaintEventArgs^ e) {
 		Graphics^ g = e->Graphics;
 		for (int i = 0; i < NumOfNodes; i++) {
-			g->DrawString(Nodes[i], gcnew System::Drawing::Font("Arial", 20), System::Drawing::Brushes::Black, NodesPoints[i]);
-			Pen^ NewPen = gcnew Pen(Color::Black, 2);
-			g->DrawEllipse(NewPen, NodesPoints[i].X-2, NodesPoints[i].Y, 36, 36);
+			if (NodesPoints[i].X > 0) {
+
+
+				g->DrawString(Nodes[i], gcnew System::Drawing::Font("Arial", 20), System::Drawing::Brushes::Black, NodesPoints[i]);
+				Pen^ NewPen = gcnew Pen(Color::Black, 2);
+				g->DrawEllipse(NewPen, NodesPoints[i].X - 2, NodesPoints[i].Y, 36, 36);
+			}
 		}
 		
 	}
@@ -1556,9 +1456,9 @@ private: System::Windows::Forms::Button^  button2;
 		CurrentLevel = 0;
 
 
-		string TempArray[200] = {};
-		Nodes = gcnew array<String^>(200);
-		NodesPoints = gcnew array<Point>(200);
+		string TempArray[300] = {};
+		Nodes = gcnew array<String^>(300);
+		NodesPoints = gcnew array<Point>(300);
 		pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph1);
 		pictureBox1->Refresh();		
 		pictureBox2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph3);
@@ -1595,10 +1495,24 @@ private: System::Windows::Forms::Button^  button2;
 		}	
 		//Calculates the results for each test value
 		vector<float> TargetValues(Diff * 10);
-		for (int i = 0; i < Diff * 10; i++) {
-			float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
-			result = roundf(result * 100) / 100;
-			TargetValues[i] = result;
+		if (FormulaComboBox->SelectedIndex == 0)
+		{
+			
+			for (int i = 0; i < Diff * 10; i++) {
+				float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+				result = roundf(result * 100) / 100;
+				TargetValues[i] = result;
+			}
+		}
+		if (FormulaComboBox->SelectedIndex == 1)
+		{
+
+			for (int i = 0; i < Diff * 10; i++) {
+				float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+				result = result * 2;
+				result = roundf(result * 100) / 100;		
+				TargetValues[i] = result;
+			}
 		}
 		//Gets the lowest and highest target values
 		int LowestIndex = -1;
@@ -1620,7 +1534,7 @@ private: System::Windows::Forms::Button^  button2;
 
 
 
-		Population Pop(MaxPopSize, MaxTreeDepth, CrossoverRate, MutationRate,ChosenTreeGenMethod, ChosenSelectionMethod);
+		Population Pop(MaxPopSize, MaxTreeDepth, CrossoverRate, MutationRate,ChosenTreeGenMethod, ChosenSelectionMethod, FormulaComboBox->SelectedIndex, TestRange1Value, TestRange2Value);
 		Pop.Generate();	
 		bool SolutionFound = false;
 		for (int i = 0; i < MaxNoOfGens; i++)
@@ -1777,6 +1691,14 @@ private: System::Void label30_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void label23_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void tabPage4_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	
+}
+private: System::Void toolTip2_Popup(System::Object^  sender, System::Windows::Forms::PopupEventArgs^  e) {
+}
+private: System::Void toolTip2_Popup_1(System::Object^  sender, System::Windows::Forms::PopupEventArgs^  e) {
 }
 };
 }

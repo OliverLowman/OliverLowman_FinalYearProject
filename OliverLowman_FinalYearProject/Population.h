@@ -12,7 +12,7 @@ using namespace System::Windows::Forms;
 class Population {
 public:
 	//Constructor 
-	Population(int, int,float, float,int, int);
+	Population(int, int,float, float,int, int, int, int, int);
 	
 	//Destructor
 	~Population();
@@ -72,6 +72,9 @@ private:
 
 	//The percent of the next generation that will be generated via reproduction
 	float ReproductionRate;
+
+	//The chosen target formula
+	int ChosenTargetFormula;
 	
 	float LowestDifference;
 	float AverageDifference;
