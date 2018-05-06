@@ -143,6 +143,62 @@ private: System::Windows::Forms::PictureBox^  pictureBox5;
 private: System::Windows::Forms::Label^  label35;
 private: System::Windows::Forms::ComboBox^  FormulaComboBox;
 private: System::Windows::Forms::ToolTip^  toolTip2;
+private: System::Windows::Forms::Label^  label37;
+private: System::Windows::Forms::Label^  label38;
+private: System::Windows::Forms::Label^  label36;
+
+
+
+private: System::Windows::Forms::Label^  label40;
+private: System::Windows::Forms::Label^  label39;
+private: System::Windows::Forms::Label^  label42;
+private: System::Windows::Forms::Label^  label41;
+
+private: System::Windows::Forms::Label^  label47;
+private: System::Windows::Forms::Label^  label46;
+private: System::Windows::Forms::Label^  label44;
+private: System::Windows::Forms::Label^  label45;
+private: System::Windows::Forms::PictureBox^  pictureBox6;
+private: System::Windows::Forms::Panel^  panel7;
+private: System::Windows::Forms::Panel^  panel9;
+private: System::Windows::Forms::Panel^  panel8;
+private: System::Windows::Forms::Label^  label51;
+private: System::Windows::Forms::Panel^  panel10;
+private: System::Windows::Forms::Label^  label50;
+private: System::Windows::Forms::Label^  label48;
+private: System::Windows::Forms::Label^  label49;
+private: System::Windows::Forms::Label^  label54;
+private: System::Windows::Forms::Label^  label53;
+private: System::Windows::Forms::Label^  label52;
+private: System::Windows::Forms::Label^  label55;
+private: System::Windows::Forms::Label^  label57;
+private: System::Windows::Forms::Label^  label56;
+private: System::Windows::Forms::Label^  label59;
+private: System::Windows::Forms::Label^  label58;
+private: System::Windows::Forms::Label^  CrossoverRateWarning;
+
+private: System::Windows::Forms::Label^  TestRangeWarning;
+
+private: System::Windows::Forms::Label^  NoOfGensWarning;
+
+private: System::Windows::Forms::Label^  PopSizeWarning;
+private: System::Windows::Forms::Label^  Over100Warning;
+
+
+private: System::Windows::Forms::Label^  MutationRateWarning;
+
+private: System::Windows::Forms::Label^  label43;
+private: System::Windows::Forms::Label^  label66;
+private: System::Windows::Forms::Panel^  panel15;
+private: System::Windows::Forms::Panel^  panel13;
+private: System::Windows::Forms::Panel^  panel14;
+private: System::Windows::Forms::Label^  label67;
+private: System::Windows::Forms::Panel^  panel12;
+private: System::Windows::Forms::Panel^  panel11;
+private: System::Windows::Forms::Label^  MaxTreeWarning;
+
+
+
 
 
 
@@ -185,6 +241,55 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->LowestDiffTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
+			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
+			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
+			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
+			this->panel15 = (gcnew System::Windows::Forms::Panel());
+			this->panel13 = (gcnew System::Windows::Forms::Panel());
+			this->panel14 = (gcnew System::Windows::Forms::Panel());
+			this->label67 = (gcnew System::Windows::Forms::Label());
+			this->label43 = (gcnew System::Windows::Forms::Label());
+			this->label66 = (gcnew System::Windows::Forms::Label());
+			this->label59 = (gcnew System::Windows::Forms::Label());
+			this->label58 = (gcnew System::Windows::Forms::Label());
+			this->label37 = (gcnew System::Windows::Forms::Label());
+			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
+			this->panel9 = (gcnew System::Windows::Forms::Panel());
+			this->label35 = (gcnew System::Windows::Forms::Label());
+			this->label40 = (gcnew System::Windows::Forms::Label());
+			this->label39 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
+			this->panel8 = (gcnew System::Windows::Forms::Panel());
+			this->label36 = (gcnew System::Windows::Forms::Label());
+			this->label42 = (gcnew System::Windows::Forms::Label());
+			this->label41 = (gcnew System::Windows::Forms::Label());
+			this->label38 = (gcnew System::Windows::Forms::Label());
+			this->tabPage8 = (gcnew System::Windows::Forms::TabPage());
+			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->label46 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
+			this->label47 = (gcnew System::Windows::Forms::Label());
+			this->label44 = (gcnew System::Windows::Forms::Label());
+			this->label45 = (gcnew System::Windows::Forms::Label());
+			this->tabPage9 = (gcnew System::Windows::Forms::TabPage());
+			this->label51 = (gcnew System::Windows::Forms::Label());
+			this->panel10 = (gcnew System::Windows::Forms::Panel());
+			this->label50 = (gcnew System::Windows::Forms::Label());
+			this->label48 = (gcnew System::Windows::Forms::Label());
+			this->label49 = (gcnew System::Windows::Forms::Label());
+			this->tabPage10 = (gcnew System::Windows::Forms::TabPage());
+			this->panel12 = (gcnew System::Windows::Forms::Panel());
+			this->panel11 = (gcnew System::Windows::Forms::Panel());
+			this->label57 = (gcnew System::Windows::Forms::Label());
+			this->label56 = (gcnew System::Windows::Forms::Label());
+			this->label55 = (gcnew System::Windows::Forms::Label());
+			this->label54 = (gcnew System::Windows::Forms::Label());
+			this->label53 = (gcnew System::Windows::Forms::Label());
+			this->label52 = (gcnew System::Windows::Forms::Label());
+			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->label31 = (gcnew System::Windows::Forms::Label());
@@ -200,19 +305,6 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
-			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
-			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
-			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
-			this->label35 = (gcnew System::Windows::Forms::Label());
-			this->label29 = (gcnew System::Windows::Forms::Label());
-			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage8 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage9 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage10 = (gcnew System::Windows::Forms::TabPage());
-			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
@@ -250,20 +342,34 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->MaxTreeWarning = (gcnew System::Windows::Forms::Label());
+			this->Over100Warning = (gcnew System::Windows::Forms::Label());
+			this->MutationRateWarning = (gcnew System::Windows::Forms::Label());
+			this->CrossoverRateWarning = (gcnew System::Windows::Forms::Label());
+			this->TestRangeWarning = (gcnew System::Windows::Forms::Label());
+			this->NoOfGensWarning = (gcnew System::Windows::Forms::Label());
+			this->PopSizeWarning = (gcnew System::Windows::Forms::Label());
 			this->FormulaComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->toolTip2 = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->panel2->SuspendLayout();
 			this->tabControl1->SuspendLayout();
+			this->tabPage4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
+			this->tabControl2->SuspendLayout();
+			this->tabPage5->SuspendLayout();
+			this->panel13->SuspendLayout();
+			this->tabPage6->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
+			this->tabPage7->SuspendLayout();
+			this->tabPage8->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
+			this->tabPage9->SuspendLayout();
+			this->tabPage10->SuspendLayout();
 			this->tabPage2->SuspendLayout();
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->tabPage3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
-			this->tabPage4->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
-			this->tabControl2->SuspendLayout();
-			this->tabPage6->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->tabPage1->SuspendLayout();
 			this->panel6->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -378,15 +484,544 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			// tabControl1
 			// 
+			this->tabControl1->Controls->Add(this->tabPage4);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
-			this->tabControl1->Controls->Add(this->tabPage4);
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Location = System::Drawing::Point(256, 0);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(725, 363);
 			this->tabControl1->TabIndex = 3;
+			// 
+			// tabPage4
+			// 
+			this->tabPage4->Controls->Add(this->pictureBox4);
+			this->tabPage4->Controls->Add(this->tabControl2);
+			this->tabPage4->Controls->Add(this->label26);
+			this->tabPage4->Location = System::Drawing::Point(4, 22);
+			this->tabPage4->Name = L"tabPage4";
+			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage4->Size = System::Drawing::Size(717, 337);
+			this->tabPage4->TabIndex = 3;
+			this->tabPage4->Text = L"Info";
+			this->tabPage4->UseVisualStyleBackColor = true;
+			this->tabPage4->Click += gcnew System::EventHandler(this, &GUI::tabPage4_Click);
+			// 
+			// pictureBox4
+			// 
+			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
+			this->pictureBox4->Location = System::Drawing::Point(80, 19);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(544, 125);
+			this->pictureBox4->TabIndex = 4;
+			this->pictureBox4->TabStop = false;
+			// 
+			// tabControl2
+			// 
+			this->tabControl2->Controls->Add(this->tabPage5);
+			this->tabControl2->Controls->Add(this->tabPage6);
+			this->tabControl2->Controls->Add(this->tabPage7);
+			this->tabControl2->Controls->Add(this->tabPage8);
+			this->tabControl2->Controls->Add(this->tabPage9);
+			this->tabControl2->Controls->Add(this->tabPage10);
+			this->tabControl2->Location = System::Drawing::Point(0, 150);
+			this->tabControl2->Name = L"tabControl2";
+			this->tabControl2->SelectedIndex = 0;
+			this->tabControl2->Size = System::Drawing::Size(721, 191);
+			this->tabControl2->TabIndex = 3;
+			// 
+			// tabPage5
+			// 
+			this->tabPage5->Controls->Add(this->panel15);
+			this->tabPage5->Controls->Add(this->panel13);
+			this->tabPage5->Controls->Add(this->label67);
+			this->tabPage5->Controls->Add(this->label43);
+			this->tabPage5->Controls->Add(this->label66);
+			this->tabPage5->Controls->Add(this->label59);
+			this->tabPage5->Controls->Add(this->label58);
+			this->tabPage5->Controls->Add(this->label37);
+			this->tabPage5->Location = System::Drawing::Point(4, 22);
+			this->tabPage5->Name = L"tabPage5";
+			this->tabPage5->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage5->Size = System::Drawing::Size(713, 165);
+			this->tabPage5->TabIndex = 0;
+			this->tabPage5->Text = L"Instructions";
+			this->tabPage5->UseVisualStyleBackColor = true;
+			// 
+			// panel15
+			// 
+			this->panel15->BackColor = System::Drawing::Color::Black;
+			this->panel15->Location = System::Drawing::Point(550, -2);
+			this->panel15->Name = L"panel15";
+			this->panel15->Size = System::Drawing::Size(2, 168);
+			this->panel15->TabIndex = 15;
+			// 
+			// panel13
+			// 
+			this->panel13->BackColor = System::Drawing::Color::Black;
+			this->panel13->Controls->Add(this->panel14);
+			this->panel13->Location = System::Drawing::Point(247, -2);
+			this->panel13->Name = L"panel13";
+			this->panel13->Size = System::Drawing::Size(2, 168);
+			this->panel13->TabIndex = 14;
+			// 
+			// panel14
+			// 
+			this->panel14->BackColor = System::Drawing::Color::Black;
+			this->panel14->Location = System::Drawing::Point(10, 0);
+			this->panel14->Name = L"panel14";
+			this->panel14->Size = System::Drawing::Size(2, 168);
+			this->panel14->TabIndex = 13;
+			// 
+			// label67
+			// 
+			this->label67->AutoSize = true;
+			this->label67->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label67->Location = System::Drawing::Point(602, 3);
+			this->label67->Name = L"label67";
+			this->label67->Size = System::Drawing::Size(70, 16);
+			this->label67->TabIndex = 13;
+			this->label67->Text = L"Glossary";
+			// 
+			// label43
+			// 
+			this->label43->AutoSize = true;
+			this->label43->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label43->Location = System::Drawing::Point(349, 0);
+			this->label43->Name = L"label43";
+			this->label43->Size = System::Drawing::Size(53, 16);
+			this->label43->TabIndex = 12;
+			this->label43->Text = L"Pages";
+			// 
+			// label66
+			// 
+			this->label66->AutoSize = true;
+			this->label66->Location = System::Drawing::Point(251, 16);
+			this->label66->Name = L"label66";
+			this->label66->Size = System::Drawing::Size(303, 143);
+			this->label66->TabIndex = 11;
+			this->label66->Text = resources->GetString(L"label66.Text");
+			// 
+			// label59
+			// 
+			this->label59->AutoSize = true;
+			this->label59->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label59->Location = System::Drawing::Point(73, 4);
+			this->label59->Name = L"label59";
+			this->label59->Size = System::Drawing::Size(86, 16);
+			this->label59->TabIndex = 10;
+			this->label59->Text = L"User Guide";
+			// 
+			// label58
+			// 
+			this->label58->AutoSize = true;
+			this->label58->Location = System::Drawing::Point(6, 21);
+			this->label58->Name = L"label58";
+			this->label58->Size = System::Drawing::Size(243, 130);
+			this->label58->TabIndex = 3;
+			this->label58->Text = resources->GetString(L"label58.Text");
+			this->label58->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->label58->Click += gcnew System::EventHandler(this, &GUI::label58_Click);
+			// 
+			// label37
+			// 
+			this->label37->AutoSize = true;
+			this->label37->Location = System::Drawing::Point(551, 19);
+			this->label37->Name = L"label37";
+			this->label37->Size = System::Drawing::Size(163, 143);
+			this->label37->TabIndex = 1;
+			this->label37->Text = L"Inividual: This refers to a single\r\nmembe of the algorithm that is\r\nbeing evolove"
+				L"d and evaluated\r\n\r\nPopulation: The current group\r\nof individuals\r\n\r\nGeneration: "
+				L"A specific population\r\niteration.\r\n\r\n\r\n";
+			// 
+			// tabPage6
+			// 
+			this->tabPage6->Controls->Add(this->panel9);
+			this->tabPage6->Controls->Add(this->label35);
+			this->tabPage6->Controls->Add(this->label40);
+			this->tabPage6->Controls->Add(this->label39);
+			this->tabPage6->Controls->Add(this->pictureBox5);
+			this->tabPage6->Controls->Add(this->label29);
+			this->tabPage6->Location = System::Drawing::Point(4, 22);
+			this->tabPage6->Name = L"tabPage6";
+			this->tabPage6->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage6->Size = System::Drawing::Size(713, 165);
+			this->tabPage6->TabIndex = 1;
+			this->tabPage6->Text = L"Initialize Population";
+			this->tabPage6->UseVisualStyleBackColor = true;
+			// 
+			// panel9
+			// 
+			this->panel9->BackColor = System::Drawing::Color::Black;
+			this->panel9->Location = System::Drawing::Point(404, -2);
+			this->panel9->Name = L"panel9";
+			this->panel9->Size = System::Drawing::Size(2, 168);
+			this->panel9->TabIndex = 13;
+			// 
+			// label35
+			// 
+			this->label35->AutoSize = true;
+			this->label35->Location = System::Drawing::Point(425, 21);
+			this->label35->Name = L"label35";
+			this->label35->Size = System::Drawing::Size(293, 143);
+			this->label35->TabIndex = 1;
+			this->label35->Text = resources->GetString(L"label35.Text");
+			this->label35->Click += gcnew System::EventHandler(this, &GUI::label35_Click);
+			// 
+			// label40
+			// 
+			this->label40->AutoSize = true;
+			this->label40->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label40->Location = System::Drawing::Point(480, 5);
+			this->label40->Name = L"label40";
+			this->label40->Size = System::Drawing::Size(184, 32);
+			this->label40->TabIndex = 6;
+			this->label40->Text = L"Tree Generation Methods\r\n\r\n";
+			// 
+			// label39
+			// 
+			this->label39->AutoSize = true;
+			this->label39->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label39->Location = System::Drawing::Point(75, 6);
+			this->label39->Name = L"label39";
+			this->label39->Size = System::Drawing::Size(81, 16);
+			this->label39->TabIndex = 5;
+			this->label39->Text = L"Initilization\r\n";
+			// 
+			// pictureBox5
+			// 
+			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
+			this->pictureBox5->Location = System::Drawing::Point(235, 5);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(173, 157);
+			this->pictureBox5->TabIndex = 2;
+			this->pictureBox5->TabStop = false;
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Location = System::Drawing::Point(6, 21);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(226, 104);
+			this->label29->TabIndex = 0;
+			this->label29->Text = resources->GetString(L"label29.Text");
+			this->label29->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->label29->Click += gcnew System::EventHandler(this, &GUI::label29_Click);
+			// 
+			// tabPage7
+			// 
+			this->tabPage7->Controls->Add(this->panel8);
+			this->tabPage7->Controls->Add(this->label36);
+			this->tabPage7->Controls->Add(this->label42);
+			this->tabPage7->Controls->Add(this->label41);
+			this->tabPage7->Controls->Add(this->label38);
+			this->tabPage7->Location = System::Drawing::Point(4, 22);
+			this->tabPage7->Name = L"tabPage7";
+			this->tabPage7->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage7->Size = System::Drawing::Size(713, 165);
+			this->tabPage7->TabIndex = 2;
+			this->tabPage7->Text = L"Evaluate Population";
+			this->tabPage7->UseVisualStyleBackColor = true;
+			// 
+			// panel8
+			// 
+			this->panel8->BackColor = System::Drawing::Color::Black;
+			this->panel8->Location = System::Drawing::Point(212, 1);
+			this->panel8->Name = L"panel8";
+			this->panel8->Size = System::Drawing::Size(2, 168);
+			this->panel8->TabIndex = 12;
+			// 
+			// label36
+			// 
+			this->label36->AutoSize = true;
+			this->label36->Location = System::Drawing::Point(3, 31);
+			this->label36->Name = L"label36";
+			this->label36->Size = System::Drawing::Size(208, 91);
+			this->label36->TabIndex = 1;
+			this->label36->Text = resources->GetString(L"label36.Text");
+			this->label36->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			// 
+			// label42
+			// 
+			this->label42->AutoSize = true;
+			this->label42->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label42->Location = System::Drawing::Point(377, 5);
+			this->label42->Name = L"label42";
+			this->label42->Size = System::Drawing::Size(173, 16);
+			this->label42->TabIndex = 7;
+			this->label42->Text = L"Specific Implementation\r\n";
+			// 
+			// label41
+			// 
+			this->label41->AutoSize = true;
+			this->label41->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label41->Location = System::Drawing::Point(66, 6);
+			this->label41->Name = L"label41";
+			this->label41->Size = System::Drawing::Size(81, 32);
+			this->label41->TabIndex = 6;
+			this->label41->Text = L"Evaluation\r\n\r\n";
+			// 
+			// label38
+			// 
+			this->label38->AutoSize = true;
+			this->label38->Location = System::Drawing::Point(224, 28);
+			this->label38->Name = L"label38";
+			this->label38->Size = System::Drawing::Size(483, 130);
+			this->label38->TabIndex = 2;
+			this->label38->Text = resources->GetString(L"label38.Text");
+			this->label38->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->label38->Click += gcnew System::EventHandler(this, &GUI::label38_Click);
+			// 
+			// tabPage8
+			// 
+			this->tabPage8->Controls->Add(this->panel7);
+			this->tabPage8->Controls->Add(this->label46);
+			this->tabPage8->Controls->Add(this->pictureBox6);
+			this->tabPage8->Controls->Add(this->label47);
+			this->tabPage8->Controls->Add(this->label44);
+			this->tabPage8->Controls->Add(this->label45);
+			this->tabPage8->Location = System::Drawing::Point(4, 22);
+			this->tabPage8->Name = L"tabPage8";
+			this->tabPage8->Size = System::Drawing::Size(713, 165);
+			this->tabPage8->TabIndex = 3;
+			this->tabPage8->Text = L"Selection";
+			this->tabPage8->UseVisualStyleBackColor = true;
+			// 
+			// panel7
+			// 
+			this->panel7->BackColor = System::Drawing::Color::Black;
+			this->panel7->Location = System::Drawing::Point(212, 0);
+			this->panel7->Name = L"panel7";
+			this->panel7->Size = System::Drawing::Size(2, 168);
+			this->panel7->TabIndex = 11;
+			// 
+			// label46
+			// 
+			this->label46->AutoSize = true;
+			this->label46->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label46->Location = System::Drawing::Point(384, 5);
+			this->label46->Name = L"label46";
+			this->label46->Size = System::Drawing::Size(136, 16);
+			this->label46->TabIndex = 8;
+			this->label46->Text = L"Selection Methods";
+			// 
+			// pictureBox6
+			// 
+			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
+			this->pictureBox6->Location = System::Drawing::Point(469, 2);
+			this->pictureBox6->Name = L"pictureBox6";
+			this->pictureBox6->Size = System::Drawing::Size(240, 159);
+			this->pictureBox6->TabIndex = 10;
+			this->pictureBox6->TabStop = false;
+			this->pictureBox6->Click += gcnew System::EventHandler(this, &GUI::pictureBox6_Click);
+			// 
+			// label47
+			// 
+			this->label47->AutoSize = true;
+			this->label47->Location = System::Drawing::Point(216, 22);
+			this->label47->Name = L"label47";
+			this->label47->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->label47->Size = System::Drawing::Size(256, 195);
+			this->label47->TabIndex = 9;
+			this->label47->Text = resources->GetString(L"label47.Text");
+			// 
+			// label44
+			// 
+			this->label44->AutoSize = true;
+			this->label44->Location = System::Drawing::Point(0, 24);
+			this->label44->Name = L"label44";
+			this->label44->Size = System::Drawing::Size(214, 143);
+			this->label44->TabIndex = 2;
+			this->label44->Text = resources->GetString(L"label44.Text");
+			this->label44->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label45
+			// 
+			this->label45->AutoSize = true;
+			this->label45->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label45->Location = System::Drawing::Point(70, 5);
+			this->label45->Name = L"label45";
+			this->label45->Size = System::Drawing::Size(73, 32);
+			this->label45->TabIndex = 7;
+			this->label45->Text = L"Selection\r\n\r\n";
+			// 
+			// tabPage9
+			// 
+			this->tabPage9->Controls->Add(this->label51);
+			this->tabPage9->Controls->Add(this->panel10);
+			this->tabPage9->Controls->Add(this->label50);
+			this->tabPage9->Controls->Add(this->label48);
+			this->tabPage9->Controls->Add(this->label49);
+			this->tabPage9->Location = System::Drawing::Point(4, 22);
+			this->tabPage9->Name = L"tabPage9";
+			this->tabPage9->Size = System::Drawing::Size(713, 165);
+			this->tabPage9->TabIndex = 4;
+			this->tabPage9->Text = L"Crossover";
+			this->tabPage9->UseVisualStyleBackColor = true;
+			// 
+			// label51
+			// 
+			this->label51->AutoSize = true;
+			this->label51->Location = System::Drawing::Point(252, 25);
+			this->label51->Name = L"label51";
+			this->label51->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->label51->Size = System::Drawing::Size(450, 169);
+			this->label51->TabIndex = 13;
+			this->label51->Text = resources->GetString(L"label51.Text");
+			// 
+			// panel10
+			// 
+			this->panel10->BackColor = System::Drawing::Color::Black;
+			this->panel10->Location = System::Drawing::Point(239, -2);
+			this->panel10->Name = L"panel10";
+			this->panel10->Size = System::Drawing::Size(2, 168);
+			this->panel10->TabIndex = 12;
+			// 
+			// label50
+			// 
+			this->label50->AutoSize = true;
+			this->label50->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label50->Location = System::Drawing::Point(398, 3);
+			this->label50->Name = L"label50";
+			this->label50->Size = System::Drawing::Size(142, 16);
+			this->label50->TabIndex = 10;
+			this->label50->Text = L"Crossover Methods";
+			// 
+			// label48
+			// 
+			this->label48->AutoSize = true;
+			this->label48->Location = System::Drawing::Point(11, 23);
+			this->label48->Name = L"label48";
+			this->label48->Size = System::Drawing::Size(228, 143);
+			this->label48->TabIndex = 8;
+			this->label48->Text = resources->GetString(L"label48.Text");
+			this->label48->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			// 
+			// label49
+			// 
+			this->label49->AutoSize = true;
+			this->label49->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label49->Location = System::Drawing::Point(80, 3);
+			this->label49->Name = L"label49";
+			this->label49->Size = System::Drawing::Size(79, 16);
+			this->label49->TabIndex = 9;
+			this->label49->Text = L"Crossover";
+			// 
+			// tabPage10
+			// 
+			this->tabPage10->Controls->Add(this->panel12);
+			this->tabPage10->Controls->Add(this->panel11);
+			this->tabPage10->Controls->Add(this->label57);
+			this->tabPage10->Controls->Add(this->label56);
+			this->tabPage10->Controls->Add(this->label55);
+			this->tabPage10->Controls->Add(this->label54);
+			this->tabPage10->Controls->Add(this->label53);
+			this->tabPage10->Controls->Add(this->label52);
+			this->tabPage10->Location = System::Drawing::Point(4, 22);
+			this->tabPage10->Name = L"tabPage10";
+			this->tabPage10->Size = System::Drawing::Size(713, 165);
+			this->tabPage10->TabIndex = 5;
+			this->tabPage10->Text = L"Mutation";
+			this->tabPage10->UseVisualStyleBackColor = true;
+			// 
+			// panel12
+			// 
+			this->panel12->BackColor = System::Drawing::Color::Black;
+			this->panel12->Location = System::Drawing::Point(476, -2);
+			this->panel12->Name = L"panel12";
+			this->panel12->Size = System::Drawing::Size(2, 168);
+			this->panel12->TabIndex = 17;
+			// 
+			// panel11
+			// 
+			this->panel11->BackColor = System::Drawing::Color::Black;
+			this->panel11->Location = System::Drawing::Point(233, -2);
+			this->panel11->Name = L"panel11";
+			this->panel11->Size = System::Drawing::Size(2, 168);
+			this->panel11->TabIndex = 16;
+			// 
+			// label57
+			// 
+			this->label57->AutoSize = true;
+			this->label57->Location = System::Drawing::Point(485, 21);
+			this->label57->Name = L"label57";
+			this->label57->Size = System::Drawing::Size(217, 130);
+			this->label57->TabIndex = 15;
+			this->label57->Text = resources->GetString(L"label57.Text");
+			this->label57->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label56
+			// 
+			this->label56->AutoSize = true;
+			this->label56->Location = System::Drawing::Point(250, 20);
+			this->label56->Name = L"label56";
+			this->label56->Size = System::Drawing::Size(220, 182);
+			this->label56->TabIndex = 14;
+			this->label56->Text = resources->GetString(L"label56.Text");
+			// 
+			// label55
+			// 
+			this->label55->AutoSize = true;
+			this->label55->Location = System::Drawing::Point(8, 24);
+			this->label55->Name = L"label55";
+			this->label55->Size = System::Drawing::Size(215, 156);
+			this->label55->TabIndex = 13;
+			this->label55->Text = resources->GetString(L"label55.Text");
+			this->label55->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label54
+			// 
+			this->label54->AutoSize = true;
+			this->label54->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label54->Location = System::Drawing::Point(541, 5);
+			this->label54->Name = L"label54";
+			this->label54->Size = System::Drawing::Size(101, 16);
+			this->label54->TabIndex = 12;
+			this->label54->Text = L"Reproduction";
+			// 
+			// label53
+			// 
+			this->label53->AutoSize = true;
+			this->label53->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label53->Location = System::Drawing::Point(292, 4);
+			this->label53->Name = L"label53";
+			this->label53->Size = System::Drawing::Size(129, 16);
+			this->label53->TabIndex = 11;
+			this->label53->Text = L"Mutation Methods";
+			// 
+			// label52
+			// 
+			this->label52->AutoSize = true;
+			this->label52->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label52->Location = System::Drawing::Point(78, 4);
+			this->label52->Name = L"label52";
+			this->label52->Size = System::Drawing::Size(66, 16);
+			this->label52->TabIndex = 10;
+			this->label52->Text = L"Mutation";
+			// 
+			// label26
+			// 
+			this->label26->AutoSize = true;
+			this->label26->Location = System::Drawing::Point(272, 3);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(143, 13);
+			this->label26->TabIndex = 1;
+			this->label26->Text = L"Genetic Algorithm Flow Chart";
 			// 
 			// tabPage2
 			// 
@@ -499,7 +1134,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage3->Size = System::Drawing::Size(717, 337);
 			this->tabPage3->TabIndex = 2;
-			this->tabPage3->Text = L"Average Distance Graph";
+			this->tabPage3->Text = L"Average Difference Graph";
 			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
 			// label25
@@ -538,139 +1173,6 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->pictureBox2->Size = System::Drawing::Size(486, 274);
 			this->pictureBox2->TabIndex = 3;
 			this->pictureBox2->TabStop = false;
-			// 
-			// tabPage4
-			// 
-			this->tabPage4->Controls->Add(this->pictureBox4);
-			this->tabPage4->Controls->Add(this->tabControl2);
-			this->tabPage4->Controls->Add(this->label26);
-			this->tabPage4->Location = System::Drawing::Point(4, 22);
-			this->tabPage4->Name = L"tabPage4";
-			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage4->Size = System::Drawing::Size(717, 337);
-			this->tabPage4->TabIndex = 3;
-			this->tabPage4->Text = L"Info";
-			this->tabPage4->UseVisualStyleBackColor = true;
-			this->tabPage4->Click += gcnew System::EventHandler(this, &GUI::tabPage4_Click);
-			// 
-			// pictureBox4
-			// 
-			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
-			this->pictureBox4->Location = System::Drawing::Point(80, 19);
-			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(544, 125);
-			this->pictureBox4->TabIndex = 4;
-			this->pictureBox4->TabStop = false;
-			// 
-			// tabControl2
-			// 
-			this->tabControl2->Controls->Add(this->tabPage5);
-			this->tabControl2->Controls->Add(this->tabPage6);
-			this->tabControl2->Controls->Add(this->tabPage7);
-			this->tabControl2->Controls->Add(this->tabPage8);
-			this->tabControl2->Controls->Add(this->tabPage9);
-			this->tabControl2->Controls->Add(this->tabPage10);
-			this->tabControl2->Location = System::Drawing::Point(0, 150);
-			this->tabControl2->Name = L"tabControl2";
-			this->tabControl2->SelectedIndex = 0;
-			this->tabControl2->Size = System::Drawing::Size(721, 191);
-			this->tabControl2->TabIndex = 3;
-			// 
-			// tabPage5
-			// 
-			this->tabPage5->Location = System::Drawing::Point(4, 22);
-			this->tabPage5->Name = L"tabPage5";
-			this->tabPage5->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage5->Size = System::Drawing::Size(713, 165);
-			this->tabPage5->TabIndex = 0;
-			this->tabPage5->Text = L"Instructions";
-			this->tabPage5->UseVisualStyleBackColor = true;
-			// 
-			// tabPage6
-			// 
-			this->tabPage6->Controls->Add(this->pictureBox5);
-			this->tabPage6->Controls->Add(this->label35);
-			this->tabPage6->Controls->Add(this->label29);
-			this->tabPage6->Location = System::Drawing::Point(4, 22);
-			this->tabPage6->Name = L"tabPage6";
-			this->tabPage6->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage6->Size = System::Drawing::Size(713, 165);
-			this->tabPage6->TabIndex = 1;
-			this->tabPage6->Text = L"Initialize Population";
-			this->tabPage6->UseVisualStyleBackColor = true;
-			// 
-			// pictureBox5
-			// 
-			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-			this->pictureBox5->Location = System::Drawing::Point(248, 5);
-			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(173, 157);
-			this->pictureBox5->TabIndex = 2;
-			this->pictureBox5->TabStop = false;
-			// 
-			// label35
-			// 
-			this->label35->AutoSize = true;
-			this->label35->Location = System::Drawing::Point(474, 18);
-			this->label35->Name = L"label35";
-			this->label35->Size = System::Drawing::Size(204, 91);
-			this->label35->TabIndex = 1;
-			this->label35->Text = resources->GetString(L"label35.Text");
-			// 
-			// label29
-			// 
-			this->label29->AutoSize = true;
-			this->label29->Location = System::Drawing::Point(6, 18);
-			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(226, 104);
-			this->label29->TabIndex = 0;
-			this->label29->Text = resources->GetString(L"label29.Text");
-			// 
-			// tabPage7
-			// 
-			this->tabPage7->Location = System::Drawing::Point(4, 22);
-			this->tabPage7->Name = L"tabPage7";
-			this->tabPage7->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage7->Size = System::Drawing::Size(713, 165);
-			this->tabPage7->TabIndex = 2;
-			this->tabPage7->Text = L"Evaluate Population";
-			this->tabPage7->UseVisualStyleBackColor = true;
-			// 
-			// tabPage8
-			// 
-			this->tabPage8->Location = System::Drawing::Point(4, 22);
-			this->tabPage8->Name = L"tabPage8";
-			this->tabPage8->Size = System::Drawing::Size(713, 165);
-			this->tabPage8->TabIndex = 3;
-			this->tabPage8->Text = L"Selection";
-			this->tabPage8->UseVisualStyleBackColor = true;
-			// 
-			// tabPage9
-			// 
-			this->tabPage9->Location = System::Drawing::Point(4, 22);
-			this->tabPage9->Name = L"tabPage9";
-			this->tabPage9->Size = System::Drawing::Size(713, 165);
-			this->tabPage9->TabIndex = 4;
-			this->tabPage9->Text = L"Crossover";
-			this->tabPage9->UseVisualStyleBackColor = true;
-			// 
-			// tabPage10
-			// 
-			this->tabPage10->Location = System::Drawing::Point(4, 22);
-			this->tabPage10->Name = L"tabPage10";
-			this->tabPage10->Size = System::Drawing::Size(713, 165);
-			this->tabPage10->TabIndex = 5;
-			this->tabPage10->Text = L"Mutation";
-			this->tabPage10->UseVisualStyleBackColor = true;
-			// 
-			// label26
-			// 
-			this->label26->AutoSize = true;
-			this->label26->Location = System::Drawing::Point(272, 3);
-			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(143, 13);
-			this->label26->TabIndex = 1;
-			this->label26->Text = L"Genetic Algorithm Flow Chart";
 			// 
 			// tabPage1
 			// 
@@ -738,7 +1240,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(62, 12);
+			this->label1->Location = System::Drawing::Point(77, 8);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(100, 21);
 			this->label1->TabIndex = 0;
@@ -764,7 +1266,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			// StartButton
 			// 
-			this->StartButton->Location = System::Drawing::Point(169, 476);
+			this->StartButton->Location = System::Drawing::Point(81, 498);
 			this->StartButton->Name = L"StartButton";
 			this->StartButton->Size = System::Drawing::Size(75, 23);
 			this->StartButton->TabIndex = 3;
@@ -783,7 +1285,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(13, 75);
+			this->label3->Location = System::Drawing::Point(13, 84);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(87, 13);
 			this->label3->TabIndex = 5;
@@ -791,7 +1293,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			// NoOfGensTextBox
 			// 
-			this->NoOfGensTextBox->Location = System::Drawing::Point(102, 72);
+			this->NoOfGensTextBox->Location = System::Drawing::Point(102, 82);
 			this->NoOfGensTextBox->Name = L"NoOfGensTextBox";
 			this->NoOfGensTextBox->Size = System::Drawing::Size(100, 20);
 			this->NoOfGensTextBox->TabIndex = 6;
@@ -802,7 +1304,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(17, 99);
+			this->label4->Location = System::Drawing::Point(17, 122);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(81, 13);
 			this->label4->TabIndex = 7;
@@ -811,7 +1313,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(6, 128);
+			this->label5->Location = System::Drawing::Point(6, 151);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(96, 13);
 			this->label5->TabIndex = 9;
@@ -819,7 +1321,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			// TestRangeBox1
 			// 
-			this->TestRangeBox1->Location = System::Drawing::Point(102, 125);
+			this->TestRangeBox1->Location = System::Drawing::Point(100, 148);
 			this->TestRangeBox1->Name = L"TestRangeBox1";
 			this->TestRangeBox1->Size = System::Drawing::Size(36, 20);
 			this->TestRangeBox1->TabIndex = 10;
@@ -828,7 +1330,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			// TestRangeBox2
 			// 
-			this->TestRangeBox2->Location = System::Drawing::Point(166, 125);
+			this->TestRangeBox2->Location = System::Drawing::Point(165, 146);
 			this->TestRangeBox2->Name = L"TestRangeBox2";
 			this->TestRangeBox2->Size = System::Drawing::Size(36, 20);
 			this->TestRangeBox2->TabIndex = 11;
@@ -838,7 +1340,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(144, 130);
+			this->label6->Location = System::Drawing::Point(142, 152);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(16, 13);
 			this->label6->TabIndex = 12;
@@ -849,7 +1351,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(54, 171);
+			this->label7->Location = System::Drawing::Point(54, 182);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(121, 21);
 			this->label7->TabIndex = 13;
@@ -859,7 +1361,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(12, 201);
+			this->label8->Location = System::Drawing::Point(12, 209);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(87, 13);
 			this->label8->TabIndex = 14;
@@ -867,7 +1369,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			// MaxTreeDepthTextBox
 			// 
-			this->MaxTreeDepthTextBox->Location = System::Drawing::Point(102, 198);
+			this->MaxTreeDepthTextBox->Location = System::Drawing::Point(102, 206);
 			this->MaxTreeDepthTextBox->Name = L"MaxTreeDepthTextBox";
 			this->MaxTreeDepthTextBox->Size = System::Drawing::Size(100, 20);
 			this->MaxTreeDepthTextBox->TabIndex = 15;
@@ -878,7 +1380,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(6, 233);
+			this->label9->Location = System::Drawing::Point(6, 243);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(94, 13);
 			this->label9->TabIndex = 16;
@@ -889,7 +1391,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->TreeGenComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->TreeGenComboBox->FormattingEnabled = true;
 			this->TreeGenComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Full", L"Grow", L"Ramped Half & Half" });
-			this->TreeGenComboBox->Location = System::Drawing::Point(102, 233);
+			this->TreeGenComboBox->Location = System::Drawing::Point(102, 239);
 			this->TreeGenComboBox->Name = L"TreeGenComboBox";
 			this->TreeGenComboBox->Size = System::Drawing::Size(131, 21);
 			this->TreeGenComboBox->TabIndex = 17;
@@ -901,7 +1403,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI Emoji", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(62, 270);
+			this->label10->Location = System::Drawing::Point(62, 269);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(104, 21);
 			this->label10->TabIndex = 18;
@@ -931,7 +1433,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(2, 331);
+			this->label12->Location = System::Drawing::Point(2, 338);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(96, 13);
 			this->label12->TabIndex = 21;
@@ -941,7 +1443,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			this->comboBox3->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(102, 330);
+			this->comboBox3->Location = System::Drawing::Point(102, 333);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(100, 21);
 			this->comboBox3->TabIndex = 22;
@@ -951,7 +1453,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(6, 361);
+			this->label13->Location = System::Drawing::Point(6, 369);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(90, 13);
 			this->label13->TabIndex = 23;
@@ -961,7 +1463,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			this->comboBox4->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Location = System::Drawing::Point(102, 358);
+			this->comboBox4->Location = System::Drawing::Point(102, 367);
 			this->comboBox4->Name = L"comboBox4";
 			this->comboBox4->Size = System::Drawing::Size(100, 21);
 			this->comboBox4->TabIndex = 24;
@@ -971,7 +1473,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->Location = System::Drawing::Point(10, 397);
+			this->label14->Location = System::Drawing::Point(10, 405);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(83, 13);
 			this->label14->TabIndex = 25;
@@ -979,7 +1481,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			// CrossoverRateTextBox
 			// 
-			this->CrossoverRateTextBox->Location = System::Drawing::Point(101, 395);
+			this->CrossoverRateTextBox->Location = System::Drawing::Point(101, 401);
 			this->CrossoverRateTextBox->Name = L"CrossoverRateTextBox";
 			this->CrossoverRateTextBox->Size = System::Drawing::Size(37, 20);
 			this->CrossoverRateTextBox->TabIndex = 26;
@@ -989,7 +1491,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label15
 			// 
 			this->label15->AutoSize = true;
-			this->label15->Location = System::Drawing::Point(13, 426);
+			this->label15->Location = System::Drawing::Point(13, 438);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(77, 13);
 			this->label15->TabIndex = 27;
@@ -997,7 +1499,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			// MutationRateTextbox
 			// 
-			this->MutationRateTextbox->Location = System::Drawing::Point(101, 423);
+			this->MutationRateTextbox->Location = System::Drawing::Point(101, 435);
 			this->MutationRateTextbox->Name = L"MutationRateTextbox";
 			this->MutationRateTextbox->Size = System::Drawing::Size(37, 20);
 			this->MutationRateTextbox->TabIndex = 28;
@@ -1007,7 +1509,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label16
 			// 
 			this->label16->AutoSize = true;
-			this->label16->Location = System::Drawing::Point(141, 398);
+			this->label16->Location = System::Drawing::Point(141, 405);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(15, 13);
 			this->label16->TabIndex = 29;
@@ -1016,7 +1518,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(142, 426);
+			this->label17->Location = System::Drawing::Point(142, 439);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(15, 13);
 			this->label17->TabIndex = 30;
@@ -1026,12 +1528,21 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel1->Controls->Add(this->MaxTreeDepthTextBox);
+			this->panel1->Controls->Add(this->MaxTreeWarning);
+			this->panel1->Controls->Add(this->Over100Warning);
+			this->panel1->Controls->Add(this->MutationRateWarning);
+			this->panel1->Controls->Add(this->CrossoverRateWarning);
+			this->panel1->Controls->Add(this->label7);
+			this->panel1->Controls->Add(this->TestRangeWarning);
+			this->panel1->Controls->Add(this->NoOfGensWarning);
+			this->panel1->Controls->Add(this->PopSizeWarning);
+			this->panel1->Controls->Add(this->CrossoverRateTextBox);
 			this->panel1->Controls->Add(this->FormulaComboBox);
 			this->panel1->Controls->Add(this->label17);
 			this->panel1->Controls->Add(this->label16);
 			this->panel1->Controls->Add(this->MutationRateTextbox);
 			this->panel1->Controls->Add(this->label15);
-			this->panel1->Controls->Add(this->CrossoverRateTextBox);
 			this->panel1->Controls->Add(this->label14);
 			this->panel1->Controls->Add(this->comboBox4);
 			this->panel1->Controls->Add(this->label13);
@@ -1042,9 +1553,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->panel1->Controls->Add(this->label10);
 			this->panel1->Controls->Add(this->TreeGenComboBox);
 			this->panel1->Controls->Add(this->label9);
-			this->panel1->Controls->Add(this->MaxTreeDepthTextBox);
 			this->panel1->Controls->Add(this->label8);
-			this->panel1->Controls->Add(this->label7);
 			this->panel1->Controls->Add(this->label6);
 			this->panel1->Controls->Add(this->TestRangeBox2);
 			this->panel1->Controls->Add(this->TestRangeBox1);
@@ -1064,12 +1573,92 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->panel1->TabIndex = 1;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::panel1_Paint);
 			// 
+			// MaxTreeWarning
+			// 
+			this->MaxTreeWarning->AutoSize = true;
+			this->MaxTreeWarning->ForeColor = System::Drawing::Color::DarkRed;
+			this->MaxTreeWarning->Location = System::Drawing::Point(60, 225);
+			this->MaxTreeWarning->Name = L"MaxTreeWarning";
+			this->MaxTreeWarning->Size = System::Drawing::Size(183, 13);
+			this->MaxTreeWarning->TabIndex = 49;
+			this->MaxTreeWarning->Text = L"Input must be an integer between 1-4";
+			this->MaxTreeWarning->Visible = false;
+			// 
+			// Over100Warning
+			// 
+			this->Over100Warning->AutoSize = true;
+			this->Over100Warning->ForeColor = System::Drawing::Color::DarkRed;
+			this->Over100Warning->Location = System::Drawing::Point(27, 466);
+			this->Over100Warning->Name = L"Over100Warning";
+			this->Over100Warning->Size = System::Drawing::Size(194, 26);
+			this->Over100Warning->TabIndex = 48;
+			this->Over100Warning->Text = L"The sum of the mutation and crossover \r\nrate must equal 100 or less";
+			this->Over100Warning->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Over100Warning->Visible = false;
+			// 
+			// MutationRateWarning
+			// 
+			this->MutationRateWarning->AutoSize = true;
+			this->MutationRateWarning->ForeColor = System::Drawing::Color::DarkRed;
+			this->MutationRateWarning->Location = System::Drawing::Point(48, 458);
+			this->MutationRateWarning->Name = L"MutationRateWarning";
+			this->MutationRateWarning->Size = System::Drawing::Size(200, 13);
+			this->MutationRateWarning->TabIndex = 47;
+			this->MutationRateWarning->Text = L"Inputs must be an integer between 1-100";
+			this->MutationRateWarning->Visible = false;
+			// 
+			// CrossoverRateWarning
+			// 
+			this->CrossoverRateWarning->AutoSize = true;
+			this->CrossoverRateWarning->ForeColor = System::Drawing::Color::DarkRed;
+			this->CrossoverRateWarning->Location = System::Drawing::Point(48, 422);
+			this->CrossoverRateWarning->Name = L"CrossoverRateWarning";
+			this->CrossoverRateWarning->Size = System::Drawing::Size(200, 13);
+			this->CrossoverRateWarning->TabIndex = 46;
+			this->CrossoverRateWarning->Text = L"Inputs must be an integer between 1-100";
+			this->CrossoverRateWarning->Visible = false;
+			this->CrossoverRateWarning->Click += gcnew System::EventHandler(this, &GUI::label63_Click);
+			// 
+			// TestRangeWarning
+			// 
+			this->TestRangeWarning->AutoSize = true;
+			this->TestRangeWarning->ForeColor = System::Drawing::Color::DarkRed;
+			this->TestRangeWarning->Location = System::Drawing::Point(0, 166);
+			this->TestRangeWarning->Name = L"TestRangeWarning";
+			this->TestRangeWarning->Size = System::Drawing::Size(260, 26);
+			this->TestRangeWarning->TabIndex = 45;
+			this->TestRangeWarning->Text = L"Inputs must be integer, range cannot be bigger than 3\r\n\r\n";
+			this->TestRangeWarning->Visible = false;
+			this->TestRangeWarning->Click += gcnew System::EventHandler(this, &GUI::label62_Click);
+			// 
+			// NoOfGensWarning
+			// 
+			this->NoOfGensWarning->AutoSize = true;
+			this->NoOfGensWarning->ForeColor = System::Drawing::Color::DarkRed;
+			this->NoOfGensWarning->Location = System::Drawing::Point(53, 99);
+			this->NoOfGensWarning->Name = L"NoOfGensWarning";
+			this->NoOfGensWarning->Size = System::Drawing::Size(201, 13);
+			this->NoOfGensWarning->TabIndex = 44;
+			this->NoOfGensWarning->Text = L"Input must be an integer between 1-2000\r\n";
+			this->NoOfGensWarning->Visible = false;
+			// 
+			// PopSizeWarning
+			// 
+			this->PopSizeWarning->AutoSize = true;
+			this->PopSizeWarning->ForeColor = System::Drawing::Color::DarkRed;
+			this->PopSizeWarning->Location = System::Drawing::Point(53, 66);
+			this->PopSizeWarning->Name = L"PopSizeWarning";
+			this->PopSizeWarning->Size = System::Drawing::Size(195, 13);
+			this->PopSizeWarning->TabIndex = 43;
+			this->PopSizeWarning->Text = L"Input must be an integer between 1-500";
+			this->PopSizeWarning->Visible = false;
+			// 
 			// FormulaComboBox
 			// 
 			this->FormulaComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->FormulaComboBox->FormattingEnabled = true;
 			this->FormulaComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"X*X+(X-1)", L"(X*X+(X-1))*2" });
-			this->FormulaComboBox->Location = System::Drawing::Point(100, 96);
+			this->FormulaComboBox->Location = System::Drawing::Point(100, 115);
 			this->FormulaComboBox->Name = L"FormulaComboBox";
 			this->FormulaComboBox->Size = System::Drawing::Size(131, 21);
 			this->FormulaComboBox->TabIndex = 42;
@@ -1087,6 +1676,7 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoValidate = System::Windows::Forms::AutoValidate::Disable;
 			this->ClientSize = System::Drawing::Size(978, 537);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->tabControl1);
@@ -1099,6 +1689,25 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
+			this->tabPage4->ResumeLayout(false);
+			this->tabPage4->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+			this->tabControl2->ResumeLayout(false);
+			this->tabPage5->ResumeLayout(false);
+			this->tabPage5->PerformLayout();
+			this->panel13->ResumeLayout(false);
+			this->tabPage6->ResumeLayout(false);
+			this->tabPage6->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
+			this->tabPage7->ResumeLayout(false);
+			this->tabPage7->PerformLayout();
+			this->tabPage8->ResumeLayout(false);
+			this->tabPage8->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
+			this->tabPage9->ResumeLayout(false);
+			this->tabPage9->PerformLayout();
+			this->tabPage10->ResumeLayout(false);
+			this->tabPage10->PerformLayout();
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
 			this->panel3->ResumeLayout(false);
@@ -1106,13 +1715,6 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 			this->tabPage3->ResumeLayout(false);
 			this->tabPage3->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
-			this->tabPage4->ResumeLayout(false);
-			this->tabPage4->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
-			this->tabControl2->ResumeLayout(false);
-			this->tabPage6->ResumeLayout(false);
-			this->tabPage6->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
 			this->panel6->ResumeLayout(false);
@@ -1454,8 +2056,13 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 		CurrentIndex = -1;
 		CurrentIndex2 = -1;
 		CurrentLevel = 0;
-
-
+		PopSizeWarning->Visible = false;
+		NoOfGensWarning->Visible = false;
+		TestRangeWarning->Visible = false;
+		MaxTreeWarning->Visible = false;
+		CrossoverRateWarning->Visible = false;
+		MutationRateWarning->Visible = false;
+		Over100Warning->Visible = false;
 		string TempArray[300] = {};
 		Nodes = gcnew array<String^>(300);
 		NodesPoints = gcnew array<Point>(300);
@@ -1463,210 +2070,311 @@ private: System::Windows::Forms::ToolTip^  toolTip2;
 		pictureBox1->Refresh();		
 		pictureBox2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph3);
 		pictureBox2->Refresh();
+		bool InputsValid = true;
 		String^ PopSizeInput = popSizeTextBox->Text;
-		int MaxPopSize = Convert::ToInt16(PopSizeInput);
 		String^ MaxNoOfGensInput = NoOfGensTextBox->Text;
-		int MaxNoOfGens = Convert::ToInt16(MaxNoOfGensInput);
-		MaxGen = MaxNoOfGens;
-		PointsArray = gcnew array<Point>(MaxGen*2);
-		String^ MaxTreeDepthInput = MaxTreeDepthTextBox->Text;
-		int MaxTreeDepth = Convert::ToInt16(MaxTreeDepthInput);
-		String^ CrossoverRateInput = CrossoverRateTextBox->Text;
-		int CrossoverRate = Convert::ToInt16(CrossoverRateInput);
-		String^ MutationRateInput = MutationRateTextbox->Text;
-		int MutationRate = Convert::ToInt16(MutationRateInput);
-		int ChosenTreeGenMethod = TreeGenComboBox->SelectedIndex;
-		int ChosenSelectionMethod = SelectionComboBox->SelectedIndex;
 		String^ TestRangeInput1 = TestRangeBox1->Text;
 		String^ TestRangeInput2 = TestRangeBox2->Text;
-		int TestRange1Int = Convert::ToInt16(TestRangeInput1);
-		int TestRange2Int = Convert::ToInt16(TestRangeInput2);
+		String^ MaxTreeDepthInput = MaxTreeDepthTextBox->Text;
+		String^ CrossoverRateInput = CrossoverRateTextBox->Text;
+		String^ MutationRateInput = MutationRateTextbox->Text;
+		int CrossoverRate=0;		
+		int MutationRate = 0;
+		int MaxTreeDepth = 0;
+		int TestRange1Int = 0;
+		int TestRange2Int = 0;
+		int MaxPopSize = 0;
+		int MaxNoOfGens = 0;
+		try {
+			MaxPopSize = Convert::ToInt16(PopSizeInput);
+		}
+		catch (FormatException^ e) {
+			InputsValid = false;
+			PopSizeWarning->Visible = true;
+		}
+		try {
+			MaxNoOfGens = Convert::ToInt16(MaxNoOfGensInput);
+		}
+		catch (FormatException^ e) {
+			InputsValid = false;
+			NoOfGensWarning->Visible = true;
+		}
+		try {
+			TestRange1Int = Convert::ToInt16(TestRangeInput1);
+			TestRange2Int = Convert::ToInt16(TestRangeInput2);;
+		}
+		catch (FormatException^ e) {
+			InputsValid = false;
+			TestRangeWarning->Visible = true;
+		}
+		try {
+			MaxTreeDepth = Convert::ToInt16(MaxTreeDepthInput);
+		}
+		catch (FormatException^ e) {
+			InputsValid = false;
+			MaxTreeWarning->Visible = true;
+		}
+		try {
+			CrossoverRate = Convert::ToInt16(CrossoverRateInput);
+		}
+		catch (FormatException^ e) {
+			InputsValid = false;
+			CrossoverRateWarning->Visible = true;
+		}
+		try {
+			MutationRate = Convert::ToInt16(MutationRateInput);
+		}
+		catch (FormatException^ e) {
+			InputsValid = false;
+			MutationRateWarning->Visible = true;
+		}
+
+
+
+		int PopSizeMax = 500;
+		int GenSizeMax = 2000;
+		int TestRangeSizeMax = 3;
+		int TreeDepthMax = 4;
+		int CrossoverRateMax = 100;
+		int MutationRateMax = 100;
+
+		if (MaxPopSize > PopSizeMax) {
+			InputsValid = false;
+			PopSizeWarning->Visible = true;
+		}
+		if (MaxNoOfGens > GenSizeMax) {
+			InputsValid = false;
+			NoOfGensWarning->Visible = true;
+		}
+		if ((abs(TestRange1Int - TestRange2Int)) > TestRangeSizeMax)
+		{
+			InputsValid = false;
+			TestRangeWarning->Visible = true;
+		}
+		if (MaxTreeDepth > TreeDepthMax) {
+			InputsValid = false;
+			MaxTreeWarning->Visible = true;
+		}
+		if (CrossoverRate > CrossoverRateMax) {
+			InputsValid = false;
+			CrossoverRateWarning->Visible = true;
+		}
+		if (MutationRate > MutationRateMax) {
+			InputsValid = false;
+			MutationRateWarning->Visible = true;
+		}
+		if ((CrossoverRate + MutationRate) > CrossoverRateMax) {
+			InputsValid = false;
+			Over100Warning->Visible = true;
+		}
+		
+
+
+
+		MaxGen = MaxNoOfGens;
+		PointsArray = gcnew array<Point>(MaxGen*2);				
+		int ChosenTreeGenMethod = TreeGenComboBox->SelectedIndex;
+		int ChosenSelectionMethod = SelectionComboBox->SelectedIndex;		
 		float TestRange1Value = TestRange1Int;
 		float TestRange2Value = TestRange2Int;
 		int Diff = abs(TestRange1Value - TestRange2Value);
-		float Interval = 400 / (Diff * 10);
-		bool First = true;
-		//Populates the TestRange vector
-		vector<float> TestRange(Diff * 10);
-		float CurrentValue = TestRange1Value;
-		for (int i = 0; i < Diff * 10; i++) {
-			CurrentValue = CurrentValue + 0.1;
-			TestRange[i] = CurrentValue;
-		}	
-		//Calculates the results for each test value
-		vector<float> TargetValues(Diff * 10);
-		if (FormulaComboBox->SelectedIndex == 0)
+		
+		
+		if (InputsValid)
 		{
 			
+			PopSizeWarning->Visible = false;
+			NoOfGensWarning->Visible = false;
+			TestRangeWarning->Visible = false;
+			MaxTreeWarning->Visible = false;
+			CrossoverRateWarning->Visible = false;
+			MutationRateWarning->Visible = false;
+			Over100Warning->Visible = false;
+		
+			float Interval = 400 / (Diff * 10);
+			bool First = true;
+			//Populates the TestRange vector
+			vector<float> TestRange(Diff * 10);
+			float CurrentValue = TestRange1Value;
 			for (int i = 0; i < Diff * 10; i++) {
-				float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
-				result = roundf(result * 100) / 100;
-				TargetValues[i] = result;
+				CurrentValue = CurrentValue + 0.1;
+				TestRange[i] = CurrentValue;
 			}
-		}
-		if (FormulaComboBox->SelectedIndex == 1)
-		{
+			//Calculates the results for each test value
+			vector<float> TargetValues(Diff * 10);
+			if (FormulaComboBox->SelectedIndex == 0)
+			{
 
+				for (int i = 0; i < Diff * 10; i++) {
+					float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+					result = roundf(result * 100) / 100;
+					TargetValues[i] = result;
+				}
+			}
+			if (FormulaComboBox->SelectedIndex == 1)
+			{
+
+				for (int i = 0; i < Diff * 10; i++) {
+					float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+					result = result * 2;
+					result = roundf(result * 100) / 100;
+					TargetValues[i] = result;
+				}
+			}
+			//Gets the lowest and highest target values
+			int LowestIndex = -1;
+			int HighestIndex = -1;
 			for (int i = 0; i < Diff * 10; i++) {
-				float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
-				result = result * 2;
-				result = roundf(result * 100) / 100;		
-				TargetValues[i] = result;
+				if (LowestIndex == -1) {
+					LowestIndex = i;
+					HighestIndex = i;
+				}
+				else if (TargetValues[i] < TargetValues[LowestIndex]) {
+					LowestIndex = i;
+				}
+				else if (TargetValues[i] > TargetValues[HighestIndex]) {
+					HighestIndex = i;
+				}
 			}
-		}
-		//Gets the lowest and highest target values
-		int LowestIndex = -1;
-		int HighestIndex = -1;
-		for (int i = 0; i < Diff * 10; i++) {
-			if (LowestIndex == -1) {
-				LowestIndex = i;
-				HighestIndex = i;
-			}
-			else if (TargetValues[i] < TargetValues[LowestIndex]) {
-				LowestIndex = i;
-			}
-			else if (TargetValues[i] > TargetValues[HighestIndex]) {
-				HighestIndex = i;
-			}
-		}
-		float LowestValue = TargetValues[LowestIndex];
-		float HighestValue = TargetValues[HighestIndex];
+			float LowestValue = TargetValues[LowestIndex];
+			float HighestValue = TargetValues[HighestIndex];
 
 
 
-		Population Pop(MaxPopSize, MaxTreeDepth, CrossoverRate, MutationRate,ChosenTreeGenMethod, ChosenSelectionMethod, FormulaComboBox->SelectedIndex, TestRange1Value, TestRange2Value);
-		Pop.Generate();	
-		bool SolutionFound = false;
-		for (int i = 0; i < MaxNoOfGens; i++)
-		{
+			Population Pop(MaxPopSize, MaxTreeDepth, CrossoverRate, MutationRate, ChosenTreeGenMethod, ChosenSelectionMethod, FormulaComboBox->SelectedIndex, TestRange1Value, TestRange2Value);
+			Pop.Generate();
+			bool SolutionFound = false;
+			for (int i = 0; i < MaxNoOfGens; i++)
+			{
 
-			Pop.Evaluate();
-			vector<float> CurrentBestResults = Pop.GetCurrentBestResults();			
-			vector<float> NormalizedResults(Diff * 10);
-			float NormalizedValue = 0;
-			for (int i = 0; i < Diff * 10; i++) {
-				NormalizedValue = 0;
-				NormalizedValue = (CurrentBestResults[i] - LowestValue)*(200 - 0);
-				NormalizedValue = NormalizedValue / (HighestValue - LowestValue) + 1;
-				NormalizedResults[i] = NormalizedValue;
-			}
-			Point CurrentPoint;
-			for (int i = 0; i < 30; i++) {
-				if (i < Diff * 10)
+				Pop.Evaluate();
+				vector<float> CurrentBestResults = Pop.GetCurrentBestResults();
+				vector<float> NormalizedResults(Diff * 10);
+				float NormalizedValue = 0;
+				for (int i = 0; i < Diff * 10; i++) {
+					NormalizedValue = 0;
+					NormalizedValue = (CurrentBestResults[i] - LowestValue)*(200 - 0);
+					NormalizedValue = NormalizedValue / (HighestValue - LowestValue) + 1;
+					NormalizedResults[i] = NormalizedValue;
+				}
+				Point CurrentPoint;
+				for (int i = 0; i < 30; i++) {
+					if (i < Diff * 10)
+					{
+						Point NewPoint = Point(80 + (Interval * i), 240 - NormalizedResults[i] + 1);
+						CurrentBestResultArray[i] = NewPoint;
+						CurrentPoint = NewPoint;
+					}
+					else {
+						CurrentBestResultArray[i] = CurrentPoint;
+					}
+				}
+				if (FirstPass == true)
 				{
-					Point NewPoint = Point(80 + (Interval * i), 240 - NormalizedResults[i]+1);
-					CurrentBestResultArray[i] = NewPoint;
-					CurrentPoint = NewPoint;
+					pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph2);
 				}
-				else {
-					CurrentBestResultArray[i] = CurrentPoint;
+				pictureBox1->Refresh();
+				CurrentAverageDistance = Pop.GetAvergeDiff();
+				CurrentGeneration = i + 1;
+				if (First == true && FirstPass == true)
+				{
+					pictureBox2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph4);
+					pictureBox2->Refresh();
+
 				}
-			}
-			if (FirstPass == true)
-			{
-				pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph2);
-			}
-			pictureBox1->Refresh();
-			CurrentAverageDistance = Pop.GetAvergeDiff();
-			CurrentGeneration = i + 1;
-			if (First == true&& FirstPass == true)
-			{
-				pictureBox2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph4);
+				if (First == true && FirstPass == true)
+				{
+					pictureBox2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph5);
+
+				}
 				pictureBox2->Refresh();
-				
+				Individual test = Pop.GetBestCurrentIndividualObj();
+				string test2 = test.PrintTree(1);
+				int BestIndividualIndex = Pop.GetBestCurrentIndividual();
+				string TreeString = Pop.PrintOutNewTree(BestIndividualIndex);
+				NumOfNodes = count(TreeString.begin(), TreeString.end(), ' ');
+				//MaxLevel = NumOfNodes/5;
+				stringstream ss(TreeString);
+
+				while (ss.good() && i < NumOfNodes) {
+
+					ss >> TempArray[i];
+					++i;
+				}
+				for (int i = 0; i < NumOfNodes; i++) {
+					Nodes[i] = gcnew String(TempArray[i].c_str());
+				}
+				CurrentIndex = -1;
+				CurrentIndex2 = -1;
+				CurrentLevel = 0;
+
+				Point StartPoint = Point(225, 20);
+
+
+
+				DrawTree("Center", StartPoint);
+				if (First == true && FirstPass == true)
+				{
+					pictureBox3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph6);
+					First = false;
+				}
+				pictureBox3->Refresh();
+				CurrentBestFormula = "";
+				CompileBestFormula();
+				BestFormulaTextBox->Text = CurrentBestFormula;
+				string LowestDiffStr = to_string(Pop.GetLowestDiff());
+				double dobuleValue = Pop.GetLowestDiff();
+				Decimal decimalValue = System::Convert::ToDecimal(dobuleValue);
+				String^ LowestDiffOutput = gcnew String(decimalValue.ToString());
+				LowestDiffTextBox->Text = LowestDiffOutput;
+				string CurrGenStr = to_string(i + 1);
+				String^ CurrGenOutput = gcnew String(CurrGenStr.c_str());
+				CurrentGenTextBox->Text = CurrGenOutput;
+				string AvgDiffStr = to_string(Pop.GetAvergeDiff());
+				String^ AvgDiffOutput = gcnew String(AvgDiffStr.c_str());
+				AvgDiffTextBox->Text = AvgDiffOutput;
+				Update();
+				if (Pop.GetCriteriaMet() == true) {
+					SolutionFound = true;
+					break;
+				}
+				Pop.CreateNewGen();
+
 			}
-			if (First == true && FirstPass == true)
+
+			if (SolutionFound == true) {
+				RunSuccessfulTextBox->Text = "Yes";
+			}
+			else
 			{
-				pictureBox2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph5);
-				
+				RunSuccessfulTextBox->Text = "No";
 			}
-			pictureBox2->Refresh();
-			Individual test = Pop.GetBestCurrentIndividualObj();
-			string test2 = test.PrintTree(1);
-			int BestIndividualIndex = Pop.GetBestCurrentIndividual();
-			string TreeString = Pop.PrintOutNewTree(BestIndividualIndex);
-			NumOfNodes = count(TreeString.begin(), TreeString.end(), ' ');
-			//MaxLevel = NumOfNodes/5;
-			stringstream ss(TreeString);
-			
-			while (ss.good() && i < NumOfNodes) {
+			TotalNumOfGensTextbox->Text = CurrentGenTextBox->Text;
+			CurrentGenTextBox->Text = "0";
+			Pop.setLowestDiff(-1);
 
-				ss >> TempArray[i];
-				++i;
-			}
-			for (int i = 0; i < NumOfNodes; i++) {
-				Nodes[i] = gcnew String(TempArray[i].c_str());
-			}
-			CurrentIndex = -1;
-			CurrentIndex2 = -1;
-			CurrentLevel = 0;
+			/*
 
-			Point StartPoint = Point(225, 20);
-
-
-
-			DrawTree("Center", StartPoint);
-			if (First == true && FirstPass == true)
+			//TestOnly
+			string test = Pop.PrintOutNewTree(Pop.GetBestCurrentIndividual());
+			//string test2 = Pop.PrintOutNewTree(191);
+			//string test2 = Pop.PrintOutResult(2);
+			//string test3 = Pop.PrintOutTotalDistance(2);
+			//string test4 = Pop.PrintOutNewTree(86);
+			/*
+			for (int j = 0; j < 200; j++)
 			{
-				pictureBox3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph6);
-				First = false;
+				string test5= Pop.PrintOutTree(j);
 			}
-			pictureBox3->Refresh();
-			CurrentBestFormula = "";
-			CompileBestFormula();
-			BestFormulaTextBox->Text = CurrentBestFormula;
-			string LowestDiffStr = to_string(Pop.GetLowestDiff());
-			double dobuleValue = Pop.GetLowestDiff();
-			Decimal decimalValue = System::Convert::ToDecimal(dobuleValue);
-			String^ LowestDiffOutput = gcnew String(decimalValue.ToString());
-			LowestDiffTextBox->Text = LowestDiffOutput;
-			string CurrGenStr = to_string(i+1);
-			String^ CurrGenOutput = gcnew String(CurrGenStr.c_str());
-			CurrentGenTextBox->Text = CurrGenOutput;
-			string AvgDiffStr = to_string(Pop.GetAvergeDiff());
-			String^ AvgDiffOutput = gcnew String(AvgDiffStr.c_str());
-			AvgDiffTextBox->Text = AvgDiffOutput;
-			Update();
-			if (Pop.GetCriteriaMet() == true) {
-				SolutionFound = true;
-				break;
-			}
-			Pop.CreateNewGen();
-			
-		}
-		
-		if (SolutionFound == true) {
-			RunSuccessfulTextBox->Text = "Yes";
-		}
-		else
-		{
-			RunSuccessfulTextBox->Text = "No";
-		}
-		TotalNumOfGensTextbox->Text = CurrentGenTextBox->Text;
-		CurrentGenTextBox->Text = "0";
-		Pop.setLowestDiff(-1);
 
-		/*
-
-		//TestOnly 
-		string test = Pop.PrintOutNewTree(Pop.GetBestCurrentIndividual());
-		//string test2 = Pop.PrintOutNewTree(191);
-		//string test2 = Pop.PrintOutResult(2);
-		//string test3 = Pop.PrintOutTotalDistance(2);
-		//string test4 = Pop.PrintOutNewTree(86);
-		/*
-		for (int j = 0; j < 200; j++)
-		{
-			string test5= Pop.PrintOutTree(j);
+			ofstream myfile;
+			myfile.open("example.txt");
+			myfile << test;
+			myfile.close();
+			//TestOnly
+			*/
+			FirstPass = false;
 		}
-		
-		ofstream myfile;
-		myfile.open("example.txt");
-		myfile << test;
-		myfile.close();
-		//TestOnly
-		*/
-		FirstPass = false;
 		
 	}
 private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
@@ -1699,6 +2407,23 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void toolTip2_Popup(System::Object^  sender, System::Windows::Forms::PopupEventArgs^  e) {
 }
 private: System::Void toolTip2_Popup_1(System::Object^  sender, System::Windows::Forms::PopupEventArgs^  e) {
+}
+
+private: System::Void label38_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label43_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label35_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label29_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void pictureBox6_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label58_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label63_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label62_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
