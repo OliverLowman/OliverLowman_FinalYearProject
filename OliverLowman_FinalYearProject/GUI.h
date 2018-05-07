@@ -196,6 +196,13 @@ private: System::Windows::Forms::Label^  label67;
 private: System::Windows::Forms::Panel^  panel12;
 private: System::Windows::Forms::Panel^  panel11;
 private: System::Windows::Forms::Label^  MaxTreeWarning;
+private: System::Windows::Forms::Panel^  TreePanel;
+private: System::Windows::Forms::Label^  RunInProgressText;
+private: System::Windows::Forms::Label^  RunUnssucessfulText;
+
+
+
+
 
 
 
@@ -306,6 +313,8 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->TreePanel = (gcnew System::Windows::Forms::Panel());
+			this->RunInProgressText = (gcnew System::Windows::Forms::Label());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->label34 = (gcnew System::Windows::Forms::Label());
@@ -351,6 +360,7 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 			this->PopSizeWarning = (gcnew System::Windows::Forms::Label());
 			this->FormulaComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->toolTip2 = (gcnew System::Windows::Forms::ToolTip(this->components));
+			this->RunUnssucessfulText = (gcnew System::Windows::Forms::Label());
 			this->panel2->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage4->SuspendLayout();
@@ -371,6 +381,7 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 			this->tabPage3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->tabPage1->SuspendLayout();
+			this->TreePanel->SuspendLayout();
 			this->panel6->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->panel1->SuspendLayout();
@@ -1176,6 +1187,7 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->TreePanel);
 			this->tabPage1->Controls->Add(this->label23);
 			this->tabPage1->Controls->Add(this->panel6);
 			this->tabPage1->Controls->Add(this->pictureBox3);
@@ -1186,6 +1198,28 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Tree View";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// TreePanel
+			// 
+			this->TreePanel->BackColor = System::Drawing::Color::White;
+			this->TreePanel->Controls->Add(this->RunUnssucessfulText);
+			this->TreePanel->Controls->Add(this->RunInProgressText);
+			this->TreePanel->Location = System::Drawing::Point(123, 23);
+			this->TreePanel->Name = L"TreePanel";
+			this->TreePanel->Size = System::Drawing::Size(462, 236);
+			this->TreePanel->TabIndex = 7;
+			// 
+			// RunInProgressText
+			// 
+			this->RunInProgressText->AutoSize = true;
+			this->RunInProgressText->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->RunInProgressText->Location = System::Drawing::Point(163, 100);
+			this->RunInProgressText->Name = L"RunInProgressText";
+			this->RunInProgressText->Size = System::Drawing::Size(139, 20);
+			this->RunInProgressText->TabIndex = 0;
+			this->RunInProgressText->Text = L"Run In Progress\r\n";
+			this->RunInProgressText->Visible = false;
 			// 
 			// label23
 			// 
@@ -1443,6 +1477,7 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 			// 
 			this->comboBox3->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Subtree" });
 			this->comboBox3->Location = System::Drawing::Point(102, 333);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(100, 21);
@@ -1463,6 +1498,7 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 			// 
 			this->comboBox4->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox4->FormattingEnabled = true;
+			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Subtree" });
 			this->comboBox4->Location = System::Drawing::Point(102, 367);
 			this->comboBox4->Name = L"comboBox4";
 			this->comboBox4->Size = System::Drawing::Size(100, 21);
@@ -1672,6 +1708,18 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 			this->toolTip2->IsBalloon = true;
 			this->toolTip2->ReshowDelay = 100;
 			// 
+			// RunUnssucessfulText
+			// 
+			this->RunUnssucessfulText->AutoSize = true;
+			this->RunUnssucessfulText->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->RunUnssucessfulText->Location = System::Drawing::Point(162, 104);
+			this->RunUnssucessfulText->Name = L"RunUnssucessfulText";
+			this->RunUnssucessfulText->Size = System::Drawing::Size(155, 40);
+			this->RunUnssucessfulText->TabIndex = 1;
+			this->RunUnssucessfulText->Text = L"Run Unsuccessful\r\n\r\n";
+			this->RunUnssucessfulText->Visible = false;
+			// 
 			// GUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1717,6 +1765,8 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
+			this->TreePanel->ResumeLayout(false);
+			this->TreePanel->PerformLayout();
 			this->panel6->ResumeLayout(false);
 			this->panel6->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -2063,6 +2113,9 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 		CrossoverRateWarning->Visible = false;
 		MutationRateWarning->Visible = false;
 		Over100Warning->Visible = false;
+		RunUnssucessfulText->Visible = false;
+		RunInProgressText->Visible = true;
+		TreePanel->Visible = true;
 		string TempArray[300] = {};
 		Nodes = gcnew array<String^>(300);
 		NodesPoints = gcnew array<Point>(300);
@@ -2285,9 +2338,10 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 				if (First == true && FirstPass == true)
 				{
 					pictureBox2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph5);
-
+					First = false;
 				}
 				pictureBox2->Refresh();
+				/*
 				Individual test = Pop.GetBestCurrentIndividualObj();
 				string test2 = test.PrintTree(1);
 				int BestIndividualIndex = Pop.GetBestCurrentIndividual();
@@ -2310,8 +2364,6 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 
 				Point StartPoint = Point(225, 20);
 
-
-
 				DrawTree("Center", StartPoint);
 				if (First == true && FirstPass == true)
 				{
@@ -2319,9 +2371,11 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 					First = false;
 				}
 				pictureBox3->Refresh();
+				
 				CurrentBestFormula = "";
 				CompileBestFormula();
 				BestFormulaTextBox->Text = CurrentBestFormula;
+				*/
 				string LowestDiffStr = to_string(Pop.GetLowestDiff());
 				double dobuleValue = Pop.GetLowestDiff();
 				Decimal decimalValue = System::Convert::ToDecimal(dobuleValue);
@@ -2335,7 +2389,34 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 				AvgDiffTextBox->Text = AvgDiffOutput;
 				Update();
 				if (Pop.GetCriteriaMet() == true) {
+					TreePanel->Visible = false;
+					RunInProgressText->Visible = false;
 					SolutionFound = true;
+					Individual test = Pop.GetBestCurrentIndividualObj();
+					string test2 = test.PrintTree(1);
+					int BestIndividualIndex = Pop.GetBestCurrentIndividual();
+					string TreeString = Pop.PrintOutNewTree(BestIndividualIndex);
+					NumOfNodes = count(TreeString.begin(), TreeString.end(), ' ');
+					stringstream ss(TreeString);
+					int j = 0;
+					while (ss.good() && j < NumOfNodes) {
+						ss >> TempArray[j];
+						++j;
+					}
+					for (int i = 0; i < NumOfNodes; i++) {
+						Nodes[i] = gcnew String(TempArray[i].c_str());
+					}
+					CurrentIndex = -1;
+					CurrentIndex2 = -1;
+					CurrentLevel = 0;
+					Point StartPoint = Point(225, 20);
+					DrawTree("Center", StartPoint);					
+					pictureBox3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph6);					
+					pictureBox3->Refresh();
+
+					CurrentBestFormula = "";
+					CompileBestFormula();
+					BestFormulaTextBox->Text = CurrentBestFormula;
 					break;
 				}
 				Pop.CreateNewGen();
@@ -2348,6 +2429,8 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 			else
 			{
 				RunSuccessfulTextBox->Text = "No";
+				RunInProgressText->Visible = false;
+				RunUnssucessfulText->Visible = true;
 			}
 			TotalNumOfGensTextbox->Text = CurrentGenTextBox->Text;
 			CurrentGenTextBox->Text = "0";

@@ -43,7 +43,6 @@ public:
 	vector<float> GetCurrentBestResults();
 
 
-	//~REMEMBER TO DISCLUDE INDIVIDUALS THAT HAVE TRUE ISINVALID VALUES/add appropriate comment
 	
 	//TestOnly
 	string PrintOutTree(int);
