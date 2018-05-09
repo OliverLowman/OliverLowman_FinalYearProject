@@ -54,6 +54,17 @@ Population::Population(int GivenMaxPopSize, int GivenMaxTreeDepth, float GivenCr
 			TargetValues[i] = result;
 		}
 	}
+	if (ChosenTargetFormula == 2)
+	{
+
+		for (int i = 0; i < TestRangeSize; i++) {
+			float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+			result = result + ((1 - TestRange[i])*(5 + TestRange[i]));
+			result = result + 6;
+			result = roundf(result * 100) / 100;
+			TargetValues[i] = result;
+		}
+	}
 	//TargetValues = { -0.89f,-0.76f, -0.61f, -0.44f, -0.25f, -0.04f, 0.19f, 0.44f,0.71f,1 };
 
 	CriteriaMet = false;
@@ -313,7 +324,7 @@ void Population::Crossover() {
 				break;
 			}
 		}
-
+		
 		NextGeneration[i] = Individual(MaxTreeDepth,TreeGenMethod, NodeList1);
 	}
 }
@@ -427,14 +438,24 @@ int Population::TournamentSelection() {
 	bool Individual2Found = false;
 	int RandIndividual1 = 0;
 	int RandIndividual2 = 0;
+	int NumOfNodes1 = 0;
+	int NumOfNodes2 = 0;
+	string Parent1Tree = "";
+	string Parent2Tree = "";
 	while (true) {
 		int Rand1 = 1 + (rand() % static_cast<int>(MaxPopSize - 2 + 1));
 		int Rand2 = 1 + (rand() % static_cast<int>(MaxPopSize - 2 + 1));
-		if (!Individuals[Rand1].GetIsInvalid() && Individual1Found == false) {
+
+		Parent1Tree = Individuals[Rand1].PrintTree(1);
+		Parent2Tree = Individuals[Rand2].PrintTree(1);
+		NumOfNodes1 = count(Parent1Tree.begin(), Parent1Tree.end(), ' ');
+		NumOfNodes2 = count(Parent2Tree.begin(), Parent2Tree.end(), ' ');
+
+		if (!Individuals[Rand1].GetIsInvalid() && Individual1Found == false && NumOfNodes1 <20) {
 			RandIndividual1 = Rand1;
 			Individual1Found = true;
 		}
-		if (!Individuals[Rand2].GetIsInvalid() && Individual2Found == false) {
+		if (!Individuals[Rand2].GetIsInvalid() && Individual2Found == false && NumOfNodes2 <20) {
 			RandIndividual2 = Rand2;
 			Individual2Found = true;
 		}

@@ -86,9 +86,11 @@ namespace OliverLowman_FinalYearProject {
 	private: System::Windows::Forms::ComboBox^  SelectionComboBox;
 
 	private: System::Windows::Forms::Label^  label12;
-	private: System::Windows::Forms::ComboBox^  comboBox3;
+	private: System::Windows::Forms::ComboBox^  CrossoverComboBox;
+
 	private: System::Windows::Forms::Label^  label13;
-	private: System::Windows::Forms::ComboBox^  comboBox4;
+	private: System::Windows::Forms::ComboBox^  MutationComboBox;
+
 	private: System::Windows::Forms::Label^  label14;
 	private: System::Windows::Forms::TextBox^  CrossoverRateTextBox;
 	private: System::Windows::Forms::Label^  label15;
@@ -199,6 +201,9 @@ private: System::Windows::Forms::Label^  MaxTreeWarning;
 private: System::Windows::Forms::Panel^  TreePanel;
 private: System::Windows::Forms::Label^  RunInProgressText;
 private: System::Windows::Forms::Label^  RunUnssucessfulText;
+private: System::Windows::Forms::TextBox^  SuccessfulFormulaBox;
+
+private: System::Windows::Forms::Label^  label60;
 
 
 
@@ -237,6 +242,8 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(GUI::typeid));
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->SuccessfulFormulaBox = (gcnew System::Windows::Forms::TextBox());
+			this->label60 = (gcnew System::Windows::Forms::Label());
 			this->TotalNumOfGensTextbox = (gcnew System::Windows::Forms::TextBox());
 			this->RunSuccessfulTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label22 = (gcnew System::Windows::Forms::Label());
@@ -314,6 +321,7 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->TreePanel = (gcnew System::Windows::Forms::Panel());
+			this->RunUnssucessfulText = (gcnew System::Windows::Forms::Label());
 			this->RunInProgressText = (gcnew System::Windows::Forms::Label());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
@@ -341,9 +349,9 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->SelectionComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->CrossoverComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
+			this->MutationComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->CrossoverRateTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label15 = (gcnew System::Windows::Forms::Label());
@@ -360,7 +368,6 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			this->PopSizeWarning = (gcnew System::Windows::Forms::Label());
 			this->FormulaComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->toolTip2 = (gcnew System::Windows::Forms::ToolTip(this->components));
-			this->RunUnssucessfulText = (gcnew System::Windows::Forms::Label());
 			this->panel2->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage4->SuspendLayout();
@@ -390,6 +397,8 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->panel2->Controls->Add(this->SuccessfulFormulaBox);
+			this->panel2->Controls->Add(this->label60);
 			this->panel2->Controls->Add(this->TotalNumOfGensTextbox);
 			this->panel2->Controls->Add(this->RunSuccessfulTextBox);
 			this->panel2->Controls->Add(this->label22);
@@ -404,6 +413,23 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(747, 175);
 			this->panel2->TabIndex = 2;
+			// 
+			// SuccessfulFormulaBox
+			// 
+			this->SuccessfulFormulaBox->Enabled = false;
+			this->SuccessfulFormulaBox->Location = System::Drawing::Point(448, 115);
+			this->SuccessfulFormulaBox->Name = L"SuccessfulFormulaBox";
+			this->SuccessfulFormulaBox->Size = System::Drawing::Size(100, 20);
+			this->SuccessfulFormulaBox->TabIndex = 11;
+			// 
+			// label60
+			// 
+			this->label60->AutoSize = true;
+			this->label60->Location = System::Drawing::Point(315, 118);
+			this->label60->Name = L"label60";
+			this->label60->Size = System::Drawing::Size(102, 13);
+			this->label60->TabIndex = 10;
+			this->label60->Text = L"Successful Formula:\r\n";
 			// 
 			// TotalNumOfGensTextbox
 			// 
@@ -1154,9 +1180,10 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			this->label25->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->label25->Location = System::Drawing::Point(282, 33);
 			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(126, 15);
+			this->label25->Size = System::Drawing::Size(133, 15);
 			this->label25->TabIndex = 1;
-			this->label25->Text = L"Average Distance Graph";
+			this->label25->Text = L"Average Difference Graph";
+			this->label25->Click += gcnew System::EventHandler(this, &GUI::label25_Click);
 			// 
 			// label33
 			// 
@@ -1204,10 +1231,22 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			this->TreePanel->BackColor = System::Drawing::Color::White;
 			this->TreePanel->Controls->Add(this->RunUnssucessfulText);
 			this->TreePanel->Controls->Add(this->RunInProgressText);
-			this->TreePanel->Location = System::Drawing::Point(123, 23);
+			this->TreePanel->Location = System::Drawing::Point(123, 21);
 			this->TreePanel->Name = L"TreePanel";
-			this->TreePanel->Size = System::Drawing::Size(462, 236);
+			this->TreePanel->Size = System::Drawing::Size(462, 246);
 			this->TreePanel->TabIndex = 7;
+			// 
+			// RunUnssucessfulText
+			// 
+			this->RunUnssucessfulText->AutoSize = true;
+			this->RunUnssucessfulText->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->RunUnssucessfulText->Location = System::Drawing::Point(162, 104);
+			this->RunUnssucessfulText->Name = L"RunUnssucessfulText";
+			this->RunUnssucessfulText->Size = System::Drawing::Size(155, 40);
+			this->RunUnssucessfulText->TabIndex = 1;
+			this->RunUnssucessfulText->Text = L"Run Unsuccessful\r\n\r\n";
+			this->RunUnssucessfulText->Visible = false;
 			// 
 			// RunInProgressText
 			// 
@@ -1473,16 +1512,16 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			this->label12->TabIndex = 21;
 			this->label12->Text = L"Crossover Method:";
 			// 
-			// comboBox3
+			// CrossoverComboBox
 			// 
-			this->comboBox3->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Subtree" });
-			this->comboBox3->Location = System::Drawing::Point(102, 333);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(100, 21);
-			this->comboBox3->TabIndex = 22;
-			this->toolTip2->SetToolTip(this->comboBox3, L"The method the system will use to create a new individual by \r\ncrossing over the "
+			this->CrossoverComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->CrossoverComboBox->FormattingEnabled = true;
+			this->CrossoverComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Subtree" });
+			this->CrossoverComboBox->Location = System::Drawing::Point(102, 333);
+			this->CrossoverComboBox->Name = L"CrossoverComboBox";
+			this->CrossoverComboBox->Size = System::Drawing::Size(100, 21);
+			this->CrossoverComboBox->TabIndex = 22;
+			this->toolTip2->SetToolTip(this->CrossoverComboBox, L"The method the system will use to create a new individual by \r\ncrossing over the "
 				L"features of two parent individuals");
 			// 
 			// label13
@@ -1494,16 +1533,16 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			this->label13->TabIndex = 23;
 			this->label13->Text = L"Mutation Method:";
 			// 
-			// comboBox4
+			// MutationComboBox
 			// 
-			this->comboBox4->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Subtree" });
-			this->comboBox4->Location = System::Drawing::Point(102, 367);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(100, 21);
-			this->comboBox4->TabIndex = 24;
-			this->toolTip2->SetToolTip(this->comboBox4, L"The method the system will use to create a new individual \r\nby randomly altering "
+			this->MutationComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->MutationComboBox->FormattingEnabled = true;
+			this->MutationComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Subtree" });
+			this->MutationComboBox->Location = System::Drawing::Point(102, 367);
+			this->MutationComboBox->Name = L"MutationComboBox";
+			this->MutationComboBox->Size = System::Drawing::Size(100, 21);
+			this->MutationComboBox->TabIndex = 24;
+			this->toolTip2->SetToolTip(this->MutationComboBox, L"The method the system will use to create a new individual \r\nby randomly altering "
 				L"a parent individual");
 			// 
 			// label14
@@ -1580,9 +1619,9 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			this->panel1->Controls->Add(this->MutationRateTextbox);
 			this->panel1->Controls->Add(this->label15);
 			this->panel1->Controls->Add(this->label14);
-			this->panel1->Controls->Add(this->comboBox4);
+			this->panel1->Controls->Add(this->MutationComboBox);
 			this->panel1->Controls->Add(this->label13);
-			this->panel1->Controls->Add(this->comboBox3);
+			this->panel1->Controls->Add(this->CrossoverComboBox);
 			this->panel1->Controls->Add(this->label12);
 			this->panel1->Controls->Add(this->SelectionComboBox);
 			this->panel1->Controls->Add(this->label11);
@@ -1693,10 +1732,10 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			// 
 			this->FormulaComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->FormulaComboBox->FormattingEnabled = true;
-			this->FormulaComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"X*X+(X-1)", L"(X*X+(X-1))*2" });
+			this->FormulaComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"X*X+(X-1)", L"(X*X+(X-1))*2", L"(((X*X)+(X-1))+((1-X)*(5+X)))+6" });
 			this->FormulaComboBox->Location = System::Drawing::Point(100, 115);
 			this->FormulaComboBox->Name = L"FormulaComboBox";
-			this->FormulaComboBox->Size = System::Drawing::Size(131, 21);
+			this->FormulaComboBox->Size = System::Drawing::Size(154, 21);
 			this->FormulaComboBox->TabIndex = 42;
 			this->toolTip2->SetToolTip(this->FormulaComboBox, L"The formula that the genetic \r\nalgorithm will try to emulate");
 			// 
@@ -1707,18 +1746,6 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			this->toolTip2->InitialDelay = 500;
 			this->toolTip2->IsBalloon = true;
 			this->toolTip2->ReshowDelay = 100;
-			// 
-			// RunUnssucessfulText
-			// 
-			this->RunUnssucessfulText->AutoSize = true;
-			this->RunUnssucessfulText->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->RunUnssucessfulText->Location = System::Drawing::Point(162, 104);
-			this->RunUnssucessfulText->Name = L"RunUnssucessfulText";
-			this->RunUnssucessfulText->Size = System::Drawing::Size(155, 40);
-			this->RunUnssucessfulText->TabIndex = 1;
-			this->RunUnssucessfulText->Text = L"Run Unsuccessful\r\n\r\n";
-			this->RunUnssucessfulText->Visible = false;
 			// 
 			// GUI
 			// 
@@ -1780,6 +1807,8 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 		TreeGenComboBox->SelectedIndex = 0;
 		SelectionComboBox->SelectedIndex = 0;
 		FormulaComboBox->SelectedIndex = 0;
+		CrossoverComboBox->SelectedIndex = 0;
+		MutationComboBox->SelectedIndex = 0;
 		pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::pictureBox1_Paint);
 		pictureBox2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::pictureBox1_Paint);
 	}
@@ -1851,6 +1880,18 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 				float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
 				result = result * 2;
 				result = roundf(result * 100) / 100;				
+				TargetValues[i] = result;
+			}
+		}
+		if (FormulaComboBox->SelectedIndex == 2)
+		{
+
+			for (int i = 0; i < Diff * 10; i++) {
+				float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+				result = result + ((1 - TestRange[i])*(5 + TestRange[i]));
+
+				result = result + 6;
+				result = roundf(result * 100) / 100;
 				TargetValues[i] = result;
 			}
 		}
@@ -2116,8 +2157,8 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 		RunUnssucessfulText->Visible = false;
 		RunInProgressText->Visible = true;
 		TreePanel->Visible = true;
-		string TempArray[300] = {};
-		Nodes = gcnew array<String^>(300);
+		string TempArray[100] = {};
+		Nodes = gcnew array<String^>(100);
 		NodesPoints = gcnew array<Point>(300);
 		pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph1);
 		pictureBox1->Refresh();		
@@ -2274,6 +2315,18 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 					TargetValues[i] = result;
 				}
 			}
+			if (FormulaComboBox->SelectedIndex == 2)
+			{
+
+				for (int i = 0; i < Diff * 10; i++) {
+					float result = TestRange[i] * TestRange[i] + (TestRange[i] - 1);
+					float result2 = ((1 - TestRange[i])*(5 + TestRange[i]));
+					result = result + ((1 - TestRange[i])*(5 + TestRange[i]));
+					result = result + 6;
+					result = roundf(result * 100) / 100;
+					TargetValues[i] = result;
+				}
+			}
 			//Gets the lowest and highest target values
 			int LowestIndex = -1;
 			int HighestIndex = -1;
@@ -2299,7 +2352,9 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 			bool SolutionFound = false;
 			for (int i = 0; i < MaxNoOfGens; i++)
 			{
-
+				if (i == 200) {
+					string test = "";
+				}
 				Pop.Evaluate();
 				vector<float> CurrentBestResults = Pop.GetCurrentBestResults();
 				vector<float> NormalizedResults(Diff * 10);
@@ -2341,41 +2396,7 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 					First = false;
 				}
 				pictureBox2->Refresh();
-				/*
-				Individual test = Pop.GetBestCurrentIndividualObj();
-				string test2 = test.PrintTree(1);
-				int BestIndividualIndex = Pop.GetBestCurrentIndividual();
-				string TreeString = Pop.PrintOutNewTree(BestIndividualIndex);
-				NumOfNodes = count(TreeString.begin(), TreeString.end(), ' ');
-				//MaxLevel = NumOfNodes/5;
-				stringstream ss(TreeString);
-
-				while (ss.good() && i < NumOfNodes) {
-
-					ss >> TempArray[i];
-					++i;
-				}
-				for (int i = 0; i < NumOfNodes; i++) {
-					Nodes[i] = gcnew String(TempArray[i].c_str());
-				}
-				CurrentIndex = -1;
-				CurrentIndex2 = -1;
-				CurrentLevel = 0;
-
-				Point StartPoint = Point(225, 20);
-
-				DrawTree("Center", StartPoint);
-				if (First == true && FirstPass == true)
-				{
-					pictureBox3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph6);
-					First = false;
-				}
-				pictureBox3->Refresh();
-				
-				CurrentBestFormula = "";
-				CompileBestFormula();
-				BestFormulaTextBox->Text = CurrentBestFormula;
-				*/
+			
 				string LowestDiffStr = to_string(Pop.GetLowestDiff());
 				double dobuleValue = Pop.GetLowestDiff();
 				Decimal decimalValue = System::Convert::ToDecimal(dobuleValue);
@@ -2413,10 +2434,10 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 					DrawTree("Center", StartPoint);					
 					pictureBox3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::UpdateGraph6);					
 					pictureBox3->Refresh();
-
 					CurrentBestFormula = "";
 					CompileBestFormula();
 					BestFormulaTextBox->Text = CurrentBestFormula;
+					SuccessfulFormulaBox->Text = CurrentBestFormula;
 					break;
 				}
 				Pop.CreateNewGen();
@@ -2431,31 +2452,11 @@ private: System::Windows::Forms::Label^  RunUnssucessfulText;
 				RunSuccessfulTextBox->Text = "No";
 				RunInProgressText->Visible = false;
 				RunUnssucessfulText->Visible = true;
+				SuccessfulFormulaBox->Text = "N/A";
 			}
 			TotalNumOfGensTextbox->Text = CurrentGenTextBox->Text;
 			CurrentGenTextBox->Text = "0";
 			Pop.setLowestDiff(-1);
-
-			/*
-
-			//TestOnly
-			string test = Pop.PrintOutNewTree(Pop.GetBestCurrentIndividual());
-			//string test2 = Pop.PrintOutNewTree(191);
-			//string test2 = Pop.PrintOutResult(2);
-			//string test3 = Pop.PrintOutTotalDistance(2);
-			//string test4 = Pop.PrintOutNewTree(86);
-			/*
-			for (int j = 0; j < 200; j++)
-			{
-				string test5= Pop.PrintOutTree(j);
-			}
-
-			ofstream myfile;
-			myfile.open("example.txt");
-			myfile << test;
-			myfile.close();
-			//TestOnly
-			*/
 			FirstPass = false;
 		}
 		
@@ -2507,6 +2508,8 @@ private: System::Void label58_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void label63_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void label62_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label25_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
